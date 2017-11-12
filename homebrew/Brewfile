@@ -1,0 +1,15 @@
+# databases
+brew "redis"
+
+# development tools
+brew "git"
+
+# development tools - go
+brew "glide"
+
+# development tools -ruby
+brew "rbenv"
+
+# utilities
+brew "wget"
+
