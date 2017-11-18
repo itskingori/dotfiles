@@ -8,6 +8,9 @@ brew "git"
 brew "go"
 brew "glide"
 
+# development tools - javascript
+brew "nodejs"
+
 # development tools -ruby
 brew "rbenv"
 
