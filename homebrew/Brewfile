@@ -5,6 +5,7 @@ brew "redis"
 brew "git"
 
 # development tools - go
+brew "go"
 brew "glide"
 
 # development tools -ruby
