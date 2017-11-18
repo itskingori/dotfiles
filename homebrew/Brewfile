@@ -15,5 +15,6 @@ brew "nodejs"
 brew "rbenv"
 
 # utilities
+brew "awscli"
 brew "wget"
 
