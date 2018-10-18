@@ -1,0 +1,23 @@
+[user]
+	name = King'ori Maina
+	email = j@kingori.co
+	signingkey = 04398F1A6E1D9B22
+
+[core]
+	excludesfile = /Users/kingori/.gitignore_global
+
+[commit]
+	gpgsign = true
+
+[gpg]
+	program = /usr/local/bin/gpg
+
+[alias]
+	grog = log --graph --abbrev-commit --oneline
+	prune-merged = !git branch --merged master | grep -v 'master$' | xargs git branch -d
+	refresh = !git fetch -p && git checkout master && git pull && git prune-merged
+	stsh = stash --keep-index
+	staash = stash --include-untracked
+	staaash = stash --all
+	sync-upstream = !git fetch upstream && git checkout master && git merge upstream/master && git push -f origin master
+	yolo = !git add -A && git commit -am \"`curl -s http://whatthecommit.com/index.txt`\" && git push -f
