@@ -2,8 +2,3 @@
 export HISTSIZE=1000
 export HISTFILESIZE=2000
 export HISTCONTROL=ignoreboth:erasedups
-
-# aliases
-alias git-delete-merged="git branch --merged master | grep -v 'master$' | xargs git branch -d"
-alias git-clean="git fetch -p && git checkout master && git pull && git-delete-merged"
-
