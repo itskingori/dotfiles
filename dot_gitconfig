@@ -1,0 +1,55 @@
+[user]
+	name = King'ori Maina
+	email = j@kingori.co
+	signingkey = 80B8E84A8137F159B012374804398F1A6E1D9B22
+
+[core]
+	excludesfile = ~/.gitignore_global
+
+[commit]
+	gpgsign = true
+
+[gpg]
+	program = gpg
+
+[fetch]
+	prune = true
+	pruneTags = true
+
+[pull]
+	rebase = true
+	ff = only
+
+[rebase]
+	autoStash = true
+	updateRefs = true
+
+[push]
+	autoSetupRemote = true
+
+[diff]
+	algorithm = histogram
+
+[merge]
+	conflictstyle = zdiff3
+
+[alias]
+	grog = log --graph --all --pretty='format:%C(auto)%h %C(cyan)%ar %C(auto)%d %C(magenta)%an %C(auto)%s'
+	stsh = stash --keep-index
+	staash = stash --include-untracked
+	staaash = stash --all
+
+	default-branch = "!f(){ b=$(git symbolic-ref -q --short refs/remotes/origin/HEAD 2>/dev/null); b=${b#origin/}; if [ -n \"$b\" ]; then echo \"$b\"; elif git show-ref -q --verify refs/heads/main; then echo main; else echo master; fi; }; f"
+	prune-merged = "!f(){ base=${1:-$(git default-branch)}; git branch --merged \"$base\" --format='%(refname:short)' | while IFS= read -r br; do [ \"$br\" = \"$base\" ] && continue; git branch -d -- \"$br\"; done; }; f"
+	refresh = "!f(){ base=${1:-$(git default-branch)}; git fetch --prune && git switch \"$base\" && git pull --ff-only && git prune-merged \"$base\"; }; f"
+
+[init]
+	defaultBranch = main
+
+[credential "https://github.com"]
+	helper =
+	helper = !gh auth git-credential
+
+[credential "https://gist.github.com"]
+	helper =
+	helper = !gh auth git-credential
