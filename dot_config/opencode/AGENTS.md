@@ -81,7 +81,7 @@ Examples (generic):
   - Use `gh pr view <number> --repo Org/repo --json url` to fetch PR URLs programmatically
   - Group related PRs in descriptions by status (e.g., merged, pending, cleanup)
   - Use bare GitHub URLs (not markdown links) -- GitHub auto-generates rich link cards
-- Use GitHub alert syntax for callouts instead of inline bold text:
+- For any GitHub-rendered Markdown (PR descriptions, issue bodies, comments, READMEs/docs), use GitHub alert syntax for callouts instead of inline bold text. Avoid GitHub callouts outside GitHub (e.g., Jira uses ADF):
   > [!NOTE]
   > Highlights information that users should take into account, even when skimming.
 
