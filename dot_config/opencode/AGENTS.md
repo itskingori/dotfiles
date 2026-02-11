@@ -59,21 +59,21 @@ Examples (generic):
 - `deps-bump-eslint`
 - `dns-phase1-import-records`
 
-## Pull Requests (PRs)
+## GitHub
 
-### PR Workflow
+### GitHub PR Workflow
 
 - Create PRs in **draft mode** when work is in progress.
 - Defer unrelated work to separate PRs even if convenient to do together; keep PRs focused on one logical change.
 - For UI changes, include a screenshots checklist section by default.
 - Call out anything that requires manual browser verification (JS-driven behaviors) and list concrete steps.
 
-### PR Titles
+### GitHub PR Titles
 
 - For multi-phase work, prefix PR titles with `Phase N: <description>`
 - In the Intellection GitHub org, also include the Jira ticket reference: `[TICKET] Phase N: <description>`
 
-### PR Descriptions
+### GitHub PR Descriptions
 
 - Keep the PR description comprehensive and update it as new commits land (why/what/testing/manual steps/follow-ups).
 - Use numbered lists when the count of items matters (e.g., related PRs, migration steps)
@@ -81,7 +81,10 @@ Examples (generic):
   - Use `gh pr view <number> --repo Org/repo --json url` to fetch PR URLs programmatically
   - Group related PRs in descriptions by status (e.g., merged, pending, cleanup)
   - Use bare GitHub URLs (not markdown links) -- GitHub auto-generates rich link cards
-- Use GitHub alert syntax for callouts instead of inline bold text:
+
+### GitHub Markdown
+
+- For any GitHub-rendered Markdown (PR descriptions, issue bodies, comments, READMEs/docs), use GitHub alert syntax for callouts instead of inline bold text. Avoid GitHub callouts outside GitHub (e.g., Jira uses ADF):
   > [!NOTE]
   > Highlights information that users should take into account, even when skimming.
 
