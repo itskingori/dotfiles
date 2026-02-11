@@ -2,7 +2,9 @@
 
 My personal dotfiles, managed with [chezmoi][1].
 
-## How To See What's Managed
+## Usage
+
+### How To See What's Managed
 
 Run:
 
@@ -15,7 +17,7 @@ This prints the full list of destination paths that will be present in `$HOME` a
 > [!NOTE]
 > This repository uses chezmoi source-state naming (`dot_` and `private_` prefixes). chezmoi maps these back to the real destination paths when applying.
 
-## Handy Commands
+### Handy Commands
 
 ```sh
 chezmoi managed
