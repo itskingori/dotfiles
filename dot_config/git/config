@@ -4,7 +4,7 @@
 	signingkey = 80B8E84A8137F159B012374804398F1A6E1D9B22
 
 [core]
-	excludesfile = ~/.gitignore_global
+	excludesfile = ~/.config/git/gitignore_global
 
 [commit]
 	gpgsign = true
