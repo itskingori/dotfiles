@@ -86,14 +86,16 @@ Examples (generic):
 
 ### GitHub PR Descriptions
 
-- Start with a short, unheaded TL;DR paragraph (1-3 sentences). Do not start PR descriptions with a heading like `## Summary`.
+- Only required: start with a short, unheaded TL;DR paragraph (1-3 sentences). Do not start PR descriptions with a heading like `## Summary`.
 - Use a hybrid voice: keep the opener content-focused and present-tense; use first-person for testing/validation lines.
 - Avoid `##` headings (as they are too visually prominent on GitHub). Use `###` as the highest heading level, then `####` / `#####` as needed.
 - Keep the PR description comprehensive and update it as new commits land (why/what/testing/manual steps/follow-ups).
+- All other sections are optional; choose headings based on the content/context of the change and omit empty sections.
 - Use numbered lists when the count of items matters (e.g., related PRs, migration steps)
 - Prefer clear, functional section headings when needed: `### Why`, `### What`, `### Scope`, `### Non-goals`, `### Risk`, `### Testing`, `### Rollout`, `### Follow-ups`, `### Related`, `### References`.
-- Use `### Related` for GitHub-internal links (issues/PRs).
+- Use `### Related` for directly related GitHub issues/PRs (dependencies, follow-ups, or linked work).
 - Use `### References` for external links used for research/reading/study.
+- Include `### Related` and `### References` only when relevant links exist.
 - If both sections are present, keep this order: `### Related` then `### References`.
 - For cross-repo references:
   - Use `gh pr view <number> --repo Org/repo --json url` to fetch PR URLs programmatically
@@ -136,6 +138,14 @@ Examples (TL;DR opener styles):
 When using `gh pr create`, `gh pr edit`, or `gh issue create` with `--body`:
 
 - **Use quoted HEREDOC** (`<<'EOF'`) to preserve backticks and prevent shell expansion:
+- Minimal required body (recommended default):
+  ```bash
+  gh pr create --title "Title" --body "$(cat <<'EOF'
+  <TL;DR paragraph (1-3 sentences) using authorship voice guidelines>
+  EOF
+  )"
+  ```
+- Optional expanded body (use only as needed):
   ```bash
   gh pr create --title "Title" --body "$(cat <<'EOF'
   <TL;DR paragraph (1-3 sentences) using authorship voice guidelines>
