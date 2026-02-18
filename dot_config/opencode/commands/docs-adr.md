@@ -54,11 +54,13 @@ Workflow:
 4) Stop and wait for answers.
 
 After the user answers, produce:
-- Proposed file path
+- Proposed file path in the form `docs/adr/NNNN-kebab-case-slug.md`
 - A single fenced code block containing the final ADR, wrapped in clear markers:
 
   BEGIN ADR DRAFT
   <full ADR markdown>
   END ADR DRAFT
+
+- Keep the output minimal: no extra prose outside the required path line and ADR code block.
 
 To proceed with writing the file, switch to the build agent and ask it to write the ADR between the markers into the proposed path, then show `git status` and `git diff` (commit only if explicitly requested).
