@@ -28,12 +28,12 @@ Generic ADR shape (follow this structure unless there is a strong reason not to)
 ```
 
 Evidence snapshot (ground the ADR in what actually changed):
-!`git status -sb`
-!`git log --oneline -20`
-!`git diff --stat`
-!`git diff --name-only`
-!`git diff --cached --stat`
-!`git diff --cached --name-only`
+!`git rev-parse --is-inside-work-tree >/dev/null 2>&1 && git status -sb || echo "Not in a git worktree."`
+!`git rev-parse --is-inside-work-tree >/dev/null 2>&1 && git log --oneline -20 || true`
+!`git rev-parse --is-inside-work-tree >/dev/null 2>&1 && git diff --stat || true`
+!`git rev-parse --is-inside-work-tree >/dev/null 2>&1 && git diff --name-only || true`
+!`git rev-parse --is-inside-work-tree >/dev/null 2>&1 && git diff --cached --stat || true`
+!`git rev-parse --is-inside-work-tree >/dev/null 2>&1 && git diff --cached --name-only || true`
 
 Workflow:
 0) Confirm `docs/adr/` exists from repo evidence. If missing, ask one targeted question about creating it and stop.
