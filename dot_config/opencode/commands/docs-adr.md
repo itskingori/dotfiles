@@ -49,6 +49,7 @@ Workflow:
      - ADR-worthy? yes/no (with a short reason)
 2) Select the ADR theme to write now:
     - If multiple distinct themes exist, list them and ask the user to choose one theme to draft now; then stop and wait.
+    - If you asked for theme selection, do not ask step 3 questions in the same response.
     - If there is only one clear theme, proceed without asking for theme selection.
     - Propose: Title, proposed new file path under `docs/adr/` using the next 4-digit number + kebab-case slug, and numbering basis (`0001` if no existing `docs/adr/NNNN-*.md` files).
 3) Ask 4-8 targeted questions needed to write a correct ADR (only questions that materially affect the decision record).
