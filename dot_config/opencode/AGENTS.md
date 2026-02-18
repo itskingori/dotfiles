@@ -6,6 +6,17 @@
 - Mode constraints are absolute. If you're in a read-only/plan mode, the only acceptable actions are reading, searching, and planning. No exceptions.
 - If you cannot complete a requested action due to mode restrictions, explain the limitation and wait for the mode to change.
 
+## Authorship Voice (Posting As Me)
+
+When drafting or posting text in external systems as the user (e.g., GitHub PR bodies/issues/comments, Jira tickets/comments, etc.):
+
+- Default to a content-focused, reviewer-oriented perspective: describe the change in present tense (e.g., "Adds ...", "Updates ...", "Clarifies ...") and avoid "I did ..." framing in the opener.
+- Use first-person singular ("I", "my", "I'm") for actions, decisions, and accountability (especially testing/validation), for example "I ran ..." and "I verified ...".
+- Avoid "we" unless I explicitly request it for that specific message.
+- Do not address the user ("you") in that text; write to the reader/reviewer.
+- Do not mention the assistant/AI or narrate the tooling (e.g., "as an AI...", "the agent...").
+- Apply these voice rules to all external posts, including PR/issue bodies and comments.
+
 ## Dependency Management
 
 - Prefer to use `mise`.
@@ -75,12 +86,26 @@ Examples (generic):
 
 ### GitHub PR Descriptions
 
+- Only required: start with a short, unheaded TL;DR paragraph (1-3 sentences). Do not start PR descriptions with a heading like `## Summary`.
+- Use a hybrid voice: keep the opener content-focused and present-tense; use first-person for testing/validation lines.
+- Avoid `##` headings (as they are too visually prominent on GitHub). Use `###` as the highest heading level, then `####` / `#####` as needed.
 - Keep the PR description comprehensive and update it as new commits land (why/what/testing/manual steps/follow-ups).
+- All other sections are optional; choose headings based on the content/context of the change and omit empty sections.
 - Use numbered lists when the count of items matters (e.g., related PRs, migration steps)
+- Prefer clear, functional section headings when needed: `### Why`, `### What`, `### Scope`, `### Non-goals`, `### Risk`, `### Testing`, `### Rollout`, `### Follow-ups`, `### Related`, `### References`.
+- Use `### Related` for directly related GitHub issues/PRs (dependencies, follow-ups, or linked work).
+- Use `### References` for external links used for research/reading/study.
+- Include `### Related` and `### References` only when relevant links exist.
+- If both sections are present, keep this order: `### Related` then `### References`.
 - For cross-repo references:
   - Use `gh pr view <number> --repo Org/repo --json url` to fetch PR URLs programmatically
   - Group related PRs in descriptions by status (e.g., merged, pending, cleanup)
   - Use bare GitHub URLs (not markdown links) -- GitHub auto-generates rich link cards
+
+Examples (TL;DR opener styles):
+- `Codifies my PR-writing conventions and adds global authorship voice guidance for external posts.`
+- `Updates global opencode guidance to prefer unheaded TL;DR openers and `###`-level section structure.`
+- `Clarifies where to place GitHub-internal links vs external references in PR descriptions.`
 
 ### GitHub Markdown
 
@@ -106,6 +131,7 @@ Examples (generic):
 
 - Use the `gh` CLI for all GitHub operations (PRs, issues, repo info, etc.).
 - The CLI should be authenticated; if access fails, ask user to authenticate via `gh auth login`.
+- Voice: follow "Authorship Voice (Posting As Me)" for PR bodies and comments since you'll be authenticated as me.
 
 #### PR and Issue Body Formatting
 
@@ -114,8 +140,7 @@ When using `gh pr create`, `gh pr edit`, or `gh issue create` with `--body`:
 - **Use quoted HEREDOC** (`<<'EOF'`) to preserve backticks and prevent shell expansion:
   ```bash
   gh pr create --title "Title" --body "$(cat <<'EOF'
-  ## Summary
-  Description with `backticks` preserved correctly.
+  <TL;DR paragraph (1-3 sentences) using authorship voice guidelines>
   EOF
   )"
   ```
@@ -125,7 +150,8 @@ When using `gh pr create`, `gh pr edit`, or `gh issue create` with `--body`:
 
 ### Atlassian CLI (acli)
 
-Use the `acli` CLI tool for all Jira operations. The CLI should be authenticated; if not, ask me to authenticate.
+- Use the `acli` CLI tool for all Jira operations. The CLI should be authenticated; if not, ask me to authenticate.
+- Voice: follow "Authorship Voice (Posting As Me)" for Jira descriptions and comments since you'll be authenticated as me.
 
 No default project is configured, so the project key will need to be determined in conversation or specified per command.
 
