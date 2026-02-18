@@ -36,8 +36,10 @@ Evidence snapshot (ground the ADR in what actually changed):
 !`git rev-parse --is-inside-work-tree >/dev/null 2>&1 && git diff --cached --stat || true`
 !`git rev-parse --is-inside-work-tree >/dev/null 2>&1 && git diff --cached --name-only || true`
 
+Preflight:
+- Confirm `docs/adr/` exists from repo evidence. If missing, ask one targeted question about creating it and stop.
+
 Workflow:
-0) Confirm `docs/adr/` exists from repo evidence. If missing, ask one targeted question about creating it and stop.
 1) Extract candidate decisions from the session. Do not drop decisions due to an arbitrary cap.
    - If there are many, group them by theme and keep the initial pass compact.
    - For each candidate, include:
