@@ -49,6 +49,7 @@ Workflow:
     - Proposed new file path under `docs/adr/` using the next 4-digit number + kebab-case slug
     - Derive the next number from existing `docs/adr/NNNN-*.md` files; if none exist, start at `0001`
 3) Ask 4-8 targeted questions needed to write a correct ADR (only questions that materially affect the decision record).
+   - Questions must cover: decision statement, status (proposed/accepted/superseded), scope, alternatives considered, rollout/testing impact, and ownership or follow-up.
 4) Stop and wait for answers.
 
 After the user answers, produce:
