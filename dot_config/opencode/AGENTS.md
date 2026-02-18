@@ -80,6 +80,9 @@ Examples (generic):
 - Keep the PR description comprehensive and update it as new commits land (why/what/testing/manual steps/follow-ups).
 - Use numbered lists when the count of items matters (e.g., related PRs, migration steps)
 - Prefer clear, functional section headings when needed: `### Why`, `### What`, `### Scope`, `### Non-goals`, `### Risk`, `### Testing`, `### Rollout`, `### Follow-ups`, `### Related`, `### References`.
+- Use `### Related` for GitHub-internal links (issues/PRs).
+- Use `### References` for external links used for research/reading/study.
+- If both sections are present, keep this order: `### Related` then `### References`.
 - For cross-repo references:
   - Use `gh pr view <number> --repo Org/repo --json url` to fetch PR URLs programmatically
   - Group related PRs in descriptions by status (e.g., merged, pending, cleanup)
@@ -124,6 +127,12 @@ When using `gh pr create`, `gh pr edit`, or `gh issue create` with `--body`:
 
   ### Testing
   - ...
+
+  ### Related
+  - <GitHub issue/PR URL>
+
+  ### References
+  - <external URL>
   EOF
   )"
   ```
