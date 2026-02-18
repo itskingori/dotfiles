@@ -30,7 +30,7 @@ Generic ADR shape (follow this structure unless there is a strong reason not to)
 
 Evidence snapshot (ground the ADR in what actually changed):
 !`git rev-parse --is-inside-work-tree >/dev/null 2>&1 && git status -sb || echo "Not in a git worktree."`
-!`git rev-parse --is-inside-work-tree >/dev/null 2>&1 && git log --oneline -20 || true`
+!`git rev-parse --is-inside-work-tree >/dev/null 2>&1 && (git rev-parse --verify HEAD >/dev/null 2>&1 && git log --oneline -20 || echo "No commits yet.") || true`
 !`git rev-parse --is-inside-work-tree >/dev/null 2>&1 && git diff --stat || true`
 !`git rev-parse --is-inside-work-tree >/dev/null 2>&1 && git diff --name-only || true`
 !`git rev-parse --is-inside-work-tree >/dev/null 2>&1 && git diff --cached --stat || true`
