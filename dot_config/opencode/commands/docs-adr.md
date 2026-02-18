@@ -4,7 +4,7 @@ agent: plan
 subtask: false
 ---
 
-You are running the `/docs-adr` command during a work session (at any point). Compress key decisions from THIS CHAT SESSION + the repo evidence below into a proposed ADR.
+You are running the `/docs-adr` command during a work session (at any point). Document key decisions from THIS CHAT SESSION + the repo evidence below into a proposed ADR.
 
 Strict rules:
 - Plan agent only: do not modify files, do not apply patches, do not run any git commands that change state.
