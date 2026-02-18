@@ -6,6 +6,16 @@
 - Mode constraints are absolute. If you're in a read-only/plan mode, the only acceptable actions are reading, searching, and planning. No exceptions.
 - If you cannot complete a requested action due to mode restrictions, explain the limitation and wait for the mode to change.
 
+## Authorship Voice (Posting As Me)
+
+When drafting or posting text in external systems as the user (e.g., GitHub PR bodies/issues/comments, Jira tickets/comments, etc.):
+
+- Write in first-person singular ("I", "my", "I'm") as if I authored it.
+- Avoid "we" unless I explicitly request it for that specific message.
+- Do not address the user ("you") in that text; write to the reader/reviewer.
+- Do not mention the assistant/AI or narrate the tooling (e.g., "as an AI...", "the agent...").
+- If describing actions done via automation/tools, still phrase as "I ..." (e.g., "I ran ...", "I verified ...").
+
 ## Dependency Management
 
 - Prefer to use `mise`.
@@ -112,6 +122,7 @@ Examples (generic):
 
 - Use the `gh` CLI for all GitHub operations (PRs, issues, repo info, etc.).
 - The CLI should be authenticated; if access fails, ask user to authenticate via `gh auth login`.
+- Voice: follow "Authorship Voice (Posting As Me)" for PR bodies and comments since you'll be authenticated as me.
 
 #### PR and Issue Body Formatting
 
@@ -142,7 +153,8 @@ When using `gh pr create`, `gh pr edit`, or `gh issue create` with `--body`:
 
 ### Atlassian CLI (acli)
 
-Use the `acli` CLI tool for all Jira operations. The CLI should be authenticated; if not, ask me to authenticate.
+- Use the `acli` CLI tool for all Jira operations. The CLI should be authenticated; if not, ask me to authenticate.
+- Voice: follow "Authorship Voice (Posting As Me)" for Jira descriptions and comments since you'll be authenticated as me.
 
 No default project is configured, so the project key will need to be determined in conversation or specified per command.
 
