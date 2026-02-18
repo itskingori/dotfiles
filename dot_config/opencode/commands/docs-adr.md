@@ -32,6 +32,8 @@ Evidence snapshot (ground the ADR in what actually changed):
 !`git log --oneline -20`
 !`git diff --stat`
 !`git diff --name-only`
+!`git diff --cached --stat`
+!`git diff --cached --name-only`
 
 Workflow:
 0) Confirm `docs/adr/` exists from repo evidence. If missing, ask one targeted question about creating it and stop.
