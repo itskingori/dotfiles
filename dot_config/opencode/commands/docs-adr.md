@@ -63,7 +63,7 @@ After the user answers, produce:
   <full ADR markdown>
   END ADR DRAFT
 
-- If additional ADR themes remain, add exactly one final line: `Next: run /docs-adr again to draft another ADR theme.`
+- If additional ADR themes remain, add exactly one final line: `Next: additional ADR themes were identified; run /docs-adr again to draft the next theme.`
 - Keep the output minimal: no extra prose outside the required path line, ADR code block, and optional final line above.
 
 To proceed with writing the file, switch to the build agent and ask it to write the ADR between the markers into the proposed path, then show `git status` and `git diff` (commit only if explicitly requested).
