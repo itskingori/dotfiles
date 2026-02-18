@@ -11,6 +11,7 @@ Strict rules:
 - Your first response should ASK QUESTIONS first (to confirm/clarify), not immediately finalize the ADR.
 - Use shell output + file references as evidence. Keep evidence excerpts short and relevant.
 - Use `docs/adr/` as the ADR location. If `docs/adr/` is missing, ask whether to create it and stop.
+- Never include secrets in ADR content (tokens, keys, cookies, credentials, private URLs). Use placeholder names or secret-manager references.
 
 Repo ADR conventions:
 - Existing ADRs (numbering + slug conventions):
