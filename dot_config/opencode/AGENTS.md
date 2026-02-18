@@ -138,29 +138,9 @@ Examples (TL;DR opener styles):
 When using `gh pr create`, `gh pr edit`, or `gh issue create` with `--body`:
 
 - **Use quoted HEREDOC** (`<<'EOF'`) to preserve backticks and prevent shell expansion:
-- Minimal required body (recommended default):
   ```bash
   gh pr create --title "Title" --body "$(cat <<'EOF'
   <TL;DR paragraph (1-3 sentences) using authorship voice guidelines>
-  EOF
-  )"
-  ```
-- Optional expanded body (use only as needed):
-  ```bash
-  gh pr create --title "Title" --body "$(cat <<'EOF'
-  <TL;DR paragraph (1-3 sentences) using authorship voice guidelines>
-
-  ### What
-  - ...
-
-  ### Testing
-  - ...
-
-  ### Related
-  - <GitHub issue/PR URL>
-
-  ### References
-  - <external URL>
   EOF
   )"
   ```
