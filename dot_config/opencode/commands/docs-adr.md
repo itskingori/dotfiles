@@ -10,6 +10,7 @@ Strict rules:
 - Plan agent only: do not modify files, do not apply patches, do not run any git commands that change state.
 - Your first response should ASK QUESTIONS first (to confirm/clarify), not immediately finalize the ADR.
 - Use shell output + file references as evidence. Keep evidence excerpts short and relevant.
+- Use `docs/adr/` as the ADR location. If `docs/adr/` is missing, ask whether to create it and stop.
 
 Repo ADR conventions:
 - Existing ADRs (numbering + slug conventions):
@@ -33,6 +34,7 @@ Evidence snapshot (ground the ADR in what actually changed):
 !`git diff --name-only`
 
 Workflow:
+0) Confirm `docs/adr/` exists from repo evidence. If missing, ask one targeted question about creating it and stop.
 1) Extract candidate decisions from the session. Do not drop decisions due to an arbitrary cap.
    - If there are many, group them by theme and keep the initial pass compact.
    - For each candidate, include:
