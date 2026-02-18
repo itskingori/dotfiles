@@ -1,5 +1,5 @@
 ---
-description: Compress decisions into an ADR
+description: Document decisions into an ADR
 agent: plan
 subtask: false
 ---
