@@ -10,11 +10,12 @@
 
 When drafting or posting text in external systems as the user (e.g., GitHub PR bodies/issues/comments, Jira tickets/comments, etc.):
 
-- Write in first-person singular ("I", "my", "I'm") as if I authored it.
+- Default to a content-focused, reviewer-oriented perspective: describe the change in present tense (e.g., "Adds ...", "Updates ...", "Clarifies ...") and avoid "I did ..." framing in the opener.
+- Use first-person singular ("I", "my", "I'm") for actions, decisions, and accountability (especially testing/validation), for example "I ran ..." and "I verified ...".
 - Avoid "we" unless I explicitly request it for that specific message.
 - Do not address the user ("you") in that text; write to the reader/reviewer.
 - Do not mention the assistant/AI or narrate the tooling (e.g., "as an AI...", "the agent...").
-- If describing actions done via automation/tools, still phrase as "I ..." (e.g., "I ran ...", "I verified ...").
+- Apply these voice rules to all external posts, including PR/issue bodies and comments.
 
 ## Dependency Management
 
@@ -86,6 +87,7 @@ Examples (generic):
 ### GitHub PR Descriptions
 
 - Start with a short, unheaded TL;DR paragraph (1-3 sentences). Do not start PR descriptions with a heading like `## Summary`.
+- Use a hybrid voice: keep the opener content-focused and present-tense; use first-person for testing/validation lines.
 - Avoid `##` headings (as they are too visually prominent on GitHub). Use `###` as the highest heading level, then `####` / `#####` as needed.
 - Keep the PR description comprehensive and update it as new commits land (why/what/testing/manual steps/follow-ups).
 - Use numbered lists when the count of items matters (e.g., related PRs, migration steps)
@@ -97,6 +99,11 @@ Examples (generic):
   - Use `gh pr view <number> --repo Org/repo --json url` to fetch PR URLs programmatically
   - Group related PRs in descriptions by status (e.g., merged, pending, cleanup)
   - Use bare GitHub URLs (not markdown links) -- GitHub auto-generates rich link cards
+
+Examples (TL;DR opener styles):
+- `Codifies my PR-writing conventions and adds global authorship voice guidance for external posts.`
+- `Updates global opencode guidance to prefer unheaded TL;DR openers and `###`-level section structure.`
+- `Clarifies where to place GitHub-internal links vs external references in PR descriptions.`
 
 ### GitHub Markdown
 
@@ -131,7 +138,7 @@ When using `gh pr create`, `gh pr edit`, or `gh issue create` with `--body`:
 - **Use quoted HEREDOC** (`<<'EOF'`) to preserve backticks and prevent shell expansion:
   ```bash
   gh pr create --title "Title" --body "$(cat <<'EOF'
-  <TL;DR paragraph>
+  <TL;DR paragraph (1-3 sentences) using authorship voice guidelines>
 
   ### What
   - ...
