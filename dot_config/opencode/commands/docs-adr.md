@@ -45,8 +45,9 @@ Workflow:
      - Evidence pointers only (relevant commit subject(s) and/or file paths); do not include code excerpts or large diffs.
      - ADR-worthy? yes/no (with a short reason)
 2) Pick the single best ADR to write now and propose:
-   - Title
-   - Proposed new file path under `docs/adr/` using the next 4-digit number + kebab-case slug
+    - Title
+    - Proposed new file path under `docs/adr/` using the next 4-digit number + kebab-case slug
+    - Derive the next number from existing `docs/adr/NNNN-*.md` files; if none exist, start at `0001`
 3) Ask 4-8 targeted questions needed to write a correct ADR (only questions that materially affect the decision record).
 4) Stop and wait for answers.
 
