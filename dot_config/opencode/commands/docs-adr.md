@@ -15,7 +15,7 @@ Strict rules:
 
 Repo ADR conventions:
 - Existing ADRs (numbering + slug conventions):
-!`ls -1 docs/adr | sort`
+!`test -d docs/adr && ls -1 docs/adr | sort || echo "docs/adr/ is missing"`
 
 Generic ADR shape (follow this structure unless there is a strong reason not to):
 ```md
