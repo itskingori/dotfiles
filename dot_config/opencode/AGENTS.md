@@ -75,8 +75,11 @@ Examples (generic):
 
 ### GitHub PR Descriptions
 
+- Start with a short, unheaded TL;DR paragraph (1-3 sentences). Do not start PR descriptions with a heading like `## Summary`.
+- Avoid `##` headings (as they are too visually prominent on GitHub). Use `###` as the highest heading level, then `####` / `#####` as needed.
 - Keep the PR description comprehensive and update it as new commits land (why/what/testing/manual steps/follow-ups).
 - Use numbered lists when the count of items matters (e.g., related PRs, migration steps)
+- Prefer clear, functional section headings when needed: `### Why`, `### What`, `### Scope`, `### Non-goals`, `### Risk`, `### Testing`, `### Rollout`, `### Follow-ups`, `### Related`, `### References`.
 - For cross-repo references:
   - Use `gh pr view <number> --repo Org/repo --json url` to fetch PR URLs programmatically
   - Group related PRs in descriptions by status (e.g., merged, pending, cleanup)
@@ -114,8 +117,13 @@ When using `gh pr create`, `gh pr edit`, or `gh issue create` with `--body`:
 - **Use quoted HEREDOC** (`<<'EOF'`) to preserve backticks and prevent shell expansion:
   ```bash
   gh pr create --title "Title" --body "$(cat <<'EOF'
-  ## Summary
-  Description with `backticks` preserved correctly.
+  <TL;DR paragraph>
+
+  ### What
+  - ...
+
+  ### Testing
+  - ...
   EOF
   )"
   ```
