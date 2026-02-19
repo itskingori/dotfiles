@@ -27,6 +27,13 @@
   "use_system_window_tabs": true,
   "scroll_beyond_last_line": "off",
   "file_types": {
-    "YAML": ["**/*.yml.j2", "**/*.yml.jinja", "**/*.yml.jinja2"]
+    "YAML": [
+      "**/*.yml.j2",
+      "**/*.yml.jinja",
+      "**/*.yml.jinja2",
+      "**/*.yaml.j2",
+      "**/*.yaml.jinja",
+      "**/*.yaml.jinja2"
+    ]
   }
 }
