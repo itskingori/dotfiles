@@ -34,8 +34,9 @@ When drafting or posting text in external systems as the user (e.g., GitHub PR b
 ### Git Hygiene (Non-Destructive, Reviewable History)
 
 - Use one feature branch per change set; prefer small, reviewable PRs.
-- Keep commits "one idea each"; split logical changes; avoid mega-commits.
-- Prefer fixing commit structure before review: if a fix belongs in an earlier commit, use interactive rebase/commit reordering when safe.
+- Keep commits "one idea each"; split logical changes; avoid mega-commits. When work spans multiple ideas, commit incrementally (finish idea A and commit before starting idea B).
+- Before pushing, it is OK to reorganize commits to improve history clarity when safe.
+- If commits are already pushed, prefer a follow-up commit unless I explicitly request history rewrite.
 - Rebasing rules:
   - OK to rebase before pushing.
   - If already pushed, only use `git push --force-with-lease` when you own the branch; confirm with me before doing it.
@@ -44,6 +45,10 @@ When drafting or posting text in external systems as the user (e.g., GitHub PR b
 ### Git Commit Messages (Context Over Mechanics)
 
 - Keep commit messages free-form; optimize for clarity over strict formats.
+- Use imperative, present-tense subjects (e.g., `Add`, `Fix`, `Update`, `Clarify`).
+- Keep the subject concise (aim for ~50 chars when practical) and do not end it with a period.
+- Where helpful, add a body with localized context about the change (intent/why/constraints/risk/validation), not a file-by-file changelog.
+- If adding a body, leave a blank line after the subject and wrap lines at ~72 chars.
 - Add context when it helps a future reader understand intent/tradeoffs/risk; not every commit needs a long body.
 - When adding context, prefer "why/constraints/risk/validation" over a list of file changes.
 
