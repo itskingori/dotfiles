@@ -1,0 +1,20 @@
+# -- setup (required) --
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
+# curl
+export PATH="/opt/homebrew/opt/curl/bin:$PATH"
+
+# editor
+export EDITOR='vim'
+
+# homebrew
+export HOMEBREW_BUNDLE_FILE=~/.config/homebrew/Brewfile
+
+# mysql
+export PATH="/opt/homebrew/opt/mysql@8.0/bin:$PATH"
+
+# opencode
+export OPENCODE_EXPERIMENTAL_MARKDOWN="true"
+
+# ssh
+export SSH_AUTH_SOCK=~/.1password/agent.sock
