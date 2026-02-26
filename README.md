@@ -20,10 +20,12 @@ This prints the full list of destination paths that will be present in `$HOME` a
 ### Handy Commands
 
 ```sh
+chezmoi cd
 chezmoi managed
 chezmoi diff
 chezmoi apply -v
 chezmoi add ~/.config/zed/settings.json
+chezmoi re-add ~/.config/zed/settings.json
 chezmoi source-path ~/.config/zed/settings.json
 ```
 
