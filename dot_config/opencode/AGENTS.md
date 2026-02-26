@@ -97,7 +97,19 @@ Examples (generic):
 - Keep the PR description comprehensive and update it as new commits land (why/what/testing/manual steps/follow-ups).
 - All other sections are optional; choose headings based on the content/context of the change and omit empty sections.
 - Use numbered lists when the count of items matters (e.g., related PRs, migration steps)
-- Prefer clear, functional section headings when needed: `### Why`, `### What`, `### Scope`, `### Non-goals`, `### Risk`, `### Testing`, `### Rollout`, `### Follow-ups`, `### Related`, `### References`.
+- Prefer clear, functional section headings when needed; use the following conventions:
+  - `### Background`: prior context that remains true regardless of this PR (history, existing behavior, prior decisions).
+  - `### Motivation`: why this change now (problem/pain, goal, success criteria, constraints).
+  - `### Changes`: high-level deltas (avoid file-by-file); tradeoffs and migrations when relevant.
+  - `### Scope`: what is included in this PR.
+  - `### Non-goals`: what is explicitly out of scope.
+  - `### Risk`: what could break and how risk is mitigated (include rollback notes when relevant).
+  - `### Testing`: what I ran, what I verified manually, and any known gaps.
+  - `### Rollout`: flags, phases, steps, and monitoring notes.
+  - `### Follow-ups`: deferred work with concrete next actions.
+  - `### Related`: directly related GitHub issues/PRs.
+  - `### References`: external links used for research/reading/study.
+- The `### Related` and `### References` MUST be lists (bulleted or numbered). Even a single link must be written as a one-item list (`- https://...` or `1. https://...`). Never put a bare URL on its own line under those headings.
 - Use `### Related` for directly related GitHub issues/PRs (dependencies, follow-ups, or linked work).
 - Use `### References` for external links used for research/reading/study.
 - Include `### Related` and `### References` only when relevant links exist.
