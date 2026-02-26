@@ -98,6 +98,7 @@ Examples (generic):
 - All other sections are optional; choose headings based on the content/context of the change and omit empty sections.
 - Use numbered lists when the count of items matters (e.g., related PRs, migration steps)
 - Prefer clear, functional section headings when needed: `### Why`, `### What`, `### Scope`, `### Non-goals`, `### Risk`, `### Testing`, `### Rollout`, `### Follow-ups`, `### Related`, `### References`.
+- The `### Related` and `### References` MUST be lists (bulleted or numbered). Even a single link must be written as a one-item list (`- https://...` or `1. https://...`). Never put a bare URL on its own line under those headings.
 - Use `### Related` for directly related GitHub issues/PRs (dependencies, follow-ups, or linked work).
 - Use `### References` for external links used for research/reading/study.
 - Include `### Related` and `### References` only when relevant links exist.
