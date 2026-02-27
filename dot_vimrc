@@ -1,0 +1,30 @@
+" Sensible defaults for Vim
+" Portable: works with any Vim 7.0+ (no plugins, no dependencies)
+
+" --- Core behavior ---
+filetype plugin indent on       " File-type detection, plugins, and indentation
+set backspace=indent,eol,start  " Sane backspace behavior
+set encoding=utf-8              " UTF-8 by default
+set nocompatible                " Use Vim defaults (not vi)
+
+" --- Appearance ---
+syntax on                       " Syntax highlighting
+set belloff=all                 " No error bells
+set laststatus=2                " Always show status line
+set number                      " Line numbers
+set ruler                       " Cursor position in status line
+set scrolloff=5                 " Keep context lines above/below cursor
+set showcmd                     " Show partial commands
+
+" --- Indentation ---
+set autoindent                  " Copy indent from current line
+set smartindent                 " Smart indentation for C-like code
+
+" --- Search ---
+set hlsearch                    " Highlight search matches
+set ignorecase                  " Case-insensitive search...
+set incsearch                   " Search as you type
+set smartcase                   " ...unless query has uppercase
+
+" --- Command line ---
+set wildmenu                    " Visual autocomplete for commands
