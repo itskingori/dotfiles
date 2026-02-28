@@ -13,7 +13,7 @@
   "theme": {
     "mode": "system",
     "light": "One Dark",
-    "dark": "One Dark"
+    "dark": "One Dark",
   },
   "use_system_window_tabs": true,
   "scroll_beyond_last_line": "off",
@@ -24,7 +24,7 @@
       "**/*.yml.jinja2",
       "**/*.yaml.j2",
       "**/*.yaml.jinja",
-      "**/*.yaml.jinja2"
-    ]
-  }
+      "**/*.yaml.jinja2",
+    ],
+  },
 }
