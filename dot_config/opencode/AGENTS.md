@@ -209,7 +209,9 @@ acli jira workitem view <KEY>
 acli jira workitem edit --key <KEY> --summary "New summary" --yes
 
 # Edit ticket with description (use JSON for proper formatting)
-acli jira workitem edit --from-json ticket.json --yes
+tmp_json="$(mktemp)"
+acli jira workitem edit --from-json "$tmp_json" --yes
+rm "$tmp_json"
 ```
 
 #### ADF Formatting (Critical)
@@ -246,4 +248,4 @@ Example ADF JSON structure for editing a ticket:
 }
 ```
 
-When editing descriptions, always write to a temporary JSON file and use `--from-json`.
+When editing descriptions, always write to a temporary JSON file (prefer `mktemp`) and use `--from-json`.
