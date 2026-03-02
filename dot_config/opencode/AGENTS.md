@@ -6,6 +6,12 @@
 - Mode constraints are absolute. If you're in a read-only/plan mode, the only acceptable actions are reading, searching, and planning. No exceptions.
 - If you cannot complete a requested action due to mode restrictions, explain the limitation and wait for the mode to change.
 
+## Security & Privacy
+
+- Do not request, paste, or persist secrets (tokens, API keys, cookies, credentials, private keys).
+- If secrets appear in command output or logs, redact them in any written response.
+- Do not create or propose committing credential-like files (e.g., `.env`, `credentials.json`) unless I explicitly request it and review is complete.
+
 ## Authorship Voice (Posting As Me)
 
 When drafting or posting text in external systems as the user (e.g., GitHub PR bodies/issues/comments, Jira tickets/comments, etc.):
