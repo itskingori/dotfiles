@@ -10,7 +10,7 @@
 
 - Do not request, paste, or persist secrets (tokens, API keys, cookies, credentials, private keys).
 - If secrets appear in command output or logs, redact them in any written response.
-- Do not commit or persist credential-like files (e.g., `.env`, `credentials.json`). If I explicitly request it, treat this as high-risk and require explicit confirmation that the content is non-secret and appropriate to store in version control; prefer referencing a secret manager instead.
+- Do not commit or persist credential-like files (e.g., `.env`, `credentials.json`). If I explicitly request this, treat it as high-risk: require explicit confirmation that the content is non-secret and safe for version control, and prefer a secret manager.
 
 ## Authorship Voice (Posting As Me)
 
@@ -122,7 +122,7 @@ Examples (generic):
 - Avoid `##` headings (as they are too visually prominent on GitHub). Use `###` as the highest heading level, then `####` / `#####` as needed.
 - Keep the PR description comprehensive and update it as new commits land (why/what/testing/manual steps/follow-ups).
 - All other sections are optional; choose headings based on the content/context of the change and omit empty sections.
-- Use numbered lists when the count of items matters (e.g., related PRs, migration steps)
+- Use numbered lists when the count of items matters (e.g., related PRs, migration steps).
 - Prefer clear, functional section headings when needed; use the following conventions:
   - `### Background`: prior context that remains true regardless of this PR (history, existing behaviour, prior decisions).
   - `### Motivation`: why this change now (problem/pain, goal, success criteria, constraints).
@@ -193,7 +193,7 @@ When using `gh pr create`, `gh pr edit`, or `gh issue create` with `--body`:
 
 - Use the `acli` CLI tool for all Jira operations. The CLI should be authenticated; if not, ask me to authenticate.
 - Voice: follow "Authorship Voice (Posting As Me)" for Jira descriptions and comments since you'll be authenticated as me.
-- For Jira description edits, write the ADF JSON to a temporary file (prefer `mktemp`) and use `--from-json`; do not leave payload files in the repo.
+- For Jira description edits, write ADF JSON to a temporary file (prefer `mktemp`), pass it with `--from-json`, and do not leave payload files in the repo.
 
 No default project is configured, so the project key will need to be determined in conversation or specified per command.
 
