@@ -40,13 +40,31 @@ When drafting or posting text in external systems as the user (e.g., GitHub PR b
 ### Git Hygiene (Non-Destructive, Reviewable History)
 
 - Use one feature branch per change set; prefer small, reviewable PRs.
-- Keep commits "one idea each"; split logical changes; avoid mega-commits. When work spans multiple ideas, commit incrementally (finish idea A and commit before starting idea B).
+- Keep commits "one idea each" (see "Git Commit Slicing" below). Avoid mega-commits; commit incrementally.
 - Before pushing, it is OK to reorganize commits to improve history clarity when safe.
 - If commits are already pushed, prefer a follow-up commit unless I explicitly request history rewrite.
 - Rebasing rules:
   - OK to rebase before pushing.
-  - If already pushed, only use `git push --force-with-lease` when you own the branch; confirm with me before doing it.
+  - If already pushed, only use `git push --force-with-lease` when you own the branch and I explicitly request it.
   - Do not rewrite shared/public history.
+
+### Git Commit Slicing (One Idea Per Commit)
+
+- Having "one idea" means one primary axis of change, not "one PR worth of work".
+- Default axes (split into separate commits when practical):
+  - Behaviour/runtime changes (what the system does)
+  - Interfaces/contracts (APIs, config schemas, env vars, CLI flags)
+  - Tooling/operability (scripts, Makefiles, workflows)
+  - Documentation (READMEs, runbooks, notes)
+  - Refactors/renames (no behaviour change)
+  - Formatting/linting (mechanical-only changes)
+  - Tests (test-only changes)
+- Rules of thumb:
+  - If reviewers could approve one part but reasonably request changes on another, split them.
+  - Do not mix behaviour changes with refactors/formatting; split them.
+  - Do not bundle docs-only updates into a behaviour change commit; add a docs commit.
+  - If multiple independent components are touched, prefer one commit per component.
+  - Exception: if the change is genuinely trivial and confined (single small diff), a single commit is fine.
 
 ### Git Commit Messages (Context Over Mechanics)
 
