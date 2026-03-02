@@ -193,6 +193,7 @@ When using `gh pr create`, `gh pr edit`, or `gh issue create` with `--body`:
 
 - Use the `acli` CLI tool for all Jira operations. The CLI should be authenticated; if not, ask me to authenticate.
 - Voice: follow "Authorship Voice (Posting As Me)" for Jira descriptions and comments since you'll be authenticated as me.
+- Use a temporary JSON file (prefer `mktemp`) for Jira payloads, and do not leave files like `ticket.json` in the repo.
 
 No default project is configured, so the project key will need to be determined in conversation or specified per command.
 
