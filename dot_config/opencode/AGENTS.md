@@ -65,6 +65,7 @@ When drafting or posting text in external systems as the user (e.g., GitHub PR b
   - Do not mix behaviour changes with refactors/formatting; split them.
   - Do not bundle docs-only updates into a behaviour change commit; add a docs commit.
   - If multiple independent components are touched, prefer one commit per component.
+  - When changing behaviour, include the corresponding test additions/updates in the same commit (keep each commit green and self-contained).
   - Exception: if the change is genuinely trivial and confined (single small diff), a single commit is fine.
 
 ### Git Commit Messages (Context Over Mechanics)
