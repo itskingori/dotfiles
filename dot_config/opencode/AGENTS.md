@@ -195,7 +195,7 @@ When using `gh pr create`, `gh pr edit`, or `gh issue create` with `--body`:
 
 - Use the `acli` CLI tool for all Jira operations. The CLI should be authenticated; if not, ask me to authenticate.
 - Voice: follow "Authorship Voice (Posting As Me)" for Jira descriptions and comments since you'll be authenticated as me.
-- Use a temporary JSON file (prefer `mktemp`) for Jira payloads, and do not leave files like `ticket.json` in the repo.
+- For Jira description edits, write the ADF JSON to a temporary file (prefer `mktemp`) and use `--from-json`; do not leave payload files in the repo.
 
 No default project is configured, so the project key will need to be determined in conversation or specified per command.
 
@@ -211,19 +211,7 @@ acli jira workitem edit --key <KEY> --summary "New summary" --yes
 # Edit ticket with description (ADF JSON; see example below for richer structures)
 tmp_json="$(mktemp)"
 cat <<'EOF' >"$tmp_json"
-{
-  "issues": ["<KEY>"],
-  "description": {
-    "version": 1,
-    "type": "doc",
-    "content": [
-      {
-        "type": "paragraph",
-        "content": [{ "type": "text", "text": "Description text here" }]
-      }
-    ]
-  }
-}
+<... ADF JSON HERE ...>
 EOF
 acli jira workitem edit --from-json "$tmp_json" --yes
 rm -f "$tmp_json"
@@ -262,5 +250,3 @@ Example ADF JSON structure for editing a ticket:
   }
 }
 ```
-
-When editing descriptions, always write to a temporary JSON file (prefer `mktemp`) and use `--from-json`.
