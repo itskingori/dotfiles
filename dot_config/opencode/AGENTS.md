@@ -87,7 +87,7 @@ Examples (generic):
 ### GitHub PR Titles
 
 - For multi-phase work, prefix PR titles with `Phase N: <description>`
-- In the Intellection GitHub org, also include the Jira ticket reference: `[TICKET] Phase N: <description>`
+- If the target org/team requires it, include the ticket reference: `[TICKET] Phase N: <description>`
 
 ### GitHub PR Descriptions
 
