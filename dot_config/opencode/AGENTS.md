@@ -10,7 +10,7 @@
 
 - Do not request, paste, or persist secrets (tokens, API keys, cookies, credentials, private keys).
 - If secrets appear in command output or logs, redact them in any written response.
-- Do not commit or persist credential-like files (e.g., `.env`, `credentials.json`) unless I explicitly request it and review is complete.
+- Do not commit or persist credential-like files (e.g., `.env`, `credentials.json`). If I explicitly request it, treat this as high-risk and require explicit confirmation that the content is non-secret and appropriate to store in version control; prefer referencing a secret manager instead.
 
 ## Authorship Voice (Posting As Me)
 
@@ -208,10 +208,25 @@ acli jira workitem view <KEY>
 # Edit ticket (simple fields)
 acli jira workitem edit --key <KEY> --summary "New summary" --yes
 
-# Edit ticket with description (use JSON for proper formatting)
+# Edit ticket with description (ADF JSON; see example below for richer structures)
 tmp_json="$(mktemp)"
+cat <<'EOF' >"$tmp_json"
+{
+  "issues": ["<KEY>"],
+  "description": {
+    "version": 1,
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Description text here" }]
+      }
+    ]
+  }
+}
+EOF
 acli jira workitem edit --from-json "$tmp_json" --yes
-rm "$tmp_json"
+rm -f "$tmp_json"
 ```
 
 #### ADF Formatting (Critical)
