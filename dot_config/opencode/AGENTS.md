@@ -82,7 +82,7 @@ Examples (generic):
 - Create PRs in **draft mode** when work is in progress.
 - Defer unrelated work to separate PRs even if convenient to do together; keep PRs focused on one logical change.
 - For UI changes, include a screenshots checklist section by default.
-- Call out anything that requires manual browser verification (JS-driven behaviors) and list concrete steps.
+- Call out anything that requires manual browser verification (JS-driven behaviours) and list concrete steps.
 
 ### GitHub PR Titles
 
@@ -98,7 +98,7 @@ Examples (generic):
 - All other sections are optional; choose headings based on the content/context of the change and omit empty sections.
 - Use numbered lists when the count of items matters (e.g., related PRs, migration steps)
 - Prefer clear, functional section headings when needed; use the following conventions:
-  - `### Background`: prior context that remains true regardless of this PR (history, existing behavior, prior decisions).
+  - `### Background`: prior context that remains true regardless of this PR (history, existing behaviour, prior decisions).
   - `### Motivation`: why this change now (problem/pain, goal, success criteria, constraints).
   - `### Changes`: high-level deltas (avoid file-by-file); tradeoffs and migrations when relevant.
   - `### Scope`: what is included in this PR.
