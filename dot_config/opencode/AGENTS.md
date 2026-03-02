@@ -121,7 +121,7 @@ Examples (generic):
 
 Examples (TL;DR opener styles):
 - `Codifies my PR-writing conventions and adds global authorship voice guidance for external posts.`
-- `Updates global opencode guidance to prefer unheaded TL;DR openers and `###`-level section structure.`
+- `Updates global opencode guidance to prefer unheaded TL;DR openers and ###-level section structure.`
 - `Clarifies where to place GitHub-internal links vs external references in PR descriptions.`
 
 ### GitHub Markdown
