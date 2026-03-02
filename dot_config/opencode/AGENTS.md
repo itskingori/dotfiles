@@ -10,7 +10,7 @@
 
 - Do not request, paste, or persist secrets (tokens, API keys, cookies, credentials, private keys).
 - If secrets appear in command output or logs, redact them in any written response.
-- Do not create or propose committing credential-like files (e.g., `.env`, `credentials.json`) unless I explicitly request it and review is complete.
+- Do not commit or persist credential-like files (e.g., `.env`, `credentials.json`) unless I explicitly request it and review is complete.
 
 ## Authorship Voice (Posting As Me)
 
