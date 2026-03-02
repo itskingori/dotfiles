@@ -18,6 +18,7 @@ When drafting or posting text in external systems as the user (e.g., GitHub PR b
 
 - Default to a content-focused, reviewer-oriented perspective: describe the change in present tense (e.g., "Adds ...", "Updates ...", "Clarifies ...") and avoid "I did ..." framing in the opener.
 - Use first-person singular ("I", "my", "I'm") for actions, decisions, and accountability (especially testing/validation), for example "I ran ..." and "I verified ...".
+- Use British English spelling and punctuation for all external-facing prose generated as me, consistently (e.g., "organise", "behaviour", "licence", "centre").
 - Avoid "we" unless I explicitly request it for that specific message.
 - Do not address the user ("you") in that text; write to the reader/reviewer.
 - Do not mention the assistant/AI or narrate the tooling (e.g., "as an AI...", "the agent...").
