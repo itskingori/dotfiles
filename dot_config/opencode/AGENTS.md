@@ -133,11 +133,9 @@ Examples (generic):
   - `### Testing`: what I ran, what I verified manually, and any known gaps.
   - `### Rollout`: flags, phases, steps, and monitoring notes.
   - `### Follow-ups`: deferred work with concrete next actions.
-  - `### Related`: GitHub issues/PRs/discussions only (renders as rich cards on GitHub; excludes releases and security advisories).
-  - `### References`: all other links (external trackers/findings/docs/research, plus GitHub URLs that are not issues/PRs/discussions).
+  - `### Related`: GitHub issues/PRs/discussions only (renders as rich cards on GitHub; excludes releases and security advisories; dependencies/follow-ups/linked work).
+  - `### References`: all other links (external trackers/findings/docs/research, plus GitHub URLs that are not issues/PRs/discussions), even when directly motivating.
 - The `### Related` and `### References` MUST be lists (bulleted or numbered). Even a single link must be written as a one-item list (`- https://...` or `1. https://...`). Never put a bare URL on its own line under those headings.
-- Use `### Related` exclusively for GitHub issues/PRs/discussions (dependencies, follow-ups, or linked work). Non-issue/PR/discussion URLs never belong here.
-- Use `### References` for all other URLs (external trackers, security findings, documentation, research, plus GitHub URLs that are not issues/PRs/discussions). A link can be directly motivating and still belong here if it is not a GitHub issue/PR/discussion.
 - Include `### Related` and `### References` only when relevant links exist.
 - If both sections are present, keep this order: `### Related` then `### References`.
 - For cross-repo references:
