@@ -1,11 +1,11 @@
 { 
   "agent": {
     "plan": {
-      "model": "anthropic/claude-opus-4-6",
+      "model": "anthropic/claude-opus-4-6"
     },
     "build": {
-      "model": "anthropic/claude-sonnet-4-6",
-    },
+      "model": "anthropic/claude-sonnet-4-6"
+    }
   },
   "autoupdate": false,
   "default_agent": "plan",
