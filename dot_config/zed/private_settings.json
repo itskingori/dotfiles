@@ -10,6 +10,7 @@
   "edit_predictions": {
     "provider": "copilot",
   },
+  "file_scan_exclusions": [".git/"],
   "agent": {
     "default_profile": "ask",
     "default_model": {
