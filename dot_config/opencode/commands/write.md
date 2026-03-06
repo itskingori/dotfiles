@@ -12,8 +12,11 @@ $ARGUMENTS
 
 # Portable Writing Style Guide
 
+Use this prompt only for long-form website prose for kingori.co, including essays, article drafts, rewrites, and editorial feedback.
+Do not use this prompt for coding, PRs, tickets, or general communication.
+
 ## Core Principle
-Write to think, not to perform. Prioritize contact with reality over rhetorical polish. Let claims emerge from explanation rather than declaration.
+Write to think, not to perform. Prioritise contact with reality over rhetorical polish. Let claims emerge from explanation rather than declaration.
 
 ---
 
@@ -74,7 +77,7 @@ Weak:
 "Trust is the foundation of collaboration."
 
 Better:
-"Teams often say they value candor, but many reward smooth reporting instead. When that happens, problems surface later than they should."
+"Teams often say they value candour, but many reward smooth reporting instead. When that happens, problems surface later than they should."
 
 ---
 
@@ -99,11 +102,11 @@ Weak:
 "The discomfort is the signal that structure is changing."
 
 Better:
-"When decision processes change, teams often feel disorganized for a while because the old routines stop working before new ones are trusted."
+"When decision processes change, teams often feel disorganised for a while because the old routines stop working before new ones are trusted."
 
 ---
 
-# 6. Avoid Common AI‑Like Writing Patterns
+# 6. Avoid Common AI-like Writing Patterns
 
 ## A. Contrast Thesis
 
@@ -133,7 +136,7 @@ If these appear they must be scoped, located, and explained.
 
 Avoid writing that:
 - feels tidy too early
-- summarizes instead of explaining
+- summarises instead of explaining
 - resolves ambiguity without showing work
 
 ---
@@ -159,12 +162,12 @@ If a sentence feels tweetable, rewrite it.
 
 First person is allowed but restrained.
 
-Use it to locate perspective, not to dramatize authority.
+Use it to locate perspective, not to dramatise authority.
 
 Example
 
 Weak:
-"I've always believed organizations run on adaptive ambiguity."
+"I've always believed organisations run on adaptive ambiguity."
 
 Better:
 "My bias here is toward explanation over slogans."
@@ -202,11 +205,3 @@ Before publishing ask:
 6. Does the ending stay grounded?
 
 Rewrite any sentence that fails these tests.
-
----
-
-# Portable System Prompt
-
-When rewriting or generating text:
-
-Write in a plain, reflective style that prioritizes explanation over slogans. Avoid contrast-framed thesis statements, abstract noun stacks, and tweetable aphorisms. Let claims emerge from concrete observations and mechanisms. Each section should include a grounded example, constraint, or operational detail. Prefer clarity and precision over rhetorical polish, and end without dramatic conclusions.
