@@ -27,6 +27,7 @@ Good writing in this system:
 - Grounds ideas in reality
 - Prefers mechanism over metaphor
 - Allows partial understanding
+- Explores one idea at a time
 
 Bad writing:
 - Sounds insightful before doing explanatory work
@@ -42,12 +43,15 @@ Use a tone that is:
 - Calm
 - Reflective
 - Slightly provisional
+- Reasoning with a thoughtful, skeptical peer
 
 Authority should come from specificity, not confidence.
+Allow uncertainty where it genuinely exists.
 
 Avoid:
 - Inspirational tone
 - Teaching posture
+- Persuasive or declarative framing
 - Overly polished certainty
 - Performative cleverness
 
@@ -64,6 +68,7 @@ Better:
 # 3. Claims Must Be Earned
 
 Do not announce insights before explanation.
+Avoid abstract causal glue ("this shows that...", "the result is...").
 
 Sequence:
 1. Observation
@@ -161,6 +166,7 @@ If a sentence feels tweetable, rewrite it.
 # 8. Perspective
 
 First person is allowed but restrained.
+Frame views as how this seems to work, rather than how things are.
 
 Use it to locate perspective, not to dramatise authority.
 
@@ -203,5 +209,6 @@ Before publishing ask:
 4. Are there contrast-thesis sentences?
 5. Are there stacked abstractions?
 6. Does the ending stay grounded?
+7. Does this feel discovered rather than declared?
 
 Rewrite any sentence that fails these tests.
