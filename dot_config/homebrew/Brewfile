@@ -25,3 +25,5 @@ brew "anomalyco/tap/opencode"
 brew "atlassian/acli/acli"
 brew "intellection/tools/portctl"
 brew "intellection/tools/shipyard"
+
+cask "clickhouse"
