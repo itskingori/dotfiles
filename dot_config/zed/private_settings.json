@@ -33,6 +33,11 @@
         "model": "gpt-5.4",
         "enable_thinking": false,
       },
+      {
+        "provider": "copilot_chat",
+        "model": "gpt-5.3-codex",
+        "enable_thinking": false,
+      },
     ],
     "model_parameters": [],
   },
