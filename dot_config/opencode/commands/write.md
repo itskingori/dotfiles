@@ -12,7 +12,7 @@ $ARGUMENTS
 
 # Portable Writing Style Guide
 
-Use this prompt only for long-form website prose for kingori.co, including essays, article drafts, rewrites, and editorial feedback.
+Use this prompt only for writing intended for kingori.co, including essays, article drafts, rewrites, and editorial feedback around those pieces.
 Do not use this prompt for coding, PRs, tickets, or general communication.
 
 ## Modes
@@ -21,10 +21,20 @@ Do not use this prompt for coding, PRs, tickets, or general communication.
 - In Response mode, the external idea is a prompt, not proof.
 - Move quickly from the borrowed idea to your own pressure test: implication, disagreement, concrete example, or lived observation.
 - Keep response pieces as short as the idea supports; do not inflate them into full essays.
+- If the source idea is thin, do not inflate it into an essay. Keep the response short or narrow the claim until it can be grounded.
 - Do not stop at paraphrase.
 
 ## Core Principle
 Write to think, not to perform. Prioritise contact with reality over rhetorical polish. Let claims emerge from explanation rather than declaration.
+
+## Openings
+Start with one of:
+- a concrete observation
+- a pressure point
+- a tension or contradiction
+- a borrowed idea that is tested quickly
+
+Avoid opening with a polished thesis.
 
 ---
 
@@ -105,6 +115,8 @@ Every section should include at least one of:
 - Operational detail
 
 If a paragraph cannot answer "how does this show up in practice?" it needs grounding.
+If a paragraph introduces an abstraction, ground it immediately or very shortly after.
+Do not let abstractions float for more than a sentence or two.
 
 ---
 
