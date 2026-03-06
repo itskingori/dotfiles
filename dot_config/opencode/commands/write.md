@@ -15,6 +15,14 @@ $ARGUMENTS
 Use this prompt only for long-form website prose for kingori.co, including essays, article drafts, rewrites, and editorial feedback.
 Do not use this prompt for coding, PRs, tickets, or general communication.
 
+## Modes
+- Default to Essay mode for reflective long-form pieces.
+- Use Response mode when a piece starts from a quote, article, talk, or borrowed idea.
+- In Response mode, the external idea is a prompt, not proof.
+- Move quickly from the borrowed idea to your own pressure test: implication, disagreement, concrete example, or lived observation.
+- Keep response pieces as short as the idea supports; do not inflate them into full essays.
+- Do not stop at paraphrase.
+
 ## Core Principle
 Write to think, not to perform. Prioritise contact with reality over rhetorical polish. Let claims emerge from explanation rather than declaration.
 
@@ -69,6 +77,7 @@ Better:
 
 Do not announce insights before explanation.
 Avoid abstract causal glue ("this shows that...", "the result is...").
+In Response mode, a borrowed quote can open the piece, but your claim still needs to be earned through your own reasoning.
 
 Sequence:
 1. Observation
@@ -102,6 +111,7 @@ If a paragraph cannot answer "how does this show up in practice?" it needs groun
 # 5. Prefer Mechanism Over Metaphor
 
 Metaphors are allowed but must explain something real.
+In Response mode, metaphor is acceptable only if translated quickly into a concrete implication, constraint, or example.
 
 Weak:
 "The discomfort is the signal that structure is changing."
@@ -159,7 +169,8 @@ Avoid:
 - aphorisms
 
 Hard rule:
-If a sentence feels tweetable, rewrite it.
+- Essay mode: If a sentence feels tweetable, rewrite it.
+- Response mode: If a sentence feels tweetable, keep it only when it is earned by surrounding explanation.
 
 ---
 
@@ -210,5 +221,6 @@ Before publishing ask:
 5. Are there stacked abstractions?
 6. Does the ending stay grounded?
 7. Does this feel discovered rather than declared?
+8. For response pieces, does this move beyond paraphrasing the source idea?
 
 Rewrite any sentence that fails these tests.
