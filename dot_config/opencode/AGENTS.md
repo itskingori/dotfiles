@@ -12,17 +12,30 @@
 - If secrets appear in command output or logs, redact them in any written response.
 - Do not commit or persist credential-like files (e.g., `.env`, `credentials.json`). If I explicitly request this, treat it as high-risk: require explicit confirmation that the content is non-secret and safe for version control, and prefer a secret manager.
 
-## Authorship Voice (Posting As Me)
+## Authorship Voice (Writing As Me)
 
-When drafting or posting text in external systems as the user (e.g., GitHub PR bodies/issues/comments, Jira tickets/comments, etc.):
+Use these rules whenever writing in my voice, unless a later section narrows them for a specific platform or format.
 
-- Default to a content-focused, reviewer-oriented perspective: describe the change in present tense (e.g., "Adds ...", "Updates ...", "Clarifies ...") and avoid "I did ..." framing in the opener.
-- Use first-person singular ("I", "my", "I'm") for actions, decisions, and accountability (especially testing/validation), for example "I ran ..." and "I verified ...".
-- Use British English spelling and punctuation for all external-facing prose generated as me, consistently (e.g., "organise", "behaviour", "licence", "centre").
-- Avoid "we" unless I explicitly request it for that specific message.
-- Do not address the user ("you") in that text; write to the reader/reviewer.
-- Do not mention the assistant/AI or narrate the tooling (e.g., "as an AI...", "the agent...").
-- Apply these voice rules to all external posts, including PR/issue bodies and comments.
+### General Voice
+
+- Write clearly, directly, and with intent.
+- Prefer a content-focused perspective by default; lead with what changed, what matters, or what the reader should understand.
+- Use first-person singular ("I", "my", "I'm") for actions, decisions, opinions, and accountability where it improves clarity.
+- Use British English spelling and punctuation consistently (e.g., "organise", "behaviour", "licence", "centre").
+- Prefer plain punctuation over typographic flourish: avoid em dashes; use commas, parentheses, or full stops instead.
+- Keep punctuation restrained: do not overuse exclamation marks, ellipses, or scare quotes unless they are genuinely needed.
+- Avoid filler, hype, and fake enthusiasm.
+- Do not mention the assistant/AI or narrate the tooling.
+
+### Platform-Specific Defaults
+
+For GitHub PR bodies, issue bodies, comments, Jira tickets/comments, and similar review-oriented contexts:
+
+- Default to a content-focused, reviewer-oriented perspective.
+- Describe changes in present tense where that reads naturally (e.g., "Adds ...", "Updates ...", "Clarifies ...").
+- Avoid "I did ..." framing in the opener.
+- Avoid "we" unless I explicitly request it.
+- Do not address the reader as "you" unless the format or context genuinely requires it.
 
 ## Dependency Management
 
@@ -172,7 +185,7 @@ Examples (TL;DR opener styles):
 
 - Use the `gh` CLI for all GitHub operations (PRs, issues, repo info, etc.).
 - The CLI should be authenticated; if access fails, ask user to authenticate via `gh auth login`.
-- Voice: follow "Authorship Voice (Posting As Me)" for PR bodies and comments since you'll be authenticated as me.
+- Voice: follow "Authorship Voice (Writing As Me)" for PR bodies and comments since you'll be authenticated as me.
 
 #### PR and Issue Body Formatting
 
@@ -192,7 +205,7 @@ When using `gh pr create`, `gh pr edit`, or `gh issue create` with `--body`:
 ### Atlassian CLI (acli)
 
 - Use the `acli` CLI tool for all Jira operations. The CLI should be authenticated; if not, ask me to authenticate.
-- Voice: follow "Authorship Voice (Posting As Me)" for Jira descriptions and comments since you'll be authenticated as me.
+- Voice: follow "Authorship Voice (Writing As Me)" for Jira descriptions and comments since you'll be authenticated as me.
 - For Jira description edits, write ADF JSON to a temporary file (prefer `mktemp`), pass it with `--from-json`, and do not leave payload files in the repo.
 
 No default project is configured, so the project key will need to be determined in conversation or specified per command.
