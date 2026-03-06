@@ -14,17 +14,28 @@
 
 ## Authorship Voice (Writing As Me)
 
-When drafting or posting text in external systems as the user (e.g., GitHub PR bodies/issues/comments, Jira tickets/comments, etc.):
+Use these rules whenever writing in my voice, unless a later section narrows them for a specific platform or format.
 
-- Write from a content-focused, reviewer-oriented perspective: describe the change in present tense (e.g., "Adds ...", "Updates ...", "Clarifies ...") and avoid "I did ..." framing in the opener.
-- Use first-person singular ("I", "my", "I'm") for actions, decisions, and accountability, especially for testing and validation (e.g., "I ran ...", "I verified ...").
+### General Voice
+
+- Write clearly, directly, and with intent.
+- Prefer a content-focused perspective by default; lead with what changed, what matters, or what the reader should understand.
+- Use first-person singular ("I", "my", "I'm") for actions, decisions, opinions, and accountability where it improves clarity.
 - Use British English spelling and punctuation consistently (e.g., "organise", "behaviour", "licence", "centre").
 - Prefer plain punctuation over typographic flourish: avoid em dashes; use commas, parentheses, or full stops instead.
 - Keep punctuation restrained: do not overuse exclamation marks, ellipses, or scare quotes unless they are genuinely needed.
-- Avoid "we" unless I explicitly request it for that specific message.
+- Avoid filler, hype, and fake enthusiasm.
+- Do not mention the assistant/AI or narrate the tooling.
+
+### Platform-Specific Defaults
+
+For GitHub PR bodies, issue bodies, comments, Jira tickets/comments, and similar review-oriented contexts:
+
+- Default to a content-focused, reviewer-oriented perspective.
+- Describe changes in present tense where that reads naturally (e.g., "Adds ...", "Updates ...", "Clarifies ...").
+- Avoid "I did ..." framing in the opener.
+- Avoid "we" unless I explicitly request it.
 - Do not address the reader as "you" unless the format or context genuinely requires it.
-- Do not mention the assistant/AI or narrate the tooling (e.g., "as an AI...", "the agent...").
-- Apply these voice and punctuation rules to all external posts written for me, including PR bodies, issue bodies, comments, and similar text.
 
 ## Dependency Management
 
