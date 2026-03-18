@@ -49,6 +49,22 @@ For GitHub PR bodies, issue bodies, comments, Jira tickets/comments, and similar
 - Use local commands (e.g., test runners, linters, formatters) for fast feedback loops.
 - Only rely on CI for things that can't be tested locally (e.g., different OS, services not available locally).
 
+## Language Guidance
+
+### Elixir
+
+#### Test organisation
+
+- Prefer test files and directories that mirror the source structure when that improves clarity and reviewability.
+- For example, if app code lives in `lib/my_app/accounts/user_sync.ex`, prefer `test/my_app/accounts/user_sync_test.exs`.
+- For web code, if app code lives in `lib/my_app_web/live/admin/user_live.ex`, prefer `test/my_app_web/live/admin/user_live_test.exs`.
+- Apply the same principle to contexts, schemas, services, controllers, components, and LiveViews when the mapping is useful.
+- Do not force a 1:1 test file for tiny or tightly related modules where a shared test file is clearer.
+- Avoid large catch-all test files that cover multiple unrelated modules or pages when the tests would be easier to understand split by source area.
+- When multiple test files in one area need the same setup data or helpers, extract shared fixtures/support into `test/support/` rather than repeating large helper blocks.
+- Keep shared support focused on setup and fixtures; keep assertions and scenario intent in the most specific test file.
+- If it is not clear whether tests should be split or combined, ask before choosing a structure.
+
 ## Git
 
 ### Git Hygiene (Non-Destructive, Reviewable History)
