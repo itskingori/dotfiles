@@ -2,6 +2,7 @@ tap "anomalyco/tap"
 tap "atlassian/acli"
 tap "intellection/tools", "git@github.com:Intellection/homebrew-tools.git"
 
+brew "docker-credential-helper-ecr"
 brew "chezmoi"
 brew "curl"
 brew "gh"
@@ -27,3 +28,4 @@ brew "intellection/tools/portctl"
 brew "intellection/tools/shipyard"
 
 cask "clickhouse"
+
