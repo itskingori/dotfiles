@@ -1,0 +1,33 @@
+{
+  "issues": [
+    "TEAM-123"
+  ],
+  "summary": "Refine Jira playbook guidance",
+  "description": {
+    "version": 1,
+    "type": "doc",
+    "content": [
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Status"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Updated command examples and clarified ADF input modes."
+          }
+        ]
+      }
+    ]
+  }
+}
