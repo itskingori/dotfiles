@@ -5,139 +5,59 @@ description: GitHub conventions and gh CLI usage. Covers PR workflow, PR titles,
 
 ## When To Use This Skill
 
-Use this skill for all GitHub work via `gh`, including:
-
-- creating and editing pull requests
-- creating and editing issues
-- writing and updating PR and issue comments
-- reviewing PR status, checks, commits, files, and comments
-- handling cross-repo references and links in GitHub-rendered Markdown
+Use this skill for GitHub work where writing quality matters: PRs, issues, comments, and reviewer-facing updates.
 
 ## Core Rules
 
 - Use the `gh` CLI for all GitHub operations.
 - Follow "Authorship Voice (Writing As Me)" and "Platform-Specific Defaults" in `AGENTS.md`.
-- Keep change sets focused: one logical change per PR when possible.
-- Prefer deterministic, non-interactive workflows:
-  1. explicit flags
-  2. `--body-file`
-  3. `--editor` or `--web` only when requested
-
-## Authentication And Repository Context
-
-Start by confirming access and repo scope:
-
-```bash
-# Check gh installation and auth
-gh --version
-gh auth status
-
-# Check repository context
-gh repo view --json nameWithOwner,defaultBranchRef,url
-```
-
-If auth fails, authenticate with `gh auth login`.
-
-## Choosing Body Input Mode
-
-Use the least complex mode that preserves formatting:
-
-1. `--body`
-   - Good for short, single-line text.
-2. `--body-file <path>`
-   - Preferred for multi-line content.
-   - Use `--body-file -` to read from stdin for generated content.
-3. quoted HEREDOC into `--body` or `--body-file -`
-   - Preferred for scripted multi-line Markdown with backticks and code fences.
-
-Safe pattern:
-
-```bash
-gh pr create --title "Title" --body-file - <<'EOF'
-TL;DR sentence.
-
-### Testing
-- I ran local checks.
-EOF
-```
-
-Do not use unquoted HEREDOCs (`<<EOF`) for Markdown bodies.
-
-## Common Command Patterns
-
-### Pull Requests
-
-```bash
-# Create PR with explicit title/body
-gh pr create --title "Add workflow-first GitHub skill" --body-file "dot_config/opencode/skills/github/examples/pr-body-structured.md"
-
-# Create draft PR while work is in progress
-gh pr create --draft --title "Add workflow-first GitHub skill" --body-file "dot_config/opencode/skills/github/examples/pr-body-structured.md"
-
-# Update existing PR body/title
-gh pr edit 39 --title "Refine GitHub skill playbook" --body-file "dot_config/opencode/skills/github/examples/pr-body-structured.md"
-
-# Review PR details and status
-gh pr view 39 --json title,body,state,isDraft,baseRefName,headRefName,url
-gh pr checks 39
-gh pr diff 39
-gh pr view 39 --comments
-```
-
-### Issues
-
-```bash
-# Create issue with markdown body
-gh issue create --title "Document GitHub workflows in skill playbook" --body-file "dot_config/opencode/skills/github/examples/issue-body-structured.md"
-
-# View issue details
-gh issue view 123 --json title,body,state,labels,assignees,url
-
-# Edit issue content
-gh issue edit 123 --title "Clarify GitHub skill workflow coverage" --body-file "dot_config/opencode/skills/github/examples/issue-body-structured.md"
-```
-
-### Comments
-
-```bash
-# Add PR comment
-gh pr comment 39 --body-file "dot_config/opencode/skills/github/examples/pr-comment-minimal.md"
-
-# Edit last PR comment, create one if none exists
-gh pr comment 39 --edit-last --create-if-none --body-file "dot_config/opencode/skills/github/examples/pr-comment-minimal.md"
-
-# Add issue comment
-gh issue comment 123 --body-file "dot_config/opencode/skills/github/examples/issue-comment-minimal.md"
-
-# Edit last issue comment, create one if none exists
-gh issue comment 123 --edit-last --create-if-none --body-file "dot_config/opencode/skills/github/examples/issue-comment-minimal.md"
-```
+- Keep change sets focused: one logical change per PR when practical.
+- Prefer deterministic non-interactive input: explicit flags, then `--body-file`, then `--editor` only when requested.
 
 ## PR Workflow Conventions
 
-- Create PRs in draft mode when work is incomplete.
-- Split unrelated work into separate PRs.
-- For UI changes, include screenshots and manual verification steps.
+- Create PRs in **draft mode** when work is in progress.
+- Defer unrelated work to separate PRs even if convenient to do together; keep PRs focused on one logical change.
+- For UI changes, include a screenshots checklist section by default.
+- Call out anything that requires manual browser verification (JS-driven behaviours) and list concrete steps.
 - Keep the PR body current as commits land.
 
-### PR Titles
+## PR Titles
 
-- For multi-phase work, use `Phase N: <description>`.
-- If the team requires ticket references, use `[TICKET] Phase N: <description>`.
+- For multi-phase work, prefix PR titles with `Phase N: <description>`
+- If the target org/team requires it, include the ticket reference: `[TICKET] Phase N: <description>`
 
-### PR Descriptions
+## PR Descriptions
 
-- Start with a short, unheaded TL;DR paragraph (1-3 sentences).
-- Use `###` as the highest heading level, then `####` or `#####` as needed.
-- Use section headings only when useful; omit empty sections.
-- For links:
-  - `### Related` for GitHub issues, PRs, or discussions
-  - `### References` for external links and non-issue/PR/discussion GitHub URLs
-- `### Related` and `### References` must be lists, even for one link.
-- If both are present, keep order: `### Related`, then `### References`.
+Voice: follow the "Authorship Voice (Writing As Me)" and "Platform-Specific Defaults" sections in AGENTS.md.
 
-Example opener styles:
+- Only required: start with a short, unheaded TL;DR paragraph (1-3 sentences). Do not start PR descriptions with a heading like `## Summary`.
+- Use a hybrid voice: keep the opener content-focused and present-tense; use first-person for testing/validation lines.
+- Avoid `##` headings (as they are too visually prominent on GitHub). Use `###` as the highest heading level, then `####` / `#####` as needed.
+- Keep the PR description comprehensive and update it as new commits land (why/what/testing/manual steps/follow-ups).
+- All other sections are optional; choose headings based on the content/context of the change and omit empty sections.
+- Use numbered lists when the count of items matters (e.g., related PRs, migration steps).
+- Prefer clear, functional section headings when needed; use the following conventions:
+  - `### Background`: prior context that remains true regardless of this PR (history, existing behaviour, prior decisions).
+  - `### Motivation`: why this change now (problem/pain, goal, success criteria, constraints).
+  - `### Changes`: high-level deltas (avoid file-by-file); tradeoffs and migrations when relevant.
+  - `### Scope`: what is included in this PR.
+  - `### Non-goals`: what is explicitly out of scope.
+  - `### Risk`: what could break and how risk is mitigated (include rollback notes when relevant).
+  - `### Testing`: what I ran, what I verified manually, and any known gaps.
+  - `### Rollout`: flags, phases, steps, and monitoring notes.
+  - `### Follow-ups`: deferred work with concrete next actions.
+  - `### Related`: GitHub issues/PRs/discussions only (renders as rich cards on GitHub; excludes releases and security advisories; dependencies/follow-ups/linked work).
+  - `### References`: all other links (external trackers/findings/docs/research, plus GitHub URLs that are not issues/PRs/discussions), even when directly motivating.
+- The `### Related` and `### References` MUST be lists (bulleted or numbered). Even a single link must be written as a one-item list (`- https://...` or `1. https://...`). Never put a bare URL on its own line under those headings.
+- Include `### Related` and `### References` only when relevant links exist.
+- If both sections are present, keep this order: `### Related` then `### References`.
+- For cross-repo references:
+  - Use `gh pr view <number> --repo Org/repo --json url` to fetch PR URLs programmatically
+  - Group related PRs in descriptions by status (e.g., merged, pending, cleanup)
+  - Use bare GitHub URLs (not markdown links) -- GitHub auto-generates rich link cards
 
+Examples (TL;DR opener styles):
 - `Codifies my PR-writing conventions and adds global authorship voice guidance for external posts.`
 - `Updates global opencode guidance to prefer unheaded TL;DR openers and ###-level section structure.`
 - `Clarifies where to place GitHub-internal links vs external references in PR descriptions.`
@@ -146,12 +66,12 @@ Example opener styles:
 
 - Keep issue descriptions outcome-focused and actionable.
 - Use comments for progress updates, risks, and decisions, not long-lived specs.
-- Prefer editing the last bot-authored status comment when updating rolling progress.
+- Prefer editing the last status-style comment when updating rolling progress, rather than creating a new comment for each increment.
 - For cross-repo references, use bare GitHub URLs so cards render automatically.
 
 ## GitHub Markdown Guidance
 
-For GitHub-rendered Markdown (PRs, issues, comments, README/docs), use GitHub alert syntax for callouts instead of inline bold labels.
+For any GitHub-rendered Markdown (PR descriptions, issue bodies, comments, READMEs/docs), use GitHub alert syntax for callouts instead of inline bold text. Avoid GitHub callouts outside GitHub (e.g., Jira uses ADF):
 
 ```markdown
 > [!NOTE]
@@ -170,21 +90,27 @@ For GitHub-rendered Markdown (PRs, issues, comments, README/docs), use GitHub al
 > Negative potential consequences of an action.
 ```
 
-Do not use GitHub callout syntax outside GitHub-rendered Markdown contexts (for example, Jira uses ADF).
+## GitHub CLI (gh)
+
+- Check auth and repo context with `gh auth status` and `gh repo view --json nameWithOwner,defaultBranchRef,url`.
+- Prefer `--body-file` for multi-line Markdown. Use `--body-file -` for generated content.
+- For heredocs, always use quoted delimiters (`<<'EOF'`) to prevent shell expansion.
+- Keep command recipes in examples files so this skill stays focused on writing quality.
 
 ## Example Files
 
 Use these as copy-and-edit starting points:
 
-- `examples/pr-body-minimal.md`
+- `examples/pr-create-edit.md`
+- `examples/issue-create-edit.md`
+- `examples/comment-workflows.md`
+- `examples/review-workflows.md`
 - `examples/pr-body-structured.md`
-- `examples/issue-body-minimal.md`
 - `examples/issue-body-structured.md`
-- `examples/pr-comment-minimal.md`
-- `examples/issue-comment-minimal.md`
+- `examples/comment-minimal.md`
 
 ## Known Caveats
 
 - `gh pr create --dry-run` can still push branch changes in some flows, so do not assume it is side-effect free.
-- `gh pr create` may prompt for push/fork when branch tracking is missing; provide `--head` when you need deterministic behaviour.
+- `gh pr create` may prompt for push/fork when branch tracking is missing; provide `--head` when deterministic behaviour is required.
 - For complex Markdown bodies, `--body-file` is more reliable than heavily escaped inline `--body` strings.
