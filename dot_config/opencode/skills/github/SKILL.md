@@ -12,7 +12,6 @@ Use this skill for GitHub work where writing quality matters: PRs, issues, comme
 - Use the `gh` CLI for all GitHub operations.
 - Follow "Authorship Voice (Writing As Me)" and "Platform-Specific Defaults" in `AGENTS.md`.
 - Keep change sets focused: one logical change per PR when practical.
-- Prefer deterministic non-interactive input: explicit flags, then `--body-file`, then `--editor` only when requested.
 
 ## PR Workflow Conventions
 
@@ -71,7 +70,7 @@ Examples (TL;DR opener styles):
 
 ## GitHub Markdown Guidance
 
-For any GitHub-rendered Markdown (PR descriptions, issue bodies, comments, READMEs/docs), use GitHub alert syntax for callouts instead of inline bold text. Avoid GitHub callouts outside GitHub (e.g., Jira uses ADF):
+For any GitHub-rendered Markdown (PR descriptions, issue bodies, comments, READMEs/docs), use GitHub alert syntax for callouts instead of inline bold text:
 
 ```markdown
 > [!NOTE]
@@ -92,10 +91,9 @@ For any GitHub-rendered Markdown (PR descriptions, issue bodies, comments, READM
 
 ## GitHub CLI (gh)
 
-- Check auth and repo context with `gh auth status` and `gh repo view --json nameWithOwner,defaultBranchRef,url`.
 - Prefer `--body-file` for multi-line Markdown. Use `--body-file -` for generated content.
 - For heredocs, always use quoted delimiters (`<<'EOF'`) to prevent shell expansion.
-- Keep command recipes in examples files so this skill stays focused on writing quality.
+- Prefer deterministic non-interactive input: explicit flags, then `--body-file`, then `--editor` only when requested.
 
 ## Example Files
 
@@ -108,9 +106,3 @@ Use these as copy-and-edit starting points:
 - `examples/pr-body-structured.md`
 - `examples/issue-body-structured.md`
 - `examples/comment-minimal.md`
-
-## Known Caveats
-
-- `gh pr create --dry-run` can still push branch changes in some flows, so do not assume it is side-effect free.
-- `gh pr create` may prompt for push/fork when branch tracking is missing; provide `--head` when deterministic behaviour is required.
-- For complex Markdown bodies, `--body-file` is more reliable than heavily escaped inline `--body` strings.

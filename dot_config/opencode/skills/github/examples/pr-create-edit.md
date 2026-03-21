@@ -38,3 +38,8 @@ Updates the GitHub skill to keep nuanced writing guidance central while moving c
 - Moves command-heavy workflows into dedicated example files
 EOF
 ```
+
+## Notes
+
+- `gh pr create --dry-run` can still push branch changes in some flows, so do not assume it is side-effect free.
+- `gh pr create` may prompt for push or fork when branch tracking is missing. Use `--head` when deterministic behaviour is required.
