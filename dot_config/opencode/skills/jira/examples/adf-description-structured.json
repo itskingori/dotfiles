@@ -19,7 +19,7 @@
       "content": [
         {
           "type": "text",
-          "text": "Adds Jira playbook guidance for command usage and ADF payloads."
+          "text": "Captures Jira CLI workflow guidance and ADF usage patterns."
         }
       ]
     },
@@ -46,7 +46,7 @@
               "content": [
                 {
                   "type": "text",
-                  "text": "Rewrite skill guidance as a task-oriented playbook"
+                  "text": "Preserve writing guidance in SKILL.md"
                 }
               ]
             }
@@ -60,7 +60,139 @@
               "content": [
                 {
                   "type": "text",
-                  "text": "Add reusable ADF and from-json examples"
+                  "text": "Keep examples focused on workflow execution"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "attrs": {
+        "level": 2
+      },
+      "content": [
+        {
+          "type": "text",
+          "text": "References"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "Atlassian CLI command reference",
+          "marks": [
+            {
+              "type": "link",
+              "attrs": {
+                "href": "https://developer.atlassian.com/cloud/acli/reference/commands/jira-workitem-edit/",
+                "title": "acli jira workitem edit"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "orderedList",
+      "content": [
+        {
+          "type": "listItem",
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "Confirm project key and work item key"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "listItem",
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "Apply description update with --description-file"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "attrs": {
+        "level": 2
+      },
+      "content": [
+        {
+          "type": "text",
+          "text": "Reproduction"
+        }
+      ]
+    },
+    {
+      "type": "codeBlock",
+      "attrs": {
+        "language": "bash"
+      },
+      "content": [
+        {
+          "type": "text",
+          "text": "acli jira workitem search --jql \"project = TEAM\" --limit 10 --json"
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "attrs": {
+        "level": 2
+      },
+      "content": [
+        {
+          "type": "text",
+          "text": "Risks"
+        }
+      ]
+    },
+    {
+      "type": "bulletList",
+      "content": [
+        {
+          "type": "listItem",
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "Risk: visibility scope may hide comments"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "listItem",
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "Mitigation: verify roles and groups before update"
                 }
               ]
             }
