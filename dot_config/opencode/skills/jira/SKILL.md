@@ -14,38 +14,17 @@ Use this skill for Jira Cloud work via Atlassian CLI (`acli`), including:
 
 ## Core Rules
 
-- Use `acli` for all Jira operations.
-- Follow "Authorship Voice (Writing As Me)" and "Platform-Specific Defaults" in `AGENTS.md` for Jira descriptions and comments.
-- No default project is configured in this repo. Determine or request the project key per task.
-- Prefer deterministic, non-interactive commands in this order:
-  1. explicit flags
-  2. file-based input
-  3. editor mode (`--editor`) only when requested
+- Use the `acli` CLI for Jira operations.
+- Follow "Authorship Voice (Writing As Me)" and "Platform-Specific Defaults" in `AGENTS.md`.
+- No default project is configured in this repo, so determine or request the project key per task.
+- Keep change sets focused: one logical change per work item update when practical.
 
-## Authentication And Context
+## Jira Writing Conventions
 
-Start here when Jira access may be stale or account context is unclear:
-
-```bash
-# Check Jira auth state
-acli jira auth status
-
-# Authenticate to Jira Cloud when needed
-acli jira auth login --web
-
-# Switch account/site if multiple profiles exist
-acli jira auth switch --site "<site>.atlassian.net" --email "<email>"
-```
-
-Project discovery:
-
-```bash
-# List visible projects
-acli jira project list --limit 50 --json
-
-# Inspect one project
-acli jira project view --key "TEAM" --json
-```
+- Keep work item descriptions actionable, durable, and easy to scan.
+- Use the description for context that should remain useful over time, such as background, scope, constraints, risks, and follow-ups.
+- Use comments for progress updates, implementation notes, decisions, and other time-bound updates as work progresses.
+- Use clear section headings when they make the ticket easier to scan.
 
 ## Choosing The Input Mode
 
@@ -55,54 +34,11 @@ Use the least complex mode that preserves intent:
    - Best for short plain text.
 2. `--description-file` or `--body-file`
    - Best for longer text and reusable payload files.
-   - For descriptions, this is the default path for ADF documents.
+   - For rich descriptions, this is the default path for ADF documents.
 3. `--from-json`
-   - Advanced mode for full work item payloads and batch-like edits.
-   - Use when multiple fields must be updated atomically.
+   - Advanced mode for full work item payloads and multi-field edits.
 
-For comments with rich formatting, the most reliable explicit ADF path is `comment update --body-adf`.
-
-## Common Command Patterns
-
-Work item discovery:
-
-```bash
-# Search by JQL
-acli jira workitem search --jql "project = TEAM AND statusCategory != Done" --limit 50 --json
-
-# View one work item (note: key is positional here)
-acli jira workitem view TEAM-123 --fields key,summary,status,assignee,description --json
-```
-
-Work item create/edit:
-
-```bash
-# Create a work item (simple path)
-acli jira workitem create --project "TEAM" --type "Task" --summary "Add CLI playbook examples"
-
-# Edit simple fields
-acli jira workitem edit --key "TEAM-123" --summary "Refine Jira playbook guidance" --yes
-
-# Edit description from an ADF file
-acli jira workitem edit --key "TEAM-123" --description-file "dot_config/opencode/skills/jira/examples/adf-description-structured.json" --yes
-```
-
-Comments:
-
-```bash
-# Create a simple comment
-acli jira workitem comment create --key "TEAM-123" --body "Started implementation and validated command coverage."
-
-# List comments to find IDs before updating
-acli jira workitem comment list --key "TEAM-123" --json
-
-# Update a specific comment with ADF JSON
-acli jira workitem comment update --key "TEAM-123" --id "10001" --body-adf "dot_config/opencode/skills/jira/examples/adf-comment-minimal.json"
-
-# Discover allowed comment visibility values
-acli jira workitem comment visibility --group
-acli jira workitem comment visibility --role --project "TEAM"
-```
+For rich comment formatting, prefer `comment update --body-adf` with an ADF JSON file.
 
 ## ADF Guidance
 
@@ -116,49 +52,28 @@ Jira rich text is ADF JSON. The top-level shape must be:
 }
 ```
 
-Start from these example payloads:
+Use `examples/adf-description-structured.json` as the canonical ADF payload reference.
 
-- `examples/adf-description-minimal.json`
+## Atlassian CLI (acli)
+
+- Check auth and context with `acli jira auth status`.
+- Prefer file-based input for multi-line content (`--description-file`, `--body-file`, `--body-adf`).
+- Use quoted heredocs (`<<'EOF'`) when generating temporary files.
+- Use the workflow examples for command patterns.
+
+## Example Files
+
+Use these as copy-and-edit starting points:
+
+- `examples/project-and-discovery.md`
+- `examples/workitem-create-edit.md`
+- `examples/comment-workflows.md`
 - `examples/adf-description-structured.json`
-- `examples/adf-description-with-code-block.json`
-- `examples/adf-description-with-links-and-lists.json`
-- `examples/adf-comment-minimal.json`
-
-Advanced examples:
-
 - `examples/workitem-create.from-json.example.json`
 - `examples/workitem-edit.from-json.example.json`
-
-## Safe Temp-File Pattern
-
-When creating one-off payloads, keep files out of the repo:
-
-```bash
-tmp_json="$(mktemp)"
-cat <<'EOF' >"$tmp_json"
-{
-  "version": 1,
-  "type": "doc",
-  "content": [
-    {
-      "type": "paragraph",
-      "content": [
-        {
-          "type": "text",
-          "text": "Status update"
-        }
-      ]
-    }
-  ]
-}
-EOF
-
-acli jira workitem edit --key "TEAM-123" --description-file "$tmp_json" --yes
-rm -f "$tmp_json"
-```
 
 ## Known Caveats
 
 - `acli jira workitem view` uses a positional key, while most other commands use `--key`.
 - `comment create` docs show inconsistent examples; use the explicit form: `acli jira workitem comment create ...`.
-- ADF support can vary by command path. If `comment create` formatting is unreliable, create a plain comment first, then apply rich formatting via `comment update --body-adf`.
+- If rich formatting via comment create is unreliable, create a plain comment first, then update it with `comment update --body-adf`.
