@@ -5,7 +5,12 @@ description: Jira conventions and Atlassian CLI (acli) usage. Covers authenticat
 
 ## When To Use This Skill
 
-Use this skill for Jira work where writing quality matters: issue descriptions, comments, and reviewer-facing updates.
+Use this skill for Jira Cloud work via Atlassian CLI (`acli`), including:
+
+- discovering project keys and work item keys
+- viewing, searching, creating, and editing work items
+- creating, listing, and updating comments
+- writing rich text payloads using Atlassian Document Format (ADF)
 
 ## Core Rules
 
@@ -16,10 +21,10 @@ Use this skill for Jira work where writing quality matters: issue descriptions, 
 
 ## Jira Writing Conventions
 
-- Keep descriptions and comments outcome-focused and actionable.
-- Use comments for progress updates, risks, and decisions, not long-lived specifications.
-- For rolling progress updates, prefer updating the latest status-style comment instead of posting a new comment for every increment.
-- Use clear section headings when helpful (for example: Background, Scope, Risks, Follow-ups).
+- Keep work item descriptions actionable, durable, and easy to scan.
+- Use the description for context that should remain useful over time, such as background, scope, constraints, risks, and follow-ups.
+- Use comments for progress updates, implementation notes, decisions, and other time-bound updates as work progresses.
+- Use clear section headings when they help the next reader understand the ticket quickly.
 
 ## Choosing The Input Mode
 
