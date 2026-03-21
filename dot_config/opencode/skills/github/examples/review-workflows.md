@@ -1,5 +1,7 @@
 # Review workflows
 
+Follow `../SKILL.md` for writing guidance; this file only shows command patterns.
+
 Use these commands to inspect PR and issue state before writing updates.
 
 ## View PR metadata

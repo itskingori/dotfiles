@@ -1,5 +1,7 @@
 # PR create and edit workflows
 
+Follow `../SKILL.md` for writing guidance; this file only shows command patterns.
+
 Use these patterns to create and update pull requests with `gh`.
 
 ## Create a draft PR
@@ -8,7 +10,9 @@ Use these patterns to create and update pull requests with `gh`.
 gh pr create \
   --draft \
   --title "Add workflow-first GitHub skill guidance" \
-  --body-file "dot_config/opencode/skills/github/examples/pr-body-structured.md"
+  --body-file - <<'EOF'
+Body text.
+EOF
 ```
 
 ## Create a ready-for-review PR
@@ -16,7 +20,9 @@ gh pr create \
 ```bash
 gh pr create \
   --title "Add workflow-first GitHub skill guidance" \
-  --body-file "dot_config/opencode/skills/github/examples/pr-body-structured.md"
+  --body-file - <<'EOF'
+Body text.
+EOF
 ```
 
 ## Update an existing PR title and body
@@ -24,18 +30,16 @@ gh pr create \
 ```bash
 gh pr edit 40 \
   --title "Refine GitHub skill workflow guidance" \
-  --body-file "dot_config/opencode/skills/github/examples/pr-body-structured.md"
+  --body-file - <<'EOF'
+Body text.
+EOF
 ```
 
 ## Safe stdin pattern for generated Markdown
 
 ```bash
 gh pr edit 40 --body-file - <<'EOF'
-Updates the GitHub skill to keep nuanced writing guidance central while moving command recipes into examples.
-
-### Changes
-- Preserves PR writing conventions and section rules
-- Moves command-heavy workflows into dedicated example files
+Body text.
 EOF
 ```
 

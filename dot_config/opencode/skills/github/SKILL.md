@@ -103,6 +103,3 @@ Use these as copy-and-edit starting points:
 - `examples/issue-create-edit.md`
 - `examples/comment-workflows.md`
 - `examples/review-workflows.md`
-- `examples/pr-body-structured.md`
-- `examples/issue-body-structured.md`
-- `examples/comment-minimal.md`

@@ -1,5 +1,7 @@
 # Issue create and edit workflows
 
+Follow `../SKILL.md` for writing guidance; this file only shows command patterns.
+
 Use these patterns to create and update issues with `gh`.
 
 ## Create an issue
@@ -7,7 +9,9 @@ Use these patterns to create and update issues with `gh`.
 ```bash
 gh issue create \
   --title "Clarify GitHub skill workflow boundaries" \
-  --body-file "dot_config/opencode/skills/github/examples/issue-body-structured.md"
+  --body-file - <<'EOF'
+Body text.
+EOF
 ```
 
 ## Edit an existing issue
@@ -15,17 +19,15 @@ gh issue create \
 ```bash
 gh issue edit 123 \
   --title "Refine GitHub skill workflow boundaries" \
-  --body-file "dot_config/opencode/skills/github/examples/issue-body-structured.md"
+  --body-file - <<'EOF'
+Body text.
+EOF
 ```
 
 ## Use stdin for one-off issue content
 
 ```bash
 gh issue edit 123 --body-file - <<'EOF'
-Clarifies workflow boundaries for the GitHub skill.
-
-### Scope
-- Keep nuanced PR writing guidance in the main skill file
-- Move command recipes to dedicated workflow examples
+Body text.
 EOF
 ```
