@@ -17,19 +17,19 @@ acli jira workitem edit --key "TEAM-123" --summary "Updated title" --yes
 ## Edit description with canonical ADF payload
 
 ```bash
-acli jira workitem edit --key "TEAM-123" --description-file "dot_config/opencode/skills/jira/examples/adf-description-structured.json" --yes
+acli jira workitem edit --key "TEAM-123" --description-file "examples/adf-description-structured.json" --yes
 ```
 
 ## Create from a full JSON payload
 
 ```bash
-acli jira workitem create --from-json "dot_config/opencode/skills/jira/examples/workitem-create.from-json.example.json"
+acli jira workitem create --from-json "examples/workitem-create.from-json.example.json"
 ```
 
 ## Edit from a full JSON payload
 
 ```bash
-acli jira workitem edit --from-json "dot_config/opencode/skills/jira/examples/workitem-edit.from-json.example.json" --yes
+acli jira workitem edit --from-json "examples/workitem-edit.from-json.example.json" --yes
 ```
 
 ## Temporary file pattern for one-off ADF updates
