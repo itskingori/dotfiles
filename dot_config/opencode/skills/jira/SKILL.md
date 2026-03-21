@@ -14,7 +14,7 @@ Use this skill for Jira Cloud work via Atlassian CLI (`acli`), including:
 
 ## Core Rules
 
-- Use `acli` for Jira operations.
+- Use the `acli` CLI for Jira operations.
 - Follow "Authorship Voice (Writing As Me)" and "Platform-Specific Defaults" in `AGENTS.md`.
 - No default project is configured in this repo, so determine or request the project key per task.
 - Keep change sets focused: one logical change per work item update when practical.
@@ -24,7 +24,7 @@ Use this skill for Jira Cloud work via Atlassian CLI (`acli`), including:
 - Keep work item descriptions actionable, durable, and easy to scan.
 - Use the description for context that should remain useful over time, such as background, scope, constraints, risks, and follow-ups.
 - Use comments for progress updates, implementation notes, decisions, and other time-bound updates as work progresses.
-- Use clear section headings when they help the next reader understand the ticket quickly.
+- Use clear section headings when they make the ticket easier to scan.
 
 ## Choosing The Input Mode
 
@@ -38,7 +38,7 @@ Use the least complex mode that preserves intent:
 3. `--from-json`
    - Advanced mode for full work item payloads and multi-field edits.
 
-For rich comment formatting, use `comment update --body-adf` with an ADF JSON file.
+For rich comment formatting, prefer `comment update --body-adf` with an ADF JSON file.
 
 ## ADF Guidance
 
@@ -59,7 +59,7 @@ Use `examples/adf-description-structured.json` as the canonical ADF payload refe
 - Check auth and context with `acli jira auth status`.
 - Prefer file-based input for multi-line content (`--description-file`, `--body-file`, `--body-adf`).
 - Use quoted heredocs (`<<'EOF'`) when generating temporary files.
-- Keep command recipes in examples files so this skill stays focused on writing quality.
+- Use the workflow examples for command patterns.
 
 ## Example Files
 
@@ -76,4 +76,4 @@ Use these as copy-and-edit starting points:
 
 - `acli jira workitem view` uses a positional key, while most other commands use `--key`.
 - `comment create` docs show inconsistent examples; use the explicit form: `acli jira workitem comment create ...`.
-- If rich formatting from comment create is unreliable, create a plain comment first, then update it with `comment update --body-adf`.
+- If rich formatting via comment create is unreliable, create a plain comment first, then update it with `comment update --body-adf`.
