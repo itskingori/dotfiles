@@ -3,12 +3,23 @@ name: github
 description: GitHub conventions and gh CLI usage. Covers PR workflow, PR titles, PR descriptions, GitHub Markdown formatting, and gh CLI patterns including HEREDOC body formatting. Use when creating or editing PRs, issues, comments, or any GitHub interaction.
 ---
 
-## PR Workflow
+## When To Use This Skill
+
+Use this skill for GitHub work where writing quality matters: PRs, issues, comments, and reviewer-facing updates.
+
+## Core Rules
+
+- Use the `gh` CLI for all GitHub operations.
+- Follow "Authorship Voice (Writing As Me)" and "Platform-Specific Defaults" in `AGENTS.md`.
+- Keep change sets focused: one logical change per PR when practical.
+
+## PR Workflow Conventions
 
 - Create PRs in **draft mode** when work is in progress.
 - Defer unrelated work to separate PRs even if convenient to do together; keep PRs focused on one logical change.
 - For UI changes, include a screenshots checklist section by default.
 - Call out anything that requires manual browser verification (JS-driven behaviours) and list concrete steps.
+- Keep the PR body current as commits land.
 
 ## PR Titles
 
@@ -50,11 +61,18 @@ Examples (TL;DR opener styles):
 - `Updates global opencode guidance to prefer unheaded TL;DR openers and ###-level section structure.`
 - `Clarifies where to place GitHub-internal links vs external references in PR descriptions.`
 
-## GitHub Markdown
+## Issue And Comment Conventions
 
-For any GitHub-rendered Markdown (PR descriptions, issue bodies, comments, READMEs/docs), use GitHub alert syntax for callouts instead of inline bold text. Avoid GitHub callouts outside GitHub (e.g., Jira uses ADF):
+- Keep issue descriptions outcome-focused and actionable.
+- Use comments for progress updates, risks, and decisions, not long-lived specs.
+- Prefer editing the last status-style comment when updating rolling progress, rather than creating a new comment for each increment.
+- For cross-repo references, use bare GitHub URLs so cards render automatically.
 
-```
+## GitHub Markdown Guidance
+
+For any GitHub-rendered Markdown (PR descriptions, issue bodies, comments, READMEs/docs), use GitHub alert syntax for callouts instead of inline bold text:
+
+```markdown
 > [!NOTE]
 > Highlights information that users should take into account, even when skimming.
 
@@ -73,21 +91,15 @@ For any GitHub-rendered Markdown (PR descriptions, issue bodies, comments, READM
 
 ## GitHub CLI (gh)
 
-- Use the `gh` CLI for all GitHub operations (PRs, issues, repo info, etc.).
-- The CLI should be authenticated; if access fails, ask user to authenticate via `gh auth login`.
-- Voice: follow "Authorship Voice (Writing As Me)" in AGENTS.md for PR bodies and comments since you'll be authenticated as me.
+- Prefer `--body-file` for multi-line Markdown. Use `--body-file -` for generated content.
+- For heredocs, always use quoted delimiters (`<<'EOF'`) to prevent shell expansion.
+- Prefer deterministic non-interactive input: explicit flags, then `--body-file`, then `--editor` only when requested.
 
-### PR and Issue Body Formatting
+## Example Files
 
-When using `gh pr create`, `gh pr edit`, or `gh issue create` with `--body`:
+Use these as copy-and-edit starting points:
 
-- **Use quoted HEREDOC** (`<<'EOF'`) to preserve backticks and prevent shell expansion:
-  ```bash
-  gh pr create --title "Title" --body "$(cat <<'EOF'
-  <TL;DR paragraph (1-3 sentences) using authorship voice guidelines>
-  EOF
-  )"
-  ```
-
-- **Never use unquoted HEREDOC** (`<<EOF`) as it causes shell to escape backticks
-- **Never use inline strings with escaped backticks** (e.g., `\`code\``) - they render incorrectly
+- `examples/pr-create-edit.md`
+- `examples/issue-create-edit.md`
+- `examples/comment-workflows.md`
+- `examples/review-workflows.md`
