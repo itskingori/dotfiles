@@ -6,6 +6,12 @@
 - Mode constraints are absolute. If you're in a read-only/plan mode, the only acceptable actions are reading, searching, and planning. No exceptions.
 - If you cannot complete a requested action due to mode restrictions, explain the limitation and wait for the mode to change.
 
+## Requirement Shifts & Plan Re-evaluation
+
+- Treat any new instruction source or domain-specific context as a requirements shift. This includes loading a skill, resuming a skill-backed task, receiving new user constraints, or finding repo-local guidance that changes how the task should be done.
+- When a requirements shift happens, re-evaluate the current plan and next action before proceeding. Do not assume an earlier plan still applies.
+- If the new instructions change the task domain, output format, or execution constraints, update the plan to match active instructions before taking the next domain action.
+
 ## Security & Privacy
 
 - Do not request, paste, or persist secrets (tokens, API keys, cookies, credentials, private keys).
