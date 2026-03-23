@@ -47,6 +47,9 @@
   "use_system_window_tabs": true,
   "scroll_beyond_last_line": "off",
   "file_types": {
+    "env": [
+      ".env",
+    ],
     "YAML": [
       "**/*.yml.j2",
       "**/*.yml.jinja",
