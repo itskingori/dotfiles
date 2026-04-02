@@ -37,6 +37,7 @@ Voice: follow the "Authorship Voice (Writing As Me)" and "Platform-Specific Defa
 - Use a hybrid voice: keep the opener content-focused and present-tense; use first-person for testing/validation lines.
 - Avoid `##` headings (as they are too visually prominent on GitHub). Use `###` as the highest heading level, then `####` / `#####` as needed.
 - Keep the PR description comprehensive and update it as new commits land (why/what/testing/manual steps/follow-ups).
+- Describe the diff from base branch to current branch state. Avoid narrating exploratory implementation paths, removed intermediate problems, or transition details that are no longer present in the branch.
 - All other sections are optional; choose headings based on the content/context of the change and omit empty sections.
 - Use numbered lists when the count of items matters (e.g., related PRs, migration steps).
 - Prefer clear, functional section headings when needed; use the following conventions:
@@ -47,6 +48,7 @@ Voice: follow the "Authorship Voice (Writing As Me)" and "Platform-Specific Defa
   - `### Non-goals`: what is explicitly out of scope.
   - `### Risk`: what could break and how risk is mitigated (include rollback notes when relevant).
   - `### Testing`: what I ran, what I verified manually, and any known gaps.
+  - `### Reviewing`: optional, brief, and reviewer-oriented. Use it to suggest the most efficient review path, not to restate the change summary. Prefer one or two bullets.
   - `### Rollout`: flags, phases, steps, and monitoring notes.
   - `### Follow-ups`: deferred work with concrete next actions.
   - `### Related`: GitHub issues/PRs/discussions only (renders as rich cards on GitHub; excludes releases and security advisories; dependencies/follow-ups/linked work).
@@ -58,6 +60,7 @@ Voice: follow the "Authorship Voice (Writing As Me)" and "Platform-Specific Defa
   - Use `gh pr view <number> --repo Org/repo --json url` to fetch PR URLs programmatically
   - Group related PRs in descriptions by status (e.g., merged, pending, cleanup)
   - Use bare GitHub URLs (not markdown links) -- GitHub auto-generates rich link cards
+- Put deferred implementation direction in `### Follow-ups`, not in `### Background` or `### Changes`, unless that direction is itself part of the approved design.
 
 Examples (TL;DR opener styles):
 - `Codifies my PR-writing conventions and adds global authorship voice guidance for external posts.`

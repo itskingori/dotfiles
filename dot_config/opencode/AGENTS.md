@@ -87,16 +87,20 @@ For GitHub PR bodies, issue bodies, comments, Jira tickets/comments, and similar
 
 ## Git
 
-### Git Hygiene (Non-Destructive, Reviewable History)
+### Git Workflow & Hygiene (Non-Destructive, Reviewable History)
 
 - Use one feature branch per change set; prefer small, reviewable PRs.
 - Keep commits "one idea each" (see "Git Commit Slicing" below). Avoid mega-commits; commit incrementally.
+- When writing commit messages, PR bodies, or documentation for a change, describe the code as it exists in the reviewed state.
+- Do not reference discarded exploratory paths, removed intermediate implementations, or transition details unless they remain visible in the final history or are explicitly captured as follow-up context.
 - Before pushing, it is OK to reorganize commits to improve history clarity when safe.
 - If commits are already pushed, prefer a follow-up commit unless I explicitly request history rewrite.
 - Rebasing rules:
   - OK to rebase before pushing.
   - If already pushed, only use `git push --force-with-lease` when you own the branch and I explicitly request it.
   - Do not rewrite shared/public history.
+- Keep backup/safety branches local by default unless I explicitly ask to publish them.
+- Prefix local backup branches with `backup/` so they are clearly distinct from active working branches.
 
 ### Git Commit Slicing (One Idea Per Commit)
 
