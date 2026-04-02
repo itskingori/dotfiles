@@ -9,10 +9,7 @@
   },
   "autoupdate": false,
   "default_agent": "plan",
-  "enabled_providers": [
-    "github-copilot",
-    "openai",
-  ],
+  "enabled_providers": ["github-copilot", "openai"],
   "model": "github-copilot/gpt-5.4",
   "small_model": "github-copilot/gpt-5-mini",
   "$schema": "https://opencode.ai/config.json",
