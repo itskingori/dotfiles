@@ -102,6 +102,14 @@ For GitHub PR bodies, issue bodies, comments, Jira tickets/comments, and similar
 - Keep backup/safety branches local by default unless I explicitly ask to publish them.
 - Prefix local backup branches with `backup/` so they are clearly distinct from active working branches.
 
+### Non-Interactive Git Commands
+
+- Assume Git commands may run without an interactive terminal.
+- Never run editor-opening Git commands without suppressing the editor first.
+- For rebase continuation, use `GIT_EDITOR=true git rebase --continue` unless I explicitly ask to edit the commit message.
+- Apply the same pattern to other Git flows that may open an editor in automation or tool-driven sessions.
+- When chaining commands, do not place follow-up commands after `git rebase --continue` unless the rebase has completed successfully.
+
 ### Git Commit Slicing (One Idea Per Commit)
 
 - Having "one idea" means one primary axis of change, not "one PR worth of work".
