@@ -23,7 +23,11 @@
      - intended base branch
      - whether the work is stacked on another branch/PR
      - local commit scope relative to the proposed base
-     - expected title/body structure from recent PRs in this repository
+     - expected title/body structure source, using this order:
+       1. active stacked series PRs
+       2. explicit written instructions in this repo/active skills
+       3. recent same-author PRs in this repository (only when clearly consistent)
+       4. generic skill defaults
 - Do not draft or propose a PR title/body, issue body, review comment, or GitHub comment until those checks are complete.
 
 ## Security & Privacy
