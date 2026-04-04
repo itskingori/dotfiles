@@ -36,6 +36,14 @@ If something feels secret-ish, do not add it. Prefer referencing an external sec
   - `chezmoi apply -v`
   - `chezmoi diff` should be empty
 
+### Rename & Extension Changes
+
+- When a managed target is renamed (including extension changes like `.json` -> `.jsonc`), do not assume chezmoi removes the old destination file.
+- After applying, verify both paths explicitly:
+  - New path exists and matches source
+  - Old path no longer exists (or is intentionally kept)
+- Use `chezmoi source-path <destination-path>` plus direct file checks (for example `ls`) to confirm path mapping and cleanup.
+
 ## Adding A New Tool
 
 When adding configuration for a new tool:
