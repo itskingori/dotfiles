@@ -20,7 +20,6 @@ Use this skill for GitHub work where writing quality matters: PRs, issues, comme
 - For UI changes, include a screenshots checklist section by default.
 - Call out anything that requires manual browser verification (JS-driven behaviours) and list concrete steps.
 - Keep the PR body current as commits land.
-- Determine PR structure using the GitHub preflight in `AGENTS.md` before drafting.
 - Only apply phase naming and reviewer-facing series structure when the current PR is part of that active series; do not infer it from mixed-author or unrelated repository history.
 - When a PR follows or depends on another PR, include the relevant PR link(s) in `### Related`.
 - If execution is restricted (for example plan/read-only mode), you may inspect and draft, but you must still follow this GitHub workflow first.
