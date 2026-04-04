@@ -20,13 +20,15 @@ Use this skill for GitHub work where writing quality matters: PRs, issues, comme
 - For UI changes, include a screenshots checklist section by default.
 - Call out anything that requires manual browser verification (JS-driven behaviours) and list concrete steps.
 - Keep the PR body current as commits land.
-- Do not use a generic fallback PR structure when repository history or an active stacked PR establishes a stronger pattern.
-- When a PR follows an existing PR in a series, mirror established phase naming, include relevant links, and preserve the repository's reviewer-facing section structure.
+- Choose PR structure from the current context in this order: active stacked series PRs, explicit written instructions, recent same-author PRs in this repository (only when clearly consistent), then generic skill defaults.
+- Only mirror phase naming and reviewer-facing section structure when the current PR is part of that active series.
+- Do not infer phase naming or stacked structure from mixed-author or unrelated repository history.
+- When a PR follows or depends on another PR, include the relevant PR link(s) in `### Related`.
 - If execution is restricted (for example plan/read-only mode), you may inspect and draft, but you must still follow this GitHub workflow first.
 
 ## PR Titles
 
-- For multi-phase work, prefix PR titles with `Phase N: <description>`
+- For PRs that are explicitly part of a multi-phase series, prefix PR titles with `Phase N: <description>`
 - If the target org/team requires it, include the ticket reference: `[TICKET] Phase N: <description>`
 
 ## PR Descriptions
