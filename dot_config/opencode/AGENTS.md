@@ -138,17 +138,18 @@ For GitHub PR bodies, issue bodies, comments, Jira tickets/comments, and similar
 - Keep commit messages free-form; optimize for clarity over strict formats.
 - Use imperative, present-tense subjects (e.g., `Add`, `Fix`, `Update`, `Clarify`).
 - Keep the subject concise (aim for ~50 chars when practical) and do not end it with a period.
-- Where helpful, add a body with localized context about the change (intent/why/constraints/risk/validation), not a file-by-file changelog.
-- If adding a body, leave a blank line after the subject and wrap lines at ~72 chars.
-- Add context when it helps a future reader understand intent/tradeoffs/risk; not every commit needs a long body.
-- When adding context, prefer "why/constraints/risk/validation" over a list of file changes.
+- Default to a subject plus body for any non-trivial commit; use a subject-only message only for tiny, obvious, mechanical changes.
+- Leave a blank line after the subject and wrap every body line at ~72 chars.
+- In the body, describe the final reviewed state and prefer why/constraints/risk/validation over a file-by-file changelog.
+- When creating commits non-interactively, use an input method that preserves real newlines; never include literal `\n` escape sequences in the final commit message.
+- Keep body content concise; 1-3 short paragraphs or bullets is usually enough.
 
 Example (generic):
 
 Subject:
 `Add <outcome>`
 
-Optional body (when useful):
+Body (default for non-trivial changes):
 - Why: <motivation/problem>
 - Constraints/Risk: <tradeoffs, rollout notes, edge cases>
 - Validation: <tests run + any manual verification>
