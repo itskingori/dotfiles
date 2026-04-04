@@ -12,6 +12,20 @@
 - When a requirements shift happens, re-evaluate the current plan and next action before proceeding. Do not assume an earlier plan still applies.
 - If the new instructions change the task domain, output format, or execution constraints, update the plan to match active instructions before taking the next domain action.
 
+### GitHub Tasks
+
+- Treat any request involving GitHub as a mandatory domain shift. This includes pull requests, draft PRs, PR titles/bodies, review comments, issues, checks, release notes, `gh` usage, and GitHub URLs.
+- Before doing any GitHub-related planning or writing, you **must**:
+  1. Re-evaluate active instructions and output-format requirements.
+  2. Ensure the `github` skill is active.
+  3. Identify and restate:
+     - current branch
+     - intended base branch
+     - whether the work is stacked on another branch/PR
+     - local commit scope relative to the proposed base
+     - expected title/body structure from recent PRs in this repository
+- Do not draft or propose a PR title/body, issue body, review comment, or GitHub comment until those checks are complete.
+
 ## Security & Privacy
 
 - Do not request, paste, or persist secrets (tokens, API keys, cookies, credentials, private keys).
@@ -135,4 +149,3 @@ Examples (generic):
 - `ui-settings-layout`
 - `deps-bump-eslint`
 - `dns-phase1-import-records`
-

@@ -20,6 +20,9 @@ Use this skill for GitHub work where writing quality matters: PRs, issues, comme
 - For UI changes, include a screenshots checklist section by default.
 - Call out anything that requires manual browser verification (JS-driven behaviours) and list concrete steps.
 - Keep the PR body current as commits land.
+- Do not use a generic fallback PR structure when repository history or an active stacked PR establishes a stronger pattern.
+- When a PR follows an existing PR in a series, mirror established phase naming, include relevant links, and preserve the repository's reviewer-facing section structure.
+- If execution is restricted (for example plan/read-only mode), you may inspect and draft, but you must still follow this GitHub workflow first.
 
 ## PR Titles
 
