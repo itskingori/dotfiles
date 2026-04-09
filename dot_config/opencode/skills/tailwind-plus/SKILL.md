@@ -11,9 +11,9 @@ Use this skill when Tailwind Plus UI blocks should drive page, section, and comp
 
 ## Reference Root
 
-Use this exact local reference root: /Users/Kingori/Repositories/itskingori/uix/reference/tailwind-plus
+Use this exact local reference root: ~/Repositories/itskingori/uix/reference/tailwind-plus
 
-Treat this as a licensed local reference set. Keep exploration scoped to this path unless the task explicitly requires something else.
+Treat this as a licensed local reference set. Keep exploration scoped to this path unless the task explicitly requires something else. Use this path as inspect-only reference material, not as an editable workspace.
 
 ## Workflow
 
@@ -22,6 +22,7 @@ Treat this as a licensed local reference set. Keep exploration scoped to this pa
 3. Prioritize `ui-blocks/` candidates that match the requested structure and interaction pattern.
 4. Adapt the selected patterns to the target codebase and established visual language.
 5. Call out setup-sensitive dependencies and implementation caveats.
+6. Load or pair with `frontend-design` when the task needs broader visual direction, hierarchy, or composition guidance.
 
 ## Guardrails
 
