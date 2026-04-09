@@ -1,18 +1,10 @@
-// Zed settings
-//
-// For information on how to configure Zed, see the Zed
-// documentation: https://zed.dev/docs/configuring-zed
-//
-// To see all of Zed's default settings without changing your
-// custom settings, run `zed: open default settings` from the
-// command palette (cmd-shift-p / ctrl-shift-p)
 {
   "edit_predictions": {
     "provider": "copilot",
     "mode": "eager",
     "copilot": {
-      "enable_next_edit_suggestions": true,
-    },
+      "enable_next_edit_suggestions": true
+    }
   },
   "file_scan_exclusions": [".git/"],
   "agent": {
@@ -20,21 +12,21 @@
     "default_model": {
       "provider": "copilot_chat",
       "model": "gpt-5.4",
-      "enable_thinking": false,
+      "enable_thinking": false
     },
     "favorite_models": [
       {
         "provider": "copilot_chat",
         "model": "gpt-5.4",
-        "enable_thinking": false,
+        "enable_thinking": false
       },
       {
         "provider": "copilot_chat",
         "model": "gpt-5.3-codex",
-        "enable_thinking": false,
-      },
+        "enable_thinking": false
+      }
     ],
-    "model_parameters": [],
+    "model_parameters": []
   },
   "icon_theme": "Catppuccin Frappé",
   "ui_font_size": 15,
@@ -42,7 +34,7 @@
   "theme": {
     "mode": "dark",
     "light": "One Light",
-    "dark": "One Dark",
+    "dark": "One Dark"
   },
   "use_system_window_tabs": true,
   "scroll_beyond_last_line": "off",
@@ -54,7 +46,7 @@
       "**/*.yml.jinja2",
       "**/*.yaml.j2",
       "**/*.yaml.jinja",
-      "**/*.yaml.jinja2",
-    ],
-  },
+      "**/*.yaml.jinja2"
+    ]
+  }
 }
