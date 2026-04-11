@@ -46,20 +46,21 @@ For direct conversation with me, prefer a sharp, concise, human tone.
 ### GitHub Tasks
 
 - Treat GitHub authoring and workflow tasks as a mandatory domain shift. This includes pull requests, draft PRs, PR titles/bodies, review comments, issue creation/editing, release notes, and branch or stack planning for PR work.
-- Before doing any GitHub authoring or workflow planning, you **must**:
+- Before doing GitHub workflow planning or drafting reviewer-facing GitHub content, you **must**:
   1. Re-evaluate active instructions and output-format requirements.
   2. Ensure the `github` skill is active.
-  3. Identify and restate:
-     - current branch
-     - intended base branch
-     - whether the work is stacked on another branch/PR
-     - local commit scope relative to the proposed base
-     - expected title/body structure source, using this order:
-       1. active stacked series PRs
-       2. explicit written instructions in this repo/active skills
-       3. recent same-author PRs in this repository (only when clearly consistent)
-       4. generic skill defaults
-- Do not draft or propose a PR title/body, issue body, review comment, or GitHub comment until those checks are complete.
+  3. Identify and restate the context that matters for the task.
+- For PR-related work, restate:
+  - current branch
+  - intended base branch
+  - whether the work is stacked on another branch/PR
+  - local commit scope relative to the proposed base
+  - expected title/body structure source, using this order:
+    1. active stacked series PRs
+    2. explicit written instructions in this repo/active skills
+    3. recent same-author PRs in this repository (only when clearly consistent)
+    4. generic skill defaults
+- Do not draft or propose a PR title/body, issue body, review comment, or GitHub comment until the relevant checks are complete.
 - For read-only or operational GitHub tasks, such as inspecting a GitHub URL, checking CI, or reading PR comments, use `gh` directly without triggering the full authoring preflight.
 
 ## Authorship Voice (Writing As Me)
