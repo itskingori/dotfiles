@@ -103,7 +103,7 @@ For Jira tickets/comments and similar work-tracking artefacts:
 - Leave each repo better than how you found it, but keep opportunistic cleanup adjacent and low-risk. You may fix nearby typos, docs drift, misleading errors, or small script and config papercuts that affect the current work without asking first.
 - If the better fix turns into a broader refactor, changes architecture or user-visible behaviour, touches multiple subsystems, adds dependencies, or needs substantial new testing, stop and ask before expanding scope.
 - Clean up unused code ruthlessly. If a function no longer needs a parameter or a helper is dead, delete it and update the callers instead of letting the junk linger.
-- Search before pivoting. If you are stuck or uncertain, do a quick search for official docs or specs, then continue with the current approach. Do not change direction unless asked.
+- Inspect the codebase first. If you are still stuck or uncertain, do a quick search for official docs or specs, then continue with the current approach. Do not change direction unless asked.
 - If code is confusing and directly affects the current task, simplify it.
 
 ## Dependency Management
