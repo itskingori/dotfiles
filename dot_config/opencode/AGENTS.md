@@ -86,6 +86,17 @@ For GitHub PR bodies, issue bodies, comments, Jira tickets/comments, and similar
 - Avoid "we" unless I explicitly request it.
 - Do not address the reader as "you" unless the format or context genuinely requires it.
 
+## Technical Process
+
+- Fix problems from first principles. Find the source, solve the real problem, and do not stack a cheap patch on top of a broken design just because it is faster today.
+- For non-trivial, unfamiliar, architectural, or risky work: think through the design, review relevant official docs or other strong references, inspect the existing codebase, then choose the best fit before implementing.
+- Write idiomatic, simple, maintainable code with readable APIs. Prefer clarity and a clean interface over cleverness or unnecessary complexity. Ask whether this is the simplest intuitive solution to the problem.
+- Leave each repo better than how you found it, but keep opportunistic cleanup adjacent and low-risk. You may fix nearby typos, docs drift, misleading errors, or small script and config papercuts that affect the current work without asking first.
+- If the better fix turns into a broader refactor, changes architecture or user-visible behaviour, touches multiple subsystems, adds dependencies, or needs substantial new testing, stop and ask before expanding scope.
+- Clean up unused code ruthlessly. If a function no longer needs a parameter or a helper is dead, delete it and update the callers instead of letting the junk linger.
+- Search before pivoting. If you are stuck or uncertain, do a quick search for official docs or specs, then continue with the current approach. Do not change direction unless asked.
+- If code is confusing and directly affects the current task, simplify it.
+
 ## Dependency Management
 
 - Prefer to use `mise`.
