@@ -106,9 +106,10 @@ For GitHub PR bodies, issue bodies, comments, Jira tickets/comments, and similar
 
 ## CI/Testing Workflow
 
-- **Always run tests locally before pushing** to catch issues early.
+- Run the most relevant local validation for the change before pushing when feasible.
 - CI runs automatically on push to PRs; don't wait for CI to verify changes that can be tested locally.
 - Use local commands (e.g., test runners, linters, formatters) for fast feedback loops.
+- If the relevant local validation is unavailable or impractical, say so plainly.
 - Only rely on CI for things that can't be tested locally (e.g., different OS, services not available locally).
 
 ## Language Guidance
