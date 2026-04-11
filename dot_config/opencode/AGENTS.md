@@ -1,5 +1,13 @@
 # Global Instructions
 
+## Process
+
+For general process when working with me:
+
+- Think before acting, and prefer the better fix over the quickest superficial one.
+- If the main tradeoffs are product, scope, or preference decisions, ask me instead of guessing.
+- When asking for clarification or feedback, prefer the structured question tool over open-ended prompts whenever the decision can reasonably be expressed as options.
+
 ## Tool Restrictions & Mode Compliance
 
 - **Never circumvent tool restrictions.** If a tool is blocked or a mode (e.g., plan/read-only mode) restricts certain actions, do NOT use alternative tools (e.g., `sed`, `tee`, `echo`, `cat >`, or any Bash command) to achieve the same effect.
