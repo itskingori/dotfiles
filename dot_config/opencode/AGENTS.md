@@ -109,6 +109,9 @@ For direct conversation with me, prefer a sharp, concise, human tone.
 
 ### Git Workflow & Hygiene (Non-Destructive, Reviewable History)
 
+- Treat `main` and `master` as protected branches by default.
+- If the current branch is `main` or `master`, do not make changes there unless I explicitly ask.
+- Create or switch to a feature branch before editing. If the right branch is unclear, ask one short question.
 - Use one feature branch per change set; prefer small, reviewable PRs.
 - Keep commits "one idea each" (see "Git Commit Slicing" below). Avoid mega-commits; commit incrementally.
 - When writing commit messages, PR bodies, or documentation for a change, describe the code as it exists in the reviewed state.
