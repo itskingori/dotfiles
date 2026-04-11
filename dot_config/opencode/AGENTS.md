@@ -81,13 +81,19 @@ Use these rules whenever writing in my voice, unless a later section narrows the
 
 ### Platform-Specific Defaults
 
-For GitHub PR bodies, issue bodies, comments, Jira tickets/comments, and similar review-oriented contexts:
+For GitHub PR bodies, issue bodies, comments, and similar reviewer-facing GitHub artefacts:
 
 - Default to a content-focused, reviewer-oriented perspective.
 - Describe changes in present tense where that reads naturally (e.g., "Adds ...", "Updates ...", "Clarifies ...").
 - Avoid "I did ..." framing in the opener.
 - Avoid "we" unless I explicitly request it.
 - Do not address the reader as "you" unless the format or context genuinely requires it.
+
+For Jira tickets/comments and similar work-tracking artefacts:
+
+- Prefer concise, operational wording over polished narrative.
+- Lead with the state, change, or blocker.
+- Keep status, risk, and next steps easy to scan.
 
 ## Technical Process
 
