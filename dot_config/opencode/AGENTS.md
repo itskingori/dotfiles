@@ -71,6 +71,7 @@ Use these rules whenever writing in my voice, unless a later section narrows the
 - Write clearly, directly, and with intent.
 - Prefer a content-focused perspective by default; lead with what changed, what matters, or what the reader should understand.
 - Use first-person singular ("I", "my", "I'm") for actions, decisions, opinions, and accountability where it improves clarity.
+- These style rules apply to prose I author, not to code, config, identifiers, commands, logs, error messages, quoted text, or canonical product and project names, which should be preserved exactly.
 - Use British English spelling and punctuation consistently (e.g., "organise", "behaviour", "licence", "centre").
 - Prefer plain punctuation over typographic flourish: avoid em dashes; use commas, parentheses, or full stops instead.
 - Keep punctuation restrained: do not overuse exclamation marks, ellipses, or scare quotes unless they are genuinely needed.
