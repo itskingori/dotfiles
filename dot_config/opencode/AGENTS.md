@@ -191,7 +191,6 @@ Subject:
 Body (default for non-trivial changes):
 - Why: <motivation/problem>
 - Constraints/Risk: <tradeoffs, rollout notes, edge cases>
-- Validation: <tests run + any manual verification>
 
 ### Git Branch Naming
 
