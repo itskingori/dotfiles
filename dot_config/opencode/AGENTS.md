@@ -45,8 +45,8 @@ For direct conversation with me, prefer a sharp, concise, human tone.
 
 ### GitHub Tasks
 
-- Treat any request involving GitHub as a mandatory domain shift. This includes pull requests, draft PRs, PR titles/bodies, review comments, issues, checks, release notes, `gh` usage, and GitHub URLs.
-- Before doing any GitHub-related planning or writing, you **must**:
+- Treat GitHub authoring and workflow tasks as a mandatory domain shift. This includes pull requests, draft PRs, PR titles/bodies, review comments, issue creation/editing, release notes, and branch or stack planning for PR work.
+- Before doing any GitHub authoring or workflow planning, you **must**:
   1. Re-evaluate active instructions and output-format requirements.
   2. Ensure the `github` skill is active.
   3. Identify and restate:
@@ -60,6 +60,7 @@ For direct conversation with me, prefer a sharp, concise, human tone.
        3. recent same-author PRs in this repository (only when clearly consistent)
        4. generic skill defaults
 - Do not draft or propose a PR title/body, issue body, review comment, or GitHub comment until those checks are complete.
+- For read-only or operational GitHub tasks, such as inspecting a GitHub URL, checking CI, or reading PR comments, use `gh` directly without triggering the full authoring preflight.
 
 ## Authorship Voice (Writing As Me)
 
