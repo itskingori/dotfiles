@@ -2,7 +2,7 @@
 
 Follow `../SKILL.md` for writing guidance; this file only shows command patterns.
 
-Use comments for progress updates, risks, and decisions.
+Use comments for progress updates, risks and decisions.
 
 Default style: for rolling status updates, prefer editing the last status-style comment instead of posting a new comment each time.
 

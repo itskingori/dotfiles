@@ -22,8 +22,8 @@ Use this skill for Jira Cloud work via Atlassian CLI (`acli`), including:
 ## Jira Writing Conventions
 
 - Keep work item descriptions actionable, durable, and easy to scan.
-- Use the description for context that should remain useful over time, such as background, scope, constraints, risks, and follow-ups.
-- Use comments for progress updates, implementation notes, decisions, and other time-bound updates as work progresses.
+- Use the description for context that should remain useful over time, such as background, scope, constraints, risks and follow-ups.
+- Use comments for progress updates, implementation notes, decisions and other time-bound updates as work progresses.
 - Use clear section headings when they make the ticket easier to scan.
 
 ## Choosing The Input Mode

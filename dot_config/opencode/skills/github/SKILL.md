@@ -47,9 +47,9 @@ Voice: follow the "Authorship Voice (Writing As Me)" and "Platform-Specific Defa
   - `### Scope`: what is included in this PR.
   - `### Non-goals`: what is explicitly out of scope.
   - `### Risk`: what could break and how risk is mitigated (include rollback notes when relevant).
-  - `### Testing`: what I ran, what I verified manually, and any known gaps.
-  - `### Reviewing`: optional, brief, and reviewer-oriented. Use it to suggest the most efficient review path, not to restate the change summary. Prefer one or two bullets.
-  - `### Rollout`: flags, phases, steps, and monitoring notes.
+  - `### Testing`: what I ran, what I verified manually and any known gaps.
+  - `### Reviewing`: optional, brief and reviewer-oriented. Use it to suggest the most efficient review path, not to restate the change summary. Prefer one or two bullets.
+  - `### Rollout`: flags, phases, steps and monitoring notes.
   - `### Follow-ups`: deferred work with concrete next actions.
   - `### Related`: GitHub issues/PRs/discussions only (renders as rich cards on GitHub; excludes releases and security advisories; dependencies/follow-ups/linked work).
   - `### References`: all other links (external trackers/findings/docs/research, plus GitHub URLs that are not issues/PRs/discussions), even when directly motivating.
@@ -70,7 +70,7 @@ Examples (TL;DR opener styles):
 ## Issue And Comment Conventions
 
 - Keep issue descriptions outcome-focused and actionable.
-- Use comments for progress updates, risks, and decisions, not long-lived specs.
+- Use comments for progress updates, risks and decisions, not long-lived specs.
 - Prefer editing the last status-style comment when updating rolling progress, rather than creating a new comment for each increment.
 - For cross-repo references, use bare GitHub URLs so cards render automatically.
 

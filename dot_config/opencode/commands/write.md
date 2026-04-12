@@ -146,7 +146,7 @@ Creates false binaries and premature insight.
 ## B. Enumerative Abstraction
 
 Pattern:
-"Success requires alignment, ownership, and velocity."
+"Success requires alignment, ownership and velocity."
 
 Problem:
 Stacks abstractions without explanation.
