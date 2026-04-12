@@ -18,11 +18,43 @@ Treat this as a licensed local reference set. Keep exploration scoped to this pa
 ## Workflow
 
 1. Identify the UI intent and constraints from the request.
-2. Inspect local docs, manifests, and taxonomy files in the reference root first.
-3. Prioritize `ui-blocks/` candidates that match the requested structure and interaction pattern.
-4. Adapt the selected patterns to the target codebase and established visual language.
-5. Call out setup-sensitive dependencies and implementation caveats.
-6. Load or pair with `frontend-design` when the task needs broader visual direction, hierarchy, or composition guidance.
+2. Inspect local manifests and any relevant taxonomy or docs in the reference root first.
+3. Use `manifest/blocks.json` to identify and prioritise at least 3 concrete `ui-blocks/` candidates that match the requested structure and interaction pattern.
+4. Inspect the referenced block files in `ui-blocks/`.
+5. Provide a short reference synthesis before planning or implementation:
+   - references reviewed
+   - why each was relevant
+   - patterns to keep
+   - patterns to reject
+   - proposed direction for the target project
+6. Adapt selected patterns to the target codebase and established visual language.
+7. Call out setup-sensitive dependencies and implementation caveats.
+8. Load or pair with `frontend-design` when the task needs broader visual direction, hierarchy, or composition guidance.
+
+## Minimum Evidence Rule
+
+- Before proposing a design direction, plan, or implementation for homepage, hero, marketing section, or landing page work, inspect at least 3 relevant Tailwind Plus references and summarise what will be adapted versus rejected.
+- Do not claim to be using Tailwind Plus references unless actual reference files were inspected in the current session.
+
+## Adaptation Rules
+
+- Adapt Tailwind Plus references to the target codebase and product context rather than copying them verbatim.
+- Match the relevant block family to the task. For example, use `ui-blocks/marketing` for homepage and landing-page work, `ui-blocks/application-ui` for product surfaces and `ui-blocks/ecommerce` for shop flows.
+
+## Marketing Adaptation Rules
+
+For homepage, hero, marketing section and landing-page work, use Tailwind Plus references for:
+- section anatomy
+- layout composition
+- responsive breakpoint behaviour
+- spacing rhythm
+- CTA placement and content density
+
+For the same marketing work, do not copy verbatim:
+- product copy
+- screenshots/mockups
+- decorative motifs that do not fit the product
+- full page implementations without adaptation
 
 ## Guardrails
 
