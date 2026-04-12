@@ -191,7 +191,15 @@ For Jira tickets/comments and similar work-tracking artefacts:
 - Default to a subject plus body for any non-trivial commit; use a subject-only message only for tiny, obvious, mechanical changes.
 - Leave a blank line after the subject and wrap every body line at ~72 chars.
 - In the body, describe the final reviewed state and prefer why/constraints/risk/validation over a file-by-file changelog.
-- When creating commits non-interactively, use an input method that preserves real newlines; never include literal `\n` escape sequences in the final commit message.
+- When creating commits non-interactively, use an input method that preserves real newlines.
+- Never include literal escape sequences such as `\n` or `\t` in the final commit message text.
+- Never construct a multi-line commit message as a single normal quoted shell string containing escaped newline sequences.
+- When passing commit messages via shell arguments, avoid shell-sensitive syntax in the message text, especially backticks and command substitution.
+- For subject-only commits, `git commit -m "Subject"` is fine.
+- For subject-plus-body commits, prefer `git commit -m "Subject" -m "Body..."` or `git commit -F <message-file>`.
+- Prefer `git commit -F <message-file>` when the body contains inline code, quotes or multiple paragraphs.
+- If using shell escape syntax, only use forms that produce actual newlines in the argument passed to Git.
+- Use commit message forms that preserve real paragraph breaks and cannot emit literal `\n` text.
 - Keep body content concise; 1-3 short paragraphs or bullets is usually enough.
 
 Example (generic):
