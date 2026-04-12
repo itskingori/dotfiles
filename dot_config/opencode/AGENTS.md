@@ -45,21 +45,23 @@ For direct conversation with me, prefer a sharp, concise, human tone.
 
 ### GitHub Tasks
 
-- Treat any request involving GitHub as a mandatory domain shift. This includes pull requests, draft PRs, PR titles/bodies, review comments, issues, checks, release notes, `gh` usage, and GitHub URLs.
-- Before doing any GitHub-related planning or writing, you **must**:
+- Treat GitHub authoring and workflow tasks as a mandatory domain shift. This includes pull requests, draft PRs, PR titles/bodies, review comments, issue creation/editing, release notes, and branch or stack planning for PR work.
+- Before doing GitHub workflow planning or drafting reviewer-facing GitHub content, you **must**:
   1. Re-evaluate active instructions and output-format requirements.
   2. Ensure the `github` skill is active.
-  3. Identify and restate:
-     - current branch
-     - intended base branch
-     - whether the work is stacked on another branch/PR
-     - local commit scope relative to the proposed base
-     - expected title/body structure source, using this order:
-       1. active stacked series PRs
-       2. explicit written instructions in this repo/active skills
-       3. recent same-author PRs in this repository (only when clearly consistent)
-       4. generic skill defaults
-- Do not draft or propose a PR title/body, issue body, review comment, or GitHub comment until those checks are complete.
+  3. Identify and restate the context that matters for the task.
+- For PR-related work, restate:
+  - current branch
+  - intended base branch
+  - whether the work is stacked on another branch/PR
+  - local commit scope relative to the proposed base
+  - expected title/body structure source, using this order:
+    1. active stacked series PRs
+    2. explicit written instructions in this repo/active skills
+    3. recent same-author PRs in this repository (only when clearly consistent)
+    4. generic skill defaults
+- Do not draft or propose a PR title/body, issue body, review comment, or GitHub comment until the relevant checks are complete.
+- For read-only or operational GitHub tasks, such as inspecting a GitHub URL, checking CI, or reading PR comments, use `gh` directly without triggering the full authoring preflight.
 
 ## Authorship Voice (Writing As Me)
 
@@ -70,6 +72,7 @@ Use these rules whenever writing in my voice, unless a later section narrows the
 - Write clearly, directly, and with intent.
 - Prefer a content-focused perspective by default; lead with what changed, what matters, or what the reader should understand.
 - Use first-person singular ("I", "my", "I'm") for actions, decisions, opinions, and accountability where it improves clarity.
+- These style rules apply to prose I author, not to code, config, identifiers, commands, logs, error messages, quoted text, or canonical product and project names, which should be preserved exactly.
 - Use British English spelling and punctuation consistently (e.g., "organise", "behaviour", "licence", "centre").
 - Prefer plain punctuation over typographic flourish: avoid em dashes; use commas, parentheses, or full stops instead.
 - Keep punctuation restrained: do not overuse exclamation marks, ellipses, or scare quotes unless they are genuinely needed.
@@ -78,13 +81,19 @@ Use these rules whenever writing in my voice, unless a later section narrows the
 
 ### Platform-Specific Defaults
 
-For GitHub PR bodies, issue bodies, comments, Jira tickets/comments, and similar review-oriented contexts:
+For GitHub PR bodies, issue bodies, comments, and similar reviewer-facing GitHub artefacts:
 
 - Default to a content-focused, reviewer-oriented perspective.
 - Describe changes in present tense where that reads naturally (e.g., "Adds ...", "Updates ...", "Clarifies ...").
 - Avoid "I did ..." framing in the opener.
 - Avoid "we" unless I explicitly request it.
 - Do not address the reader as "you" unless the format or context genuinely requires it.
+
+For Jira tickets/comments and similar work-tracking artefacts:
+
+- Prefer concise, operational wording over polished narrative.
+- Lead with the state, change, or blocker.
+- Keep status, risk, and next steps easy to scan.
 
 ## Technical Process
 
@@ -94,7 +103,7 @@ For GitHub PR bodies, issue bodies, comments, Jira tickets/comments, and similar
 - Leave each repo better than how you found it, but keep opportunistic cleanup adjacent and low-risk. You may fix nearby typos, docs drift, misleading errors, or small script and config papercuts that affect the current work without asking first.
 - If the better fix turns into a broader refactor, changes architecture or user-visible behaviour, touches multiple subsystems, adds dependencies, or needs substantial new testing, stop and ask before expanding scope.
 - Clean up unused code ruthlessly. If a function no longer needs a parameter or a helper is dead, delete it and update the callers instead of letting the junk linger.
-- Search before pivoting. If you are stuck or uncertain, do a quick search for official docs or specs, then continue with the current approach. Do not change direction unless asked.
+- Inspect the codebase first. If you are still stuck or uncertain, do a quick search for official docs or specs, then continue with the current approach. Do not change direction unless asked.
 - If code is confusing and directly affects the current task, simplify it.
 
 ## Dependency Management
@@ -104,9 +113,10 @@ For GitHub PR bodies, issue bodies, comments, Jira tickets/comments, and similar
 
 ## CI/Testing Workflow
 
-- **Always run tests locally before pushing** to catch issues early.
+- Run the most relevant local validation for the change before pushing when feasible.
 - CI runs automatically on push to PRs; don't wait for CI to verify changes that can be tested locally.
 - Use local commands (e.g., test runners, linters, formatters) for fast feedback loops.
+- If the relevant local validation is unavailable or impractical, say so plainly.
 - Only rely on CI for things that can't be tested locally (e.g., different OS, services not available locally).
 
 ## Language Guidance
