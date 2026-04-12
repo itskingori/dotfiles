@@ -18,17 +18,18 @@ Treat this as a licensed local reference set. Keep exploration scoped to this pa
 ## Workflow
 
 1. Identify the UI intent and constraints from the request.
-2. Use `manifest/blocks.json` to identify at least 3 concrete candidate references.
-3. Inspect the referenced block files in `ui-blocks/`.
-4. Provide a short reference synthesis before planning or implementation:
+2. Inspect local manifests and any relevant taxonomy or docs in the reference root first.
+3. Use `manifest/blocks.json` to identify and prioritise at least 3 concrete `ui-blocks/` candidates that match the requested structure and interaction pattern.
+4. Inspect the referenced block files in `ui-blocks/`.
+5. Provide a short reference synthesis before planning or implementation:
    - references reviewed
    - why each was relevant
    - patterns to keep
    - patterns to reject
    - proposed direction for the target project
-5. Adapt selected patterns to the target codebase and established visual language.
-6. Call out setup-sensitive dependencies and implementation caveats.
-7. Load or pair with `frontend-design` when the task needs broader visual direction, hierarchy, or composition guidance.
+6. Adapt selected patterns to the target codebase and established visual language.
+7. Call out setup-sensitive dependencies and implementation caveats.
+8. Load or pair with `frontend-design` when the task needs broader visual direction, hierarchy, or composition guidance.
 
 ## Minimum Evidence Rule
 
