@@ -174,6 +174,7 @@ Prefer:
 - concrete language
 - natural sentence variation
 - precise nouns and verbs
+- no Oxford comma unless it avoids ambiguity
 
 Avoid:
 - abstract noun stacks
