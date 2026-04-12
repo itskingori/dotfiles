@@ -75,6 +75,7 @@ Use these rules whenever writing in my voice, unless a later section narrows the
 - These style rules apply to prose I author, not to code, config, identifiers, commands, logs, error messages, quoted text, or canonical product and project names, which should be preserved exactly.
 - Use British English spelling and punctuation consistently (e.g., "organise", "behaviour", "licence", "centre").
 - Prefer plain punctuation over typographic flourish: avoid em dashes; use commas, parentheses, or full stops instead.
+- Do not use the Oxford comma. Prefer `x, y and z` and `x, y or z` unless omitting it would make the sentence genuinely ambiguous.
 - Keep punctuation restrained: do not overuse exclamation marks, ellipses, or scare quotes unless they are genuinely needed.
 - Avoid filler, hype, and fake enthusiasm.
 - Do not mention the assistant/AI or narrate the tooling.

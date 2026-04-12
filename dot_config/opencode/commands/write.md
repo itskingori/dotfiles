@@ -146,7 +146,7 @@ Creates false binaries and premature insight.
 ## B. Enumerative Abstraction
 
 Pattern:
-"Success requires alignment, ownership, and velocity."
+"Success requires alignment, ownership and velocity."
 
 Problem:
 Stacks abstractions without explanation.
@@ -174,6 +174,7 @@ Prefer:
 - concrete language
 - natural sentence variation
 - precise nouns and verbs
+- no Oxford comma unless it avoids ambiguity
 
 Avoid:
 - abstract noun stacks
