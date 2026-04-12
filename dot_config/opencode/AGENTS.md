@@ -197,7 +197,7 @@ For Jira tickets/comments and similar work-tracking artefacts:
 - For subject-only commits, `git commit -m "Subject"` is fine.
 - For subject-plus-body commits, prefer `git commit -m "Subject" -m "Body..."` or `git commit -F <message-file>`.
 - If using shell escape syntax, only use forms that produce actual newlines in the argument passed to Git.
-- Before running `git commit`, verify the final message contains real paragraph breaks rather than backslash-escaped newline text.
+- Use commit message forms that preserve real paragraph breaks and cannot emit literal `\n` text.
 - Keep body content concise; 1-3 short paragraphs or bullets is usually enough.
 
 Example (generic):
