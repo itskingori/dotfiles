@@ -183,25 +183,28 @@ For Jira tickets/comments and similar work-tracking artefacts:
   - When changing behaviour, include the corresponding test additions/updates in the same commit (keep each commit green and self-contained).
   - Exception: if the change is genuinely trivial and confined (single small diff), a single commit is fine.
 
-### Git Commit Messages (Context Over Mechanics)
+### Git Commits (Context Over Mechanics)
 
-- Keep commit messages free-form; optimize for clarity over strict formats.
-- Use imperative, present-tense subjects (e.g., `Add`, `Fix`, `Update`, `Clarify`).
-- Keep the subject concise (aim for ~50 chars when practical) and do not end it with a period.
-- Default to a subject plus body for any non-trivial commit; use a subject-only message only for tiny, obvious, mechanical changes.
-- Leave a blank line after the subject and wrap every body line at ~72 chars.
-- In the body, describe the final reviewed state and prefer why/constraints/risk/validation over a file-by-file changelog.
-- Commit messages must describe only the committed state. Include only durable context that remains true when the commit is read in isolation. If a sentence depends on session, branch or working-tree context, cut it.
-- When creating commits non-interactively, use an input method that preserves real newlines.
-- Never include literal escape sequences such as `\n` or `\t` in the final commit message text.
-- Never construct a multi-line commit message as a single normal quoted shell string containing escaped newline sequences.
-- When passing commit messages via shell arguments, avoid shell-sensitive syntax in the message text, especially backticks and command substitution.
-- For subject-only commits, `git commit -m "Subject"` is fine.
-- For subject-plus-body commits, prefer `git commit -m "Subject" -m "Body..."` or `git commit -F <message-file>`.
-- Prefer `git commit -F <message-file>` when the body contains inline code, quotes or multiple paragraphs.
-- If using shell escape syntax, only use forms that produce actual newlines in the argument passed to Git.
-- Use commit message forms that preserve real paragraph breaks and cannot emit literal `\n` text.
-- Keep body content concise; 1-3 short paragraphs or bullets is usually enough.
+- Subject line:
+  - Use imperative, present-tense subjects (e.g., `Add`, `Fix`, `Update`, `Clarify`).
+  - Keep the subject concise (aim for ~50 chars when practical) and do not end it with a period.
+  - For subject-only commits, `git commit -m "Subject"` is fine.
+- Message content and structure:
+  - Keep commit messages free-form; optimize for clarity over strict formats.
+  - Default to a subject plus body for any non-trivial commit; use a subject-only message only for tiny, obvious, mechanical changes.
+  - Leave a blank line after the subject and wrap every body line at ~72 chars.
+  - In the body, describe the final reviewed state and prefer why/constraints/risk/validation over a file-by-file changelog.
+  - Commit messages must describe only the committed state. Include only durable context that remains true when the commit is read in isolation. If a sentence depends on session, branch or working-tree context, cut it.
+  - Keep body content concise; 1-3 short paragraphs or bullets is usually enough.
+- Non-interactive message authoring:
+  - When creating commits non-interactively, use an input method that preserves real newlines.
+  - Never include literal escape sequences such as `\n` or `\t` in the final commit message text.
+  - Never construct a multi-line commit message as a single normal quoted shell string containing escaped newline sequences.
+  - When passing commit messages via shell arguments, avoid shell-sensitive syntax in the message text, especially backticks and command substitution.
+  - For subject-plus-body commits, prefer `git commit -m "Subject" -m "Body..."` or `git commit -F <message-file>`.
+  - Prefer `git commit -F <message-file>` when the body contains inline code, quotes or multiple paragraphs.
+  - If using shell escape syntax, only use forms that produce actual newlines in the argument passed to Git.
+  - Use commit message forms that preserve real paragraph breaks and cannot emit literal `\n` text.
 
 Example (generic):
 
