@@ -191,6 +191,7 @@ For Jira tickets/comments and similar work-tracking artefacts:
 - Default to a subject plus body for any non-trivial commit; use a subject-only message only for tiny, obvious, mechanical changes.
 - Leave a blank line after the subject and wrap every body line at ~72 chars.
 - In the body, describe the final reviewed state and prefer why/constraints/risk/validation over a file-by-file changelog.
+- Commit messages must describe only the committed state. Include only durable context that remains true when the commit is read in isolation. If a sentence depends on session, branch or working-tree context, cut it.
 - When creating commits non-interactively, use an input method that preserves real newlines.
 - Never include literal escape sequences such as `\n` or `\t` in the final commit message text.
 - Never construct a multi-line commit message as a single normal quoted shell string containing escaped newline sequences.
