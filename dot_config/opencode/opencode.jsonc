@@ -7,17 +7,10 @@
       "model": "github-copilot/gpt-5.3-codex",
     },
   },
-  "permission": {
-    "external_directory": {
-      "~/Repositories/itskingori/uix/reference/tailwind-plus/**": "allow",
-    },
-    "edit": {
-      "~/Repositories/itskingori/uix/reference/tailwind-plus/**": "deny",
-    },
-  },
   "autoupdate": false,
   "default_agent": "plan",
   "enabled_providers": ["github-copilot", "openai"],
+  "share": "disabled",
   "model": "github-copilot/gpt-5.4",
   "small_model": "github-copilot/claude-haiku-4.5",
   "$schema": "https://opencode.ai/config.json",
