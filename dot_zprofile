@@ -7,6 +7,9 @@ export PATH="/opt/homebrew/opt/curl/bin:$PATH"
 # editor
 export EDITOR='vim'
 
+# claude-code
+export CLAUDE_CODE_NO_FLICKER="1"
+
 # homebrew
 export HOMEBREW_BUNDLE_FILE=~/.config/homebrew/Brewfile
 
