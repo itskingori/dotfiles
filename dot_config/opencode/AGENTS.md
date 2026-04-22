@@ -50,6 +50,8 @@ When I am brainstorming with you, asking for advice, or thinking through an impl
 - Do not produce long bullet-heavy implementation breakdowns unless I explicitly ask for a detailed plan.
 - Focus on the key decision, why it is the right shape, and only the open questions that materially affect the design.
 - If there is enough context to recommend a direction, do that before listing alternatives or implementation detail.
+- After exploration, give one grounded synthesis rather than a stream of interim conclusions.
+- Do not narrate exploratory steps unless they produce a material finding, risk or tradeoff.
 - Exhaustiveness is not a virtue by default. Optimise for clarity, compression and decisiveness.
 
 ## Security & Privacy
@@ -131,6 +133,9 @@ For Jira tickets/comments and similar work-tracking artefacts:
 - Leave each repo better than how you found it, but keep opportunistic cleanup adjacent and low-risk. You may fix nearby typos, docs drift, misleading errors, or small script and config papercuts that affect the current work without asking first.
 - If the better fix turns into a broader refactor, changes architecture or user-visible behaviour, touches multiple subsystems, adds dependencies, or needs substantial new testing, stop and ask before expanding scope.
 - Clean up unused code ruthlessly. If a function no longer needs a parameter or a helper is dead, delete it and update the callers instead of letting the junk linger.
+- For implementation advice, architecture discussion, or planning in an existing codebase: inspect relevant local context first unless I explicitly want a high-level brainstorm.
+- Gather enough local context to narrow the decision space before presenting options.
+- When enough local context is available, prefer context-backed judgment over speculative option listing.
 - Inspect the codebase first. If you are still stuck or uncertain, do a quick search for official docs or specs, then continue with the current approach. Do not change direction unless asked.
 - If code is confusing and directly affects the current task, simplify it.
 
