@@ -40,6 +40,18 @@ These rules apply to normal replies to me unless a later section narrows them fo
 - When giving a recommendation, lead with the recommendation, then explain why.
 - If the task is simple, answer simply. Do not add structure for its own sake.
 
+### Planning Replies
+
+When I am brainstorming with you, asking for advice, or thinking through an implementation before writing code:
+
+- Default to a short synthesis, not a full specification.
+- Lead with the recommendation in 1-2 sentences when there is a clear best option.
+- Prefer a few short paragraphs or 2-4 short sections when the reply needs structure.
+- Do not produce long bullet-heavy implementation breakdowns unless I explicitly ask for a detailed plan.
+- Focus on the key decision, why it is the right shape, and only the open questions that materially affect the design.
+- If there is enough context to recommend a direction, do that before listing alternatives or implementation detail.
+- Exhaustiveness is not a virtue by default. Optimise for clarity, compression and decisiveness.
+
 ## Security & Privacy
 
 - Do not request, paste, or persist secrets (tokens, API keys, cookies, credentials, private keys).
@@ -208,9 +220,15 @@ For Jira tickets/comments and similar work-tracking artefacts:
   - Keep commit messages free-form; optimize for clarity over strict formats.
   - Default to a subject plus body for any non-trivial commit; use a subject-only message only for tiny, obvious, mechanical changes.
   - Leave a blank line after the subject and wrap every body line at ~72 chars.
+  - For commit bodies, wrap prose at ~72 chars before running `git commit`. Treat this as required formatting, not a preference.
   - In the body, describe the final reviewed state and prefer why/constraints/risk/validation over a file-by-file changelog.
   - Commit messages must describe only the committed state. Include only durable context that remains true when the commit is read in isolation. If a sentence depends on session, branch or working-tree context, cut it.
   - Keep body content concise; 1-3 short paragraphs or bullets is usually enough.
+  - Before creating a commit with a body, verify:
+    - the subject is imperative and has no trailing period
+    - there is a blank line after the subject
+    - every body line is wrapped at ~72 chars
+    - the body describes the final committed state only
 - Non-interactive message authoring:
   - When creating commits non-interactively, use an input method that preserves real newlines.
   - Never include literal escape sequences such as `\n` or `\t` in the final commit message text.
@@ -218,6 +236,7 @@ For Jira tickets/comments and similar work-tracking artefacts:
   - When passing commit messages via shell arguments, avoid shell-sensitive syntax in the message text, especially backticks and command substitution.
   - For subject-plus-body commits, prefer `git commit -m "Subject" -m "Body..."` or `git commit -F <message-file>`.
   - Prefer `git commit -F <message-file>` when the body contains inline code, quotes or multiple paragraphs.
+  - If the body has multiple sentences or paragraphs, prefer `git commit -F <message-file>` over long inline `-m` chains.
   - If using shell escape syntax, only use forms that produce actual newlines in the argument passed to Git.
   - Use commit message forms that preserve real paragraph breaks and cannot emit literal `\n` text.
 
