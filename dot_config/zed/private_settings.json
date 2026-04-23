@@ -6,6 +6,9 @@
       "enable_next_edit_suggestions": true
     }
   },
+  "collaboration_panel": {
+    "button": false
+  },
   "file_scan_exclusions": [".git/"],
   "agent": {
     "default_profile": "ask",
