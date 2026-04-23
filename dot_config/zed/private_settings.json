@@ -6,8 +6,22 @@
       "enable_next_edit_suggestions": true
     }
   },
+  "collaboration_panel": {
+    "button": false
+  },
+  "git_panel": {
+    "dock": "left"
+  },
+  "outline_panel": {
+    "dock": "left"
+  },
+  "project_panel": {
+    "dock": "left"
+  },
   "file_scan_exclusions": [".git/"],
   "agent": {
+    "sidebar_side": "right",
+    "dock": "right",
     "default_profile": "ask",
     "default_model": {
       "provider": "copilot_chat",
