@@ -234,12 +234,12 @@ For Jira tickets/comments and similar work-tracking artefacts:
     - every body line is wrapped at ~72 chars
     - the body describes the final committed state only
 - Non-interactive message authoring:
+  - Git does not interpret `\n` or `\t` in `-m` arguments.
   - When creating commits non-interactively, use an input method that preserves real newlines.
-  - Never include literal escape sequences such as `\n` or `\t` in the final commit message text.
-  - Never construct a multi-line commit message as a single normal quoted shell string containing escaped newline sequences.
+  - For subject-plus-body commits that need real line or paragraph breaks, prefer `git commit -F <message-file>`.
+  - Use `git commit -m "Subject" -m "Body..."` only when the body is short, simple and a single paragraph.
+  - If using multiple `-m` flags, each `-m` creates a separate paragraph.
   - When passing commit messages via shell arguments, avoid shell-sensitive syntax in the message text, especially backticks and command substitution.
-  - For subject-plus-body commits, prefer `git commit -F <message-file>`. Use `git commit -m "Subject" -m "Body..."` only when the body is short and simple.
-  - If using shell escape syntax, only use forms that produce actual newlines in the argument passed to Git.
   - Use commit message forms that preserve real paragraph breaks and cannot emit literal `\n` text.
 
 Example (generic):
