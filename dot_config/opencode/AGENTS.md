@@ -156,6 +156,18 @@ For Jira tickets/comments and similar work-tracking artefacts:
 
 ### Elixir
 
+#### Documentation and comments
+
+- Add `@moduledoc` for modules that expose domain concepts, contexts, schemas or public APIs. Keep it focused on the module's purpose and durable domain rules, not an implementation tour.
+- Add `@doc` for public functions when they define caller-facing behaviour beyond the obvious function name, including ordering, filtering, preloads, normalisation, replacement versus append semantics, raised errors, error changesets, side effects or transaction boundaries.
+- Prefer documenting context functions that are called by controllers, LiveViews, jobs or other contexts. These functions form the application API and should make surprising contracts explicit.
+- Keep simple CRUD docs short when they are useful for consistency. Do not pad them with restatements of the code.
+- Use `@doc false` or omit docs for public implementation details only when they are intentionally not part of the supported API. If a public function is meant to be called externally, document its contract instead.
+- Put model-wide invariants in `@moduledoc`, for example naming rules, lifecycle state, ownership constraints, persistence assumptions or data consistency rules.
+- Use inline comments sparingly for local behaviour that is genuinely non-obvious from the code, especially when there is a hidden business rule, surprising framework behaviour, edge-case handling, non-obvious data modelling choice or historical constraint.
+- Do not comment standard Ecto validations, indexes, constraints, pipelines or migrations unless the business reason is not obvious from the code.
+- Prefer one useful sentence over a noisy paragraph. Good Elixir docs should clarify behaviour, not narrate syntax.
+
 #### Test organisation
 
 - Prefer test files and directories that mirror the source structure when that improves clarity and reviewability.
