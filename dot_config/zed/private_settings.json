@@ -1,4 +1,12 @@
 {
+  "agent_servers": {
+    "codex-acp": {
+      "type": "registry"
+    },
+    "claude-acp": {
+      "type": "registry"
+    }
+  },
   "edit_predictions": {
     "provider": "copilot",
     "mode": "eager",
@@ -28,6 +36,7 @@
       "model": "gpt-5.4",
       "enable_thinking": false
     },
+    "enable_feedback": false,
     "favorite_models": [
       {
         "provider": "copilot_chat",
