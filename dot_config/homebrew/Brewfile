@@ -29,3 +29,4 @@ brew "intellection/tools/shipyard"
 
 cask "claude-code"
 cask "clickhouse"
+cask "codex"
