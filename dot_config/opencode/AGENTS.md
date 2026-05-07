@@ -131,6 +131,7 @@ For Jira tickets/comments and similar work-tracking artefacts:
 - Fix problems from first principles. Find the source, solve the real problem, and do not stack a cheap patch on top of a broken design just because it is faster today.
 - For non-trivial, unfamiliar, architectural, or risky work: think through the design, review relevant official docs or other strong references, inspect the existing codebase, then choose the best fit before implementing.
 - Write idiomatic, simple, maintainable code with readable APIs. Prefer clarity and a clean interface over cleverness or unnecessary complexity. Ask whether this is the simplest intuitive solution to the problem.
+- Keep exploratory implementations contained. If you need to prototype, keep the editable surface small and within agreed files or boundaries, then remove temporary scaffolding before treating the work as finished.
 - Leave each repo better than how you found it, but keep opportunistic cleanup adjacent and low-risk. You may fix nearby typos, docs drift, misleading errors, or small script and config papercuts that affect the current work without asking first.
 - If the better fix turns into a broader refactor, changes architecture or user-visible behaviour, touches multiple subsystems, adds dependencies, or needs substantial new testing, stop and ask before expanding scope.
 - Clean up unused code ruthlessly. If a function no longer needs a parameter or a helper is dead, delete it and update the callers instead of letting the junk linger.
@@ -152,10 +153,25 @@ For Jira tickets/comments and similar work-tracking artefacts:
 - Use local commands (e.g., test runners, linters, formatters) for fast feedback loops.
 - If the relevant local validation is unavailable or impractical, say so plainly.
 - Only rely on CI for things that can't be tested locally (e.g., different OS, services not available locally).
+- For Elixir projects, prefer the project's broad validation command when it exists, especially `mix precommit`.
+- If full Elixir validation is blocked or too expensive, run the narrowest useful checks for touched code: relevant tests, `mix format --check-formatted`, `mix compile --warnings-as-errors`, Credo in the project's strict mode and Dialyzer when available, practical and relevant.
+- If validation fails because of unrelated files, concurrent edits or warnings you did not introduce, do not revert or fix that work. Re-check if concurrent changes are likely, then report the failure clearly with the affected files and the narrower checks that did pass.
 
 ## Language Guidance
 
 ### Elixir
+
+#### Style and structure
+
+- After proving behaviour with tests or local verification, do a simplification pass before finishing. Remove exploratory scaffolding, collapse unnecessary helpers, tighten names and prefer the smallest readable shape that still explains the domain.
+- Use pattern matching assertively for required shapes and expected return values, but do not pattern-match everything just because the language makes it easy. Prefer a simple function body when extracting values in the function head makes clauses harder to scan.
+- Keep multi-clause functions for related cases with one clear responsibility. If clauses describe unrelated behaviours, split them into named functions or modules instead of hiding a broad API behind pattern matching.
+- Prefer explicit `case` branches for known return shapes, for example `{:ok, value}` and `{:error, reason}`. Avoid catch-all `_` branches when they would hide new or invalid return values.
+- Use `map.key` or pattern matching for required atom keys, and `map[:key]` for optional or dynamic keys. Make missing required data fail close to the source instead of letting `nil` drift through the system.
+- Avoid clever `with` pipelines that push unrelated errors into a large `else`. Normalise errors near the operation that produces them so the success path stays readable.
+- Avoid dynamic atom creation from external or unbounded input. Prefer explicit string-to-atom mapping, or `String.to_existing_atom/1` only when the valid atoms are guaranteed to exist.
+- Do not introduce processes, GenServers, Agents, macros, `use` hooks or application configuration as an organisation mechanism. Use them only when the runtime, metaprogramming or configuration boundary is actually needed.
+- When sending work to another process, pass only the data it needs. Bind required fields before `spawn`, `Task`, `GenServer.call` or `GenServer.cast` so large structs are not captured or copied accidentally.
 
 #### Documentation and comments
 
