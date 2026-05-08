@@ -131,7 +131,6 @@ For Jira tickets/comments and similar work-tracking artefacts:
 - Fix problems from first principles. Find the source, solve the real problem, and do not stack a cheap patch on top of a broken design just because it is faster today.
 - For non-trivial, unfamiliar, architectural, or risky work: think through the design, review relevant official docs or other strong references, inspect the existing codebase, then choose the best fit before implementing.
 - Write idiomatic, simple, maintainable code with readable APIs. Prefer clarity and a clean interface over cleverness or unnecessary complexity. Ask whether this is the simplest intuitive solution to the problem.
-- Keep exploratory implementations contained. If you need to prototype, keep the editable surface small and within agreed files or boundaries, then remove temporary scaffolding before treating the work as finished.
 - Leave each repo better than how you found it, but keep opportunistic cleanup adjacent and low-risk. You may fix nearby typos, docs drift, misleading errors, or small script and config papercuts that affect the current work without asking first.
 - If the better fix turns into a broader refactor, changes architecture or user-visible behaviour, touches multiple subsystems, adds dependencies, or needs substantial new testing, stop and ask before expanding scope.
 - Clean up unused code ruthlessly. If a function no longer needs a parameter or a helper is dead, delete it and update the callers instead of letting the junk linger.
@@ -163,7 +162,7 @@ For Jira tickets/comments and similar work-tracking artefacts:
 
 #### Style and structure
 
-- After proving behaviour with tests or local verification, do a simplification pass before finishing. Remove exploratory scaffolding, collapse unnecessary helpers, tighten names and prefer the smallest readable shape that still explains the domain.
+- After proving behaviour with tests or local verification, do a simplification pass before finishing. Keep exploratory work contained, remove temporary scaffolding, collapse unnecessary helpers, tighten names and prefer the smallest readable shape that still explains the domain.
 - Use pattern matching assertively for required shapes and expected return values, but do not pattern-match everything just because the language makes it easy. Prefer a simple function body when extracting values in the function head makes clauses harder to scan.
 - Keep multi-clause functions for related cases with one clear responsibility. If clauses describe unrelated behaviours, split them into named functions or modules instead of hiding a broad API behind pattern matching.
 - Prefer explicit `case` branches for known return shapes, for example `{:ok, value}` and `{:error, reason}`. Avoid catch-all `_` branches when they would hide new or invalid return values.
