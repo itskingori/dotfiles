@@ -2,7 +2,6 @@
 name: tailwind-plus
 description: Tailwind Plus UI blocks workflow. Uses a local licensed Tailwind Plus reference set to guide layout and implementation.
 license: Proprietary
-compatibility: opencode
 ---
 
 ## When To Use This Skill

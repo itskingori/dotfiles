@@ -15,7 +15,7 @@ Use this skill for Jira Cloud work via Atlassian CLI (`acli`), including:
 ## Core Rules
 
 - Use the `acli` CLI for Jira operations.
-- Follow "Authorship Voice (Writing As Me)" and "Platform-Specific Defaults" in `AGENTS.md`.
+- Follow "Authorship Voice (Writing As Me)" and "Platform-Specific Defaults" in the global instructions.
 - No default project is configured in this repo, so determine or request the project key per task.
 - Keep change sets focused: one logical change per work item update when practical.
 
