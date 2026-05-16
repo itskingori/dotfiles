@@ -10,7 +10,7 @@ Use this skill for GitHub work where writing quality matters: PRs, issues, comme
 ## Core Rules
 
 - Use the `gh` CLI for all GitHub operations.
-- Follow "Authorship Voice (Writing As Me)" and "Platform-Specific Defaults" in `AGENTS.md`.
+- Follow "Authorship Voice (Writing As Me)" and "Platform-Specific Defaults" in the global instructions.
 - Keep change sets focused: one logical change per PR when practical.
 
 ## PR Workflow Conventions
@@ -31,7 +31,7 @@ Use this skill for GitHub work where writing quality matters: PRs, issues, comme
 
 ## PR Descriptions
 
-Voice: follow the "Authorship Voice (Writing As Me)" and "Platform-Specific Defaults" sections in AGENTS.md.
+Voice: follow the "Authorship Voice (Writing As Me)" and "Platform-Specific Defaults" sections in the global instructions.
 
 - Only required: start with a short, unheaded TL;DR paragraph (1-3 sentences). Do not start PR descriptions with a heading like `## Summary`.
 - Use a hybrid voice: keep the opener content-focused and present-tense; use first-person for testing/validation lines.
