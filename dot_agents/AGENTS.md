@@ -247,11 +247,13 @@ For Jira tickets/comments and similar work-tracking artefacts:
     - every body line is wrapped at ~72 chars
     - the body describes the final committed state only
 - Non-interactive message authoring:
+  - Treat commit creation as a reviewed writing step, not a mechanical finalisation step.
   - Git does not interpret `\n` or `\t` in `-m` arguments.
   - When creating commits non-interactively, use an input method that preserves real newlines.
-  - Each `-m` flag creates a separate paragraph. Never use one `-m` flag per wrapped body line.
-  - Use multiple `-m` flags only for intentional paragraphs, for example `git commit -m "Subject" -m "One short body paragraph."`.
-  - For any commit message with a manually wrapped body, multiple body paragraphs, bullets, blank lines or non-trivial prose, write the exact final message to a temporary file and use `git commit -F <message-file>` (or `git commit --amend -F <message-file>`).
+  - Use `git commit -m "Subject"` only for subject-only commits.
+  - Do not use multiple `-m` flags for commits with bodies.
+  - If a commit has any body text, write the exact final message to a temporary file and use `git commit -F <message-file>` (or `git commit --amend -F <message-file>`).
+  - Before running `git commit -F`, verify every body line is wrapped at ~72 characters.
   - Do not try to recreate commit-message formatting through shell arguments.
   - When passing commit messages via shell arguments, avoid shell-sensitive syntax in the message text, especially backticks and command substitution.
   - Use commit message forms that preserve real paragraph breaks and cannot emit literal `\n` text.
