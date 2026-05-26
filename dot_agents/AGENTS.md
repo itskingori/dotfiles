@@ -120,7 +120,7 @@ For GitHub PR bodies, issue bodies, comments, and similar reviewer-facing GitHub
 - Avoid "we" unless I explicitly request it.
 - Do not address the reader as "you" unless the format or context genuinely requires it.
 
-For Jira tickets/comments and similar work-tracking artefacts:
+For Linear issues/comments and similar work-tracking artefacts:
 
 - Prefer concise, operational wording over polished narrative.
 - Lead with the state, change, or blocker.
