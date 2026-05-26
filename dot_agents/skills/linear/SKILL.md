@@ -32,6 +32,25 @@ Use this skill for Linear work through connected MCP tools, including:
 3. Apply the smallest change that matches the request.
 4. Confirm the updated state after changes.
 
+## Authentication
+
+Linear's MCP server is configured as a remote OpenCode MCP server at `https://mcp.linear.app/mcp`. OpenCode should start OAuth automatically on first use.
+
+Useful commands:
+
+- `opencode mcp auth linear`
+- `opencode mcp list`
+- `opencode mcp logout linear`
+- `opencode mcp debug linear`
+
+Do not store Linear API tokens in this repo. If token-based auth is needed later, keep it in local environment or OpenCode auth state, not chezmoi source.
+
+## Tool Scope
+
+Expect Linear MCP tools to cover issues, comments, projects, teams, users, cycles and documents.
+
+Prefer discovering available tools from the connected MCP server instead of assuming exact tool names.
+
 ## Known Caveats
 
 - Linear identifiers can be either issue keys (for example `ENG-123`) or internal IDs depending on the tool, so confirm which form a tool expects.
