@@ -36,6 +36,12 @@ If something feels secret-ish, do not add it. Prefer referencing an external sec
   - `chezmoi apply -v`
   - `chezmoi diff` should be empty
 
+### Applying Managed Changes
+
+- Preview the intended changes and apply the smallest target scope that covers them. Apply a parent directory only when the change requires it and its preview contains no unrelated changes.
+- If `chezmoi apply` prompts because of local destination drift, stop and show the drift. Do not force an overwrite or retry with narrower paths merely to bypass the prompt; overwrite unrelated drift only when explicitly requested.
+- Removing a source file does not guarantee removal of its destination. For intended deletions, use an explicit removal mechanism such as `remove_` or `.chezmoiremove`, preview it and verify the destination is absent afterwards. Do not add `exact_` solely to remove one stale file: it removes unmanaged entries more broadly. An empty `chezmoi diff` alone does not prove cleanup.
+
 ### Rename & Extension Changes
 
 - When a managed target is renamed (including extension changes like `.json` -> `.jsonc`), do not assume chezmoi removes the old destination file.
