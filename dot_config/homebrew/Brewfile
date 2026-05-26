@@ -1,5 +1,4 @@
 tap "anomalyco/tap"
-tap "atlassian/acli"
 tap "intellection/tools", "git@github.com:Intellection/homebrew-tools.git"
 
 brew "chezmoi"
@@ -23,7 +22,6 @@ brew "wget"
 brew "yq"
 
 brew "anomalyco/tap/opencode"
-brew "atlassian/acli/acli"
 brew "intellection/tools/portctl"
 brew "intellection/tools/shipyard"
 
