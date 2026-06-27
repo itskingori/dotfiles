@@ -27,7 +27,9 @@ Use this skill for GitHub work where writing quality matters: PRs, issues, comme
 ## PR Titles
 
 - For PRs that are explicitly part of a multi-phase series, prefix PR titles with `Phase N: <description>`
-- If the target org/team requires it, include the ticket reference: `[TICKET] Phase N: <description>`
+- If a relevant ticket key is known and conventionally belongs in the title, prefix the PR title with it: `[ABC-123] <description>`.
+- For explicit multi-phase series with a ticket key, use `[ABC-123] Phase N: <description>`.
+- Do not add a ticket link to the PR body just because a ticket exists; the title prefix is the default reference when that convention applies.
 
 ## PR Descriptions
 
@@ -38,6 +40,8 @@ Voice: follow the "Authorship Voice (Writing As Me)" and "Platform-Specific Defa
 - Avoid `##` headings (as they are too visually prominent on GitHub). Use `###` as the highest heading level, then `####` / `#####` as needed.
 - Keep the PR description comprehensive and update it as new commits land (why/what/testing/manual steps/follow-ups).
 - Describe the diff from base branch to current branch state. Avoid narrating exploratory implementation paths, removed intermediate problems, or transition details that are no longer present in the branch.
+- When mentioning tickets, GitHub PRs, issues, specs, dashboards, or other references in prose, make the reference an inline Markdown link instead of plain text when the URL is known.
+- Prefer compact link text: `[ABC-123](...)` for tickets, `[#123](...)` when the GitHub repository is obvious, and `[owner/repo#123](...)` for cross-repo PRs or issues.
 - All other sections are optional; choose headings based on the content/context of the change and omit empty sections.
 - Use numbered lists when the count of items matters (e.g., related PRs, migration steps).
 - Prefer clear, functional section headings when needed; use the following conventions:
@@ -51,9 +55,10 @@ Voice: follow the "Authorship Voice (Writing As Me)" and "Platform-Specific Defa
   - `### Reviewing`: optional, brief and reviewer-oriented. Use it to suggest the most efficient review path, not to restate the change summary. Prefer one or two bullets.
   - `### Rollout`: flags, phases, steps and monitoring notes.
   - `### Follow-ups`: deferred work with concrete next actions.
-  - `### Related`: GitHub issues/PRs/discussions only (renders as rich cards on GitHub; excludes releases and security advisories; dependencies/follow-ups/linked work).
-  - `### References`: all other links (external trackers/findings/docs/research, plus GitHub URLs that are not issues/PRs/discussions), even when directly motivating.
+  - `### Related`: GitHub issues/PRs/discussions only when they are related work, dependencies, follow-ups, or linked GitHub context.
+  - `### References`: supporting links such as external trackers, docs, specs, dashboards, incidents, research or findings.
 - The `### Related` and `### References` MUST be lists (bulleted or numbered). Even a single link must be written as a one-item list (`- https://...` or `1. https://...`). Never put a bare URL on its own line under those headings.
+- `### Related` and `### References` are optional supporting link lists, not mandatory metadata buckets. Do not add a link section just because a ticket, issue, or PR exists. If a reference is mentioned in prose, link it inline at the mention site.
 - Include `### Related` and `### References` only when relevant links exist.
 - If both sections are present, keep this order: `### Related` then `### References`.
 - For cross-repo references:
