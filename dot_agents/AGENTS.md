@@ -149,7 +149,10 @@ For Linear issues/comments and similar work-tracking artefacts:
 
 - Run the most relevant local validation for the change before pushing when feasible.
 - CI runs automatically on push to PRs; don't wait for CI to verify changes that can be tested locally.
-- Use local commands (e.g., test runners, linters, formatters) for fast feedback loops.
+- Use focused local commands (e.g., targeted tests, lint checks, or type checks) for fast feedback loops while editing.
+- Avoid running broad formatters, autofixers, code generators or full precommit hooks after every small edit unless they are required to make progress.
+- Run the project's canonical precommit or final validation command before committing or handing off substantial changes. Prefer that single command over separately running format, compile, lint and test commands when the project provides one.
+- If a formatter, autofixer or generator rewrites files during the session, re-read any touched files before making further targeted edits.
 - If the relevant local validation is unavailable or impractical, say so plainly.
 - Only rely on CI for things that can't be tested locally (e.g., different OS, services not available locally).
 
