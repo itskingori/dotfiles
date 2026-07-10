@@ -28,15 +28,16 @@
     "dock": "right",
     "default_profile": "ask",
     "default_model": {
+      "effort": "medium",
       "provider": "openai-subscribed",
-      "model": "gpt-5.5",
+      "model": "gpt-5.6-sol",
       "enable_thinking": true
     },
     "enable_feedback": false,
     "favorite_models": [
       {
         "provider": "openai-subscribed",
-        "model": "gpt-5.5",
+        "model": "gpt-5.6-sol",
         "enable_thinking": true,
         "effort": "medium"
       }
