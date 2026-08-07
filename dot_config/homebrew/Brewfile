@@ -18,6 +18,7 @@ brew "redis", restart_service: :changed
 brew "shellcheck"
 brew "tree"
 brew "watch"
+brew "webp"
 brew "wget"
 brew "yq"
 
