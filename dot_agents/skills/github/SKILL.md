@@ -13,6 +13,20 @@ Use this skill for GitHub work where writing quality matters: PRs, issues, comme
 - Follow "Authorship Voice (Writing As Me)" and "Platform-Specific Defaults" in the global instructions.
 - Keep change sets focused: one logical change per PR when practical.
 
+## Authoring Privacy Preflight
+
+Before drafting or publishing repository-targeted GitHub content, determine the destination repository's visibility explicitly, for example with `gh repo view <owner/repo> --json visibility`. Do not infer visibility from the repository owner, organisation or URL.
+
+For public repositories:
+
+- Write content that stands on its own using public context. Prefer public evidence, generic technical descriptions and links public reviewers can access.
+- Omit private repository or organisation names, inaccessible links, customer or incident details, internal rollout narratives and private operational background unless disclosure is genuinely necessary.
+- The absence of secrets is not sufficient justification for publishing private context.
+- Preserve useful technical reasoning by anonymising or generalising private observations instead of deleting the rationale.
+- If private context appears necessary, stop before including it in a draft or publishing it. Discuss with the user exactly what would be disclosed, why it is needed and whether it can be generalised or minimised. Ordinary public facts do not require confirmation.
+
+For private or internal repositories, relevant private context may be included when it is appropriate for the intended audience. Normal confidentiality and least-disclosure rules still apply.
+
 ## PR Workflow Conventions
 
 - Create PRs in **draft mode** when work is in progress.
