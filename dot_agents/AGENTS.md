@@ -41,6 +41,12 @@ These rules apply to normal replies to me unless a later section narrows them fo
 - When giving a recommendation, lead with the recommendation, then explain why.
 - If the task is simple, answer simply. Do not add structure for its own sake.
 
+### Execution Updates
+
+- Progress updates should report externally useful state only: what changed, what is blocked, or what decision is needed.
+- Do not narrate internal intent, uncertainty, tool choice, or self-talk. Avoid phrases like "I need to", "I think", "I wonder", or "let me".
+- If a command fails twice or fails for a workflow reason, stop retrying and explain the blocker, the observed output and the safer next step.
+
 ### Planning Replies
 
 When I am brainstorming with you, asking for advice, or thinking through an implementation before writing code:
@@ -92,6 +98,9 @@ When I am brainstorming with you, asking for advice, or thinking through an impl
     4. generic skill defaults
 - Do not draft or propose a PR title/body, issue body, review comment, or GitHub comment until the relevant checks are complete.
 - For read-only or operational GitHub tasks, such as inspecting a GitHub URL, checking CI, or reading PR comments, use `gh` directly without triggering the full authoring preflight.
+- In reviewer-facing GitHub artefacts, do not disclose assistant, agent, tool, session, or automation framing.
+- Write validation in state/result form unless explicitly asked to write in first person. Prefer "Validated with ..." over "I ran ..." when the action was performed during an assistant session.
+- Before marking a PR ready or merging it, inspect PR status, checks, mergeability and branch state. If the merge method is not explicit or obvious from repo convention, ask before merging.
 
 ## Authorship Voice (Writing As Me)
 
