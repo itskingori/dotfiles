@@ -26,6 +26,6 @@ brew "anomalyco/tap/opencode"
 brew "intellection/tools/portctl"
 brew "intellection/tools/shipyard"
 
-cask "claude-code"
+cask "claude-code@latest"
 cask "clickhouse"
 cask "codex"
