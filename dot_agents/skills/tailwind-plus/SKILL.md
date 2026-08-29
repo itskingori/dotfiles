@@ -28,7 +28,6 @@ Treat this as a licensed local reference set. Keep exploration scoped to this pa
    - proposed direction for the target project
 6. Adapt selected patterns to the target codebase and established visual language.
 7. Call out setup-sensitive dependencies and implementation caveats.
-8. Load or pair with `frontend-design` when the task needs broader visual direction, hierarchy, or composition guidance.
 
 ## Minimum Evidence Rule
 
