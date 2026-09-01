@@ -1,11 +1,11 @@
 ---
-name: write-clearly
-description: Draft, revise or audit explanatory and technical prose for clarity without changing its facts, certainty, voice or required format. Use for documentation, explanations, design notes, instructions and reviewer-facing prose; defer to platform and genre-specific guidance for structure and style.
+name: technical-writing
+description: Draft, revise or audit technical prose for clarity without changing its facts, certainty, voice or required format. Use for developer documentation, architecture and design explanations, operational instructions, technical blog posts and reviewer-facing engineering prose. Do not use for ordinary correspondence, creative writing or non-technical editorial content.
 ---
 
-# Write Clearly
+# Technical Writing
 
-Help the reader understand the point, why it matters and what to do with it. Improve the writing without replacing the author's judgement or voice.
+Help readers understand a technical system, change, decision, procedure or constraint. Improve the writing without replacing the author's judgement or voice.
 
 ## Respect The Writing Context
 
@@ -38,13 +38,13 @@ When the requested mode is clear, begin the work without asking the user to conf
 6. Remove repetition, filler and pre-announcements that do not help the reader understand or act.
 7. Check that headings, lists, examples and transitions reveal the structure rather than merely decorate it.
 
-Read [references/technical-writing.md](references/technical-writing.md) when the work includes developer documentation, procedures, reference material, architecture or design explanations, code examples or other technical content.
+Read [references/technical-writing.md](references/technical-writing.md) for formal developer documentation, procedures, reference material, architecture or design explanations and code examples. For technical essays and reviewer-facing engineering prose, load it only when the passage needs documentation-style guidance.
 
 ## Preserve Voice
 
 Clarity is not uniformity. Do not automatically remove first-person perspective, sentence variation, humour, metaphor, rhetorical contrast or a gradual reveal when those choices serve the piece and remain understandable.
 
-For personal or editorial writing, distinguish a comprehension problem from a stylistic preference. A specialised blog or publication guide controls voice and composition when one is available.
+For technical essays, distinguish a comprehension problem from a stylistic preference. A specialised blog or publication guide controls voice and composition when one is available.
 
 ## Review The Result
 
