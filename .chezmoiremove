@@ -1,3 +1,4 @@
 .agents/skills/frontend-design
 .agents/skills/jira
 .claude/skills/jira
+.config/opencode/commands/write.md
