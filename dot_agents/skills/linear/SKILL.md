@@ -34,16 +34,9 @@ Use this skill for Linear work through connected MCP tools, including:
 
 ## Authentication
 
-Linear's MCP server is configured as a remote OpenCode MCP server at `https://mcp.linear.app/mcp`. OpenCode should start OAuth automatically on first use.
+Use the current client's connected Linear MCP tools and authentication flow. If the connection is unavailable or unauthenticated, use that client's setup guidance.
 
-Useful commands:
-
-- `opencode mcp auth linear`
-- `opencode mcp list`
-- `opencode mcp logout linear`
-- `opencode mcp debug linear`
-
-Do not store Linear API tokens in this repo. If token-based auth is needed later, keep it in local environment or OpenCode auth state, not chezmoi source.
+Do not store Linear API tokens in this repo. If token-based auth is needed, keep it in the local environment or the client's credential store, not chezmoi source.
 
 ## Tool Scope
 

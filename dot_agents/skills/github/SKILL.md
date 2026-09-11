@@ -78,7 +78,7 @@ Voice: follow the "Authorship Voice (Writing As Me)" and "Platform-Specific Defa
 
 Examples (TL;DR opener styles):
 - `Codifies my PR-writing conventions and adds global authorship voice guidance for external posts.`
-- `Updates global opencode guidance to prefer unheaded TL;DR openers and ###-level section structure.`
+- `Updates shared agent guidance to prefer unheaded TL;DR openers and ###-level section structure.`
 - `Clarifies where to place GitHub-internal links vs external references in PR descriptions.`
 
 ## Issue And Comment Conventions
