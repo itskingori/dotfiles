@@ -74,6 +74,12 @@ Ask a concise, preferably structured question when competing interpretations wou
 - Preserve existing description structure, acceptance criteria and useful links when editing. Add durable discoveries without replacing the issue with a session transcript.
 - Post comments only when requested or already authorised by the user. When authorised, comment on material decisions, blockers or review handoffs; avoid narrating every edit or repeating a status-only change. Include the relevant deliverable link, validation result and remaining limitation when useful.
 
+### Issue Links And References
+
+- In paragraphs, use a Markdown link with the issue key as its label, such as `[ENG-123](<verified issue URL>)`. Do not wrap issue keys in inline code or use bare URLs in prose. Use the canonical URL returned by Linear or supplied in verified context; do not invent workspace slugs or URLs.
+- In Linear descriptions and comments that reference other issues, collect those issues under `### Related` as a deduplicated list of bare issue URLs, one per list item. Keep inline links where they explain the relationship. Use `### References` for other supporting links, also as a list, after Related. Omit empty sections and preserve equivalent existing sections rather than duplicating them.
+- Use linked issue keys in conversational updates too, without adding a reference section to every short reply. When writing for another platform, follow its section conventions; GitHub places Linear links under References.
+
 ## Working Pattern
 
 1. Identify the ticket from an explicit key or URL, an existing task link or an unambiguous branch/PR association. Search when necessary; do not choose between plausible matches by title similarity alone. Before creating an issue, check for an existing match when the context suggests one may already exist.
