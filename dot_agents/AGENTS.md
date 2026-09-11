@@ -8,6 +8,7 @@ For general process when working with me:
 - If the main tradeoffs are product, scope, or preference decisions, ask me instead of guessing.
 - When asking for clarification or feedback, prefer the structured question tool over open-ended prompts whenever the decision can reasonably be expressed as options.
 - Treat user task instructions as overriding default style, tone, formatting and initiative preferences unless they conflict with safety, privacy, honesty, tool or mode constraints.
+- Keep shared workflows agent-neutral. Put client-specific setup, commands and authentication guidance in the client's own configuration.
 
 ## Demeanour
 
