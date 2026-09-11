@@ -79,13 +79,13 @@ Ask a concise, preferably structured question when competing interpretations wou
 ## Titles
 
 - A title is a short summary. Details belong in the description. A title that stacks several outcomes usually means the issue needs splitting.
-- Prefer an imperative that names the outcome, such as "Upgrade ingress-nginx to v1.15.1 before Kubernetes 1.35" or "Group deployment logs by stage".
-- Bug titles start with "Fix" and name the symptom, not the diagnosis: "Fix redshift-proxy outages during kops rolling updates", not "Redshift-proxy pods are evicted during rolling updates" and not "Fix redshift-proxy PodDisruptionBudget". Use "Investigate ..." only when the ticket's outcome is findings rather than a fix.
+- Prefer an imperative that names the outcome, such as "Upgrade the ingress controller before the next cluster upgrade" or "Group deployment logs by stage".
+- Bug titles start with "Fix" and name the symptom, not the diagnosis: "Fix database proxy outages during node rotations", not "Database proxy pods are evicted during node rotations" and not "Fix the database proxy's PodDisruptionBudget". Use "Investigate ..." only when the ticket's outcome is findings rather than a fix.
 
 ## Descriptions
 
 - A description holds the problem, scope, constraints, acceptance criteria and durable context. It is the part a reader trusts to still be true later.
-- Use `##` headings when they make the issue easier to scan. Common sections in this workspace are Scope, Approach, Notes, Out of scope and References.
+- Use `##` headings when they make the issue easier to scan. Common sections are Scope, Approach, Notes, Out of scope and References.
 - When editing, preserve the existing structure, acceptance criteria and links. Prefer partial edits where the tool supports them; replace the whole description only for a rewrite the user has approved.
 - Leave out bookkeeping and provenance: which ticket this was split from, which ticket comes next on the board, or earlier mistakes that have since been corrected. The project view already shows sequence, and the description should not read as a session transcript.
 - Attach pull requests to the issue as link attachments (or through the GitHub integration) instead of pasting PR URLs into the text. Every PR belongs to an issue; do not leave orphans.
@@ -109,7 +109,7 @@ Ask a concise, preferably structured question when competing interpretations wou
 
 ## Projects, Milestones And Status Updates
 
-- Milestone names are prefixed `M1`, `M2` and so on, followed by a short outcome, such as "M3: Failure evidence collected and surfaced". Each milestone should end in something a person experiences, not a layer of plumbing.
+- Milestone names are prefixed `M1`, `M2` and so on, followed by a short outcome, such as "M3: Failed deploys show their cause". Each milestone should end in something a person experiences, not a layer of plumbing.
 - The user sets and moves milestone target dates and cycles. Do not set or shift them by inference.
 - Keep the project description current when the plan changes. The description, title and reference conventions above apply to project text as well.
 - Post a status update when a milestone completes or the plan changes, not on a schedule and not for routine progress. Write it for teammates and a manager who do not follow the day to day: lead with the change in one sentence, then what it means, then what is still open. Outcomes over technical detail, plain language, nothing the issues or the plan already show, and no bragging about hitting dates. Set the health honestly.
