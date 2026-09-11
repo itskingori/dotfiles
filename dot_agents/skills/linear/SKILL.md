@@ -101,8 +101,8 @@ Ask a concise, preferably structured question when competing interpretations wou
 
 - In paragraphs, use a Markdown link with the issue key as its label, such as `[ENG-123](<issue URL>)`. A bare key inline renders as a chip that breaks the reading flow, so do not use bare keys, inline code or bare URLs in prose. Use the URL returned by Linear; do not invent workspace slugs.
 - Reference sections sit at the end of a description or project text under `##` headings, in this order:
-  - `## Related issues`: a deduplicated list of bare issue keys, one per item.
-  - `## Related projects`: a list of linked project titles, with a short note on the relationship where it helps.
+  - `## Related Issues`: a deduplicated list of bare issue keys, one per item.
+  - `## Related Projects`: a list of linked project titles, with a short note on the relationship where it helps.
   - `## References`: a list of other supporting links, such as Slack threads, documents, dashboards or upstream issues.
 - Omit empty sections. Extend an equivalent existing section rather than adding a second one.
 - Use linked issue keys in conversational updates too, without adding a reference section to every short reply.
