@@ -52,6 +52,12 @@ When adding configuration for a new tool:
 - Add tool-specific guardrails and best practices to this file in the same PR when needed.
 - Call out manual verification steps in the PR description.
 
+## Ghost CLI
+
+- Manage `@tryghost/ghst` through mise with an explicit version.
+- Keep `~/.config/ghst/` out of chezmoi; it holds local site configuration and authentication material.
+- Keep MCP registration in each client's configuration and credentials outside this repository.
+
 ## Handy Commands
 
 ```sh
