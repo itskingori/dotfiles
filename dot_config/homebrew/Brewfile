@@ -22,7 +22,7 @@ brew "webp"
 brew "wget"
 brew "yq"
 
-brew "anomalyco/tap/opencode"
+brew "anomalyco/tap/opencode-v2"
 brew "intellection/tools/portctl"
 brew "intellection/tools/shipyard"
 

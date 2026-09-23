@@ -16,10 +16,5 @@ export HOMEBREW_BUNDLE_FILE=~/.config/homebrew/Brewfile
 # mysql
 export PATH="/opt/homebrew/opt/mysql@8.0/bin:$PATH"
 
-# opencode
-export OPENCODE_ENABLE_EXA="true"
-export OPENCODE_EXPERIMENTAL_LSP_TOOL="true"
-export OPENCODE_EXPERIMENTAL_MARKDOWN="true"
-
 # ssh
 export SSH_AUTH_SOCK=~/.1password/agent.sock
