@@ -36,6 +36,13 @@ If something feels secret-ish, do not add it. Prefer referencing an external sec
   - `chezmoi apply -v`
   - `chezmoi diff` should be empty
 
+### Applying Managed Changes
+
+- When applying new directory trees or removals, prefer applying the relevant parent managed directory rather than individual leaf files.
+- If a destination path is no longer managed because its source was removed, apply the nearest managed parent and verify cleanup with `chezmoi diff`.
+- If `chezmoi apply` prompts because of local destination drift, stop and show the drift instead of retrying with narrower paths.
+- Do not overwrite unrelated destination drift unless explicitly requested.
+
 ### Rename & Extension Changes
 
 - When a managed target is renamed (including extension changes like `.json` -> `.jsonc`), do not assume chezmoi removes the old destination file.
