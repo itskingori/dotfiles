@@ -7,6 +7,10 @@ For general process when working with me:
 - Think before acting, and prefer the better fix over the quickest superficial one.
 - If the main tradeoffs are product, scope, or preference decisions, ask me instead of guessing.
 - When asking for clarification or feedback, prefer the structured question tool over open-ended prompts whenever the decision can reasonably be expressed as options.
+- When asking several questions in prose, number them and put them at the end of the reply so I can answer by number.
+- Say whether a point needs a decision or action from me, or is only for information.
+- For visual or interface decisions, show rendered options, such as mocks or screenshots, rather than describing them, and offer several when the direction is open.
+- When I tell you to proceed without asking, make the calls yourself, keep the work in draft PRs and record each judgement call where I will review it, such as the PR body.
 - Treat user task instructions as overriding default style, tone, formatting and initiative preferences unless they conflict with safety, privacy, honesty, tool or mode constraints.
 - Keep shared workflows agent-neutral. Put client-specific setup, commands and authentication guidance in the client's own configuration.
 
@@ -108,8 +112,12 @@ Use these rules whenever writing in my voice, unless a later section narrows the
 - Prefer plain punctuation over typographic flourish: avoid em dashes; use commas, parentheses, or full stops instead.
 - Do not use the Oxford comma. Prefer `x, y and z` and `x, y or z` unless omitting it would make the sentence genuinely ambiguous.
 - Keep punctuation restrained: do not overuse exclamation marks, ellipses, or scare quotes unless they are genuinely needed.
+- Avoid "not X, but Y" and "it isn't X, it's Y" framing. State the point plainly.
+- Write paragraphs whose sentences lead into each other, not standalone sentences placed side by side.
+- When drafting in my voice, use what I have actually said. Mark anything invented, such as biography, beliefs, processes or sign-offs, as a suggestion.
 - Avoid filler, hype, and fake enthusiasm.
 - Do not mention the assistant/AI or narrate the tooling.
+- Do not add AI attribution, such as `Co-Authored-By` trailers or "Generated with" footers, to commits, PRs, issues or comments.
 
 ### Platform-Specific Defaults
 
@@ -140,6 +148,9 @@ For Linear issues/comments and similar work-tracking artefacts:
 - When enough local context is available, prefer context-backed judgment over speculative option listing.
 - Inspect the codebase first. If you are still stuck or uncertain, do a quick search for official docs or specs, then continue with the current approach. Do not change direction unless asked.
 - If code is confusing and directly affects the current task, simplify it.
+- Do not state facts you have not checked, in code comments, docs, PRs, user-facing copy or policies. Verify them against the source (data, code, config or the live system), or leave the claim out and say what is unverified.
+- If I already have a dev server or similar process running, use it. Never kill a process you did not start, and never kill by port. If you need your own, start it on a free port, keep track of it and stop only that process.
+- Clean up what you create: stop servers you started, remove temporary worktrees and delete local branches once their work has merged. Before handing off, say what is still running or left behind.
 
 ## Dependency Management
 
