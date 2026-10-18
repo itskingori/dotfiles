@@ -207,13 +207,18 @@ For Linear issues/comments and similar work-tracking artefacts:
 - Keep commits "one idea each" (see "Git Commit Slicing" below). Avoid mega-commits; commit incrementally.
 - When writing commit messages, PR bodies, or documentation for a change, describe the code as it exists in the reviewed state.
 - Do not reference discarded exploratory paths, removed intermediate implementations, or transition details unless they remain visible in the final history or are explicitly captured as follow-up context.
-- Before pushing, it is OK to reorganize commits to improve history clarity when safe.
-- If commits are already pushed, prefer a follow-up commit unless I explicitly request history rewrite.
-- Rebasing rules:
-  - OK to rebase before pushing.
-  - If already pushed, only use `git push --force-with-lease` when you own the branch and I explicitly request it.
-  - Do not rewrite shared/public history.
+- Do not describe ideas I have not agreed to as planned or deferred work in PRs, commits, issues or docs. Raise them as questions instead.
+- Do not link private scratch spaces, such as design canvases, chat artefacts or local scratch files, from committed files or GitHub content. Write settled decisions into the repo; committed content is the authority.
+- On my own unmerged PR branches, fold review fixes into the relevant commits and push with `--force-with-lease`.
+- If others contribute to or base work on the branch, use follow-up commits unless I explicitly authorise rewriting its history.
+- Never rewrite `main`, `master` or other protected branches.
+- Before the first push, reorganise local commits when safe.
+- Before switching branches, resetting, rebasing or stashing, run `git status` and stop if there are changes you did not make.
+- Never run a bare `git stash` to clear the tree; it sweeps up my uncommitted work. Stash named paths with a message, or use a worktree.
+- Never chain a destructive command after one that can fail with `;`. Run it as a separate step after checking the previous result.
+- Stage files by name. Use `git add -A` or `git add .` only when the status shows nothing but your own changes.
 - Keep backup/safety branches local by default unless I explicitly ask to publish them.
+- Do not push branches other than PR heads, such as evidence, backup or scratch branches, without first agreeing how and when they get deleted.
 - Prefix local backup branches with `backup/` so they are clearly distinct from active working branches.
 
 ### Non-Interactive Git Commands
@@ -293,10 +298,10 @@ Body (default for non-trivial changes):
 - Use short, lowercase, hyphenated names; avoid spaces and punctuation.
 - Name branches by area + outcome: `<area>-<short-slug>`.
 - Single feature: `<area>-<short-slug>`
-- Multi-phase work: `<area>-phase<N>-<short-slug>`
+- Do not put phase numbers in branch names; for multi-phase work, the PR title carries the phase.
 
 Examples (generic):
 - `api-timeout-retry`
 - `ui-settings-layout`
 - `deps-bump-eslint`
-- `dns-phase1-import-records`
+- `dns-import-records`
