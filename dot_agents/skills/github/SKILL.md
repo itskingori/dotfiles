@@ -43,6 +43,17 @@ For private or internal repositories, relevant private context may be included w
 - For PRs that are explicitly part of a multi-phase series, prefix PR titles with `Phase N: <description>`
 - If the target org/team requires it, include the ticket reference: `[TICKET] Phase N: <description>`
 
+## Links In Issue And PR Descriptions
+
+- Keep descriptions focused on the work. Describe related work by name instead of scattering issue/PR numbers, URLs or Markdown links through prose, acceptance criteria and progress notes.
+- Collect related GitHub issues, PRs and discussions in a single `### Related` section at the end of the description. Use a bulleted list of bare URLs, one per item, and deduplicate links.
+- Put external documentation and other supporting sources in a separate `### References` section after `### Related`. This includes GitHub URLs that are not issues, PRs or discussions, such as releases and security advisories. Use a bulleted list of bare URLs and deduplicate links here too.
+- Omit either section when it has no relevant links. Keep these link sections last, with `### Related` before `### References` when both exist.
+- Preserve explicit closing keywords such as `Closes #4` when intentional. Use native GitHub relationships where supported; prose references are not a substitute for those relationships.
+- Phase numbering does not require repeating the parent issue link throughout the description. Name the relevant phase or work in the prose and collect its link in `### Related`.
+- Apply these rules when creating or updating descriptions, including routine progress updates. Check the complete updated description so edits do not reintroduce inline references or duplicate links.
+- For cross-repo PR links, fetch the canonical URL with `gh pr view <number> --repo Org/repo --json url`.
+
 ## PR Descriptions
 
 Voice: follow the "Authorship Voice (Writing As Me)" and "Platform-Specific Defaults" sections in the global instructions.
@@ -53,7 +64,7 @@ Voice: follow the "Authorship Voice (Writing As Me)" and "Platform-Specific Defa
 - Keep the PR description comprehensive and update it as new commits land (why/what/testing/manual steps/follow-ups).
 - Describe the diff from base branch to current branch state. Avoid narrating exploratory implementation paths, removed intermediate problems, or transition details that are no longer present in the branch.
 - All other sections are optional; choose headings based on the content/context of the change and omit empty sections.
-- Use numbered lists when the count of items matters (e.g., related PRs, migration steps).
+- Use numbered lists when the count or sequence of items matters (e.g., migration steps). Link sections use bulleted lists as specified above.
 - Prefer clear, functional section headings when needed; use the following conventions:
   - `### Background`: prior context that remains true regardless of this PR (history, existing behaviour, prior decisions).
   - `### Motivation`: why this change now (problem/pain, goal, success criteria, constraints).
@@ -65,15 +76,9 @@ Voice: follow the "Authorship Voice (Writing As Me)" and "Platform-Specific Defa
   - `### Reviewing`: optional, brief and reviewer-oriented. Use it to suggest the most efficient review path, not to restate the change summary. Prefer one or two bullets.
   - `### Rollout`: flags, phases, steps and monitoring notes.
   - `### Follow-ups`: deferred work with concrete next actions.
-  - `### Related`: GitHub issues/PRs/discussions only (renders as rich cards on GitHub; excludes releases and security advisories; dependencies/follow-ups/linked work).
-  - `### References`: all other links (external trackers/findings/docs/research, plus GitHub URLs that are not issues/PRs/discussions), even when directly motivating.
-- The `### Related` and `### References` MUST be lists (bulleted or numbered). Even a single link must be written as a one-item list (`- https://...` or `1. https://...`). Never put a bare URL on its own line under those headings.
-- Include `### Related` and `### References` only when relevant links exist.
-- If both sections are present, keep this order: `### Related` then `### References`.
-- For cross-repo references:
-  - Use `gh pr view <number> --repo Org/repo --json url` to fetch PR URLs programmatically
-  - Group related PRs in descriptions by status (e.g., merged, pending, cleanup)
-  - Use bare GitHub URLs (not markdown links) -- GitHub auto-generates rich link cards
+  - `### Related`: related GitHub issues, PRs and discussions (dependencies, follow-ups and linked work). Bare URLs may render as rich cards here.
+  - `### References`: external documentation and other supporting sources, including GitHub URLs that are not issues, PRs or discussions.
+- Keep `### Related` and `### References` at the end, in that order, after all work-focused sections. Follow "Links In Issue And PR Descriptions" above for their bulleted bare URLs, deduplication and omission when empty.
 - Put deferred implementation direction in `### Follow-ups`, not in `### Background` or `### Changes`, unless that direction is itself part of the approved design.
 
 Examples (TL;DR opener styles):
