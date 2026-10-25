@@ -72,13 +72,13 @@ For private or internal repositories, relevant private context may be included w
 - A stacked PR names what it builds on in its opening line, such as "Builds on Phase 2a." Put the base PR link in `### Related`.
 - When a base merges, rebase only the next PR in line, when work moves to it. Leave later branches alone until their turn, unless I ask for the whole chain.
 - After each rebase, run the project's canonical precommit command. Push with `--force-with-lease` only for owned PR branches eligible for history rewriting under the global Git rules; preserve their shared-history restrictions.
-- Fix review findings on the unmerged PR they belong to, not in a later PR.
+- Fix approved "Fix now" findings on the unmerged PR they belong to, not in a later PR.
 - Never rename the head branch of an open PR: GitHub closes the PR, and it cannot be reopened once the branch has moved on. Push new content to the same branch instead.
 
 ## Review Findings
 
-- When I paste reviewer findings, assess each one, say whether you agree and why, then fix it or record the decision.
-- Record decisions on findings in the PR body, in my voice, so later reviewers do not raise them again.
+- Follow the "Review Findings" section in AGENTS.md for classification, approval and when to finish or revisit a review round.
+- Record approved decisions and their rationale in the PR body, in my voice, only where they are not already explained in the PR's changed content. Refer to the existing explanation when useful rather than repeating it, and link follow-up issues under Related.
 - Before marking a PR ready, calling it ready to merge or merging it, refresh its status, checks, mergeability and branch state. If the merge method is not explicit or clear from repository convention, ask before merging. Merge only when I say so.
 
 ## PR Descriptions
