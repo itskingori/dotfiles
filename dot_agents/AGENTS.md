@@ -7,6 +7,10 @@ For general process when working with me:
 - Think before acting, and prefer the better fix over the quickest superficial one.
 - If the main tradeoffs are product, scope, or preference decisions, ask me instead of guessing.
 - When asking for clarification or feedback, prefer the structured question tool over open-ended prompts whenever the decision can reasonably be expressed as options.
+- When asking several questions in prose, number them and put them at the end of the reply so I can answer by number.
+- Say whether a point needs a decision or action from me, or is only for information.
+- For visual or interface decisions, show rendered options, such as mocks or screenshots, rather than describing them, and offer several when the direction is open.
+- When I tell you to proceed without asking, make the calls yourself, keep the work in draft PRs and record each judgement call where I will review it, such as the PR body.
 - Treat user task instructions as overriding default style, tone, formatting and initiative preferences unless they conflict with safety, privacy, honesty, tool or mode constraints.
 - Keep shared workflows agent-neutral. Put client-specific setup, commands and authentication guidance in the client's own configuration.
 
@@ -108,8 +112,12 @@ Use these rules whenever writing in my voice, unless a later section narrows the
 - Prefer plain punctuation over typographic flourish: avoid em dashes; use commas, parentheses, or full stops instead.
 - Do not use the Oxford comma. Prefer `x, y and z` and `x, y or z` unless omitting it would make the sentence genuinely ambiguous.
 - Keep punctuation restrained: do not overuse exclamation marks, ellipses, or scare quotes unless they are genuinely needed.
+- Avoid "not X, but Y" and "it isn't X, it's Y" framing. State the point plainly.
+- Write paragraphs whose sentences lead into each other, not standalone sentences placed side by side.
+- When drafting in my voice, use what I have actually said. Mark anything invented, such as biography, beliefs, processes or sign-offs, as a suggestion.
 - Avoid filler, hype, and fake enthusiasm.
 - Do not mention the assistant/AI or narrate the tooling.
+- Do not add AI attribution, such as `Co-Authored-By` trailers or "Generated with" footers, to commits, PRs, issues or comments.
 
 ### Platform-Specific Defaults
 
@@ -140,6 +148,9 @@ For Linear issues/comments and similar work-tracking artefacts:
 - When enough local context is available, prefer context-backed judgment over speculative option listing.
 - Inspect the codebase first. If you are still stuck or uncertain, do a quick search for official docs or specs, then continue with the current approach. Do not change direction unless asked.
 - If code is confusing and directly affects the current task, simplify it.
+- Do not state facts you have not checked, in code comments, docs, PRs, user-facing copy or policies. Verify them against the source (data, code, config or the live system), or leave the claim out and say what is unverified.
+- If I already have a dev server or similar process running, use it. Never kill a process you did not start, and never kill by port. If you need your own, start it on a free port, keep track of it and stop only that process.
+- Clean up what you create: stop servers you started, remove temporary worktrees and delete local branches once their work has merged. Before handing off, say what is still running or left behind.
 
 ## Dependency Management
 
@@ -196,13 +207,18 @@ For Linear issues/comments and similar work-tracking artefacts:
 - Keep commits "one idea each" (see "Git Commit Slicing" below). Avoid mega-commits; commit incrementally.
 - When writing commit messages, PR bodies, or documentation for a change, describe the code as it exists in the reviewed state.
 - Do not reference discarded exploratory paths, removed intermediate implementations, or transition details unless they remain visible in the final history or are explicitly captured as follow-up context.
-- Before pushing, it is OK to reorganize commits to improve history clarity when safe.
-- If commits are already pushed, prefer a follow-up commit unless I explicitly request history rewrite.
-- Rebasing rules:
-  - OK to rebase before pushing.
-  - If already pushed, only use `git push --force-with-lease` when you own the branch and I explicitly request it.
-  - Do not rewrite shared/public history.
+- Do not describe ideas I have not agreed to as planned or deferred work in PRs, commits, issues or docs. Raise them as questions instead.
+- Do not link private scratch spaces, such as design canvases, chat artefacts or local scratch files, from committed files or GitHub content. Write settled decisions into the repo; committed content is the authority.
+- On my own unmerged PR branches, fold review fixes into the relevant commits and push with `--force-with-lease`.
+- If others contribute to or base work on the branch, use follow-up commits unless I explicitly authorise rewriting its history.
+- Never rewrite `main`, `master` or other protected branches.
+- Before the first push, reorganise local commits when safe.
+- Before switching branches, resetting, rebasing or stashing, run `git status` and stop if there are changes you did not make.
+- Never run a bare `git stash` to clear the tree; it sweeps up my uncommitted work. Stash named paths with a message, or use a worktree.
+- Never chain a destructive command after one that can fail with `;`. Run it as a separate step after checking the previous result.
+- Stage files by name. Use `git add -A` or `git add .` only when the status shows nothing but your own changes.
 - Keep backup/safety branches local by default unless I explicitly ask to publish them.
+- Do not push branches other than PR heads, such as evidence, backup or scratch branches, without first agreeing how and when they get deleted.
 - Prefix local backup branches with `backup/` so they are clearly distinct from active working branches.
 
 ### Non-Interactive Git Commands
@@ -282,10 +298,10 @@ Body (default for non-trivial changes):
 - Use short, lowercase, hyphenated names; avoid spaces and punctuation.
 - Name branches by area + outcome: `<area>-<short-slug>`.
 - Single feature: `<area>-<short-slug>`
-- Multi-phase work: `<area>-phase<N>-<short-slug>`
+- Do not put phase numbers in branch names; for multi-phase work, the PR title carries the phase.
 
 Examples (generic):
 - `api-timeout-retry`
 - `ui-settings-layout`
 - `deps-bump-eslint`
-- `dns-phase1-import-records`
+- `dns-import-records`
