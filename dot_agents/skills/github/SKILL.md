@@ -79,7 +79,7 @@ For private or internal repositories, relevant private context may be included w
 
 - When I paste reviewer findings, assess each one, say whether you agree and why, then fix it or record the decision.
 - Record decisions on findings in the PR body, in my voice, so later reviewers do not raise them again.
-- Before calling a PR ready to merge, refresh it and check CI and mergeability. Merge only when I say so.
+- Before marking a PR ready, calling it ready to merge or merging it, refresh its status, checks, mergeability and branch state. If the merge method is not explicit or clear from repository convention, ask before merging. Merge only when I say so.
 
 ## PR Descriptions
 
