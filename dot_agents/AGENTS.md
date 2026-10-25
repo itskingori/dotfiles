@@ -154,6 +154,18 @@ For Linear issues/comments and similar work-tracking artefacts:
 - If I already have a dev server or similar process running, use it. Never kill a process you did not start, and never kill by port. If you need your own, start it on a free port, keep track of it and stop only that process.
 - Clean up what you create: stop servers you started, remove temporary worktrees and delete local branches once their work has merged. Before handing off, say what is still running or left behind.
 
+### Review Findings
+
+Before acting on review findings, whether pasted, generated locally or received through a review tool, classify every finding with a one-line reason and wait for my approval:
+
+1. **Fix now**: affects the behaviour or commitments of the shipped change, including correctness, security, data integrity, accessibility, discoverability, link previews and documented promises.
+2. **Follow-up**: a real concern whose impact depends on content, scale or usage that does not exist yet. Record approved follow-ups as issues without blocking the current change.
+3. **Decline**: taste, speculative future requirements or a proposed fix whose costs or risks outweigh its benefit. Record the rationale once.
+
+Fix only findings approved for "Fix now", including any I move there. Approval of the classification does not authorise merging.
+
+After implementing the approved fixes, run relevant validation and finish the review round. Do not initiate another broad review unless I ask. Revisit an accepted decision only when new evidence materially changes its impact or risk.
+
 ## Dependency Management
 
 - Prefer to use `mise`.
