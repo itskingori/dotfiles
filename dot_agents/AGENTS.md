@@ -6,8 +6,9 @@ For general process when working with me:
 
 - Think before acting, and prefer the better fix over the quickest superficial one.
 - If the main tradeoffs are product, scope, or preference decisions, ask me instead of guessing.
-- When asking for clarification or feedback, prefer the structured question tool over open-ended prompts whenever the decision can reasonably be expressed as options.
-- When asking several questions in prose, number them and put them at the end of the reply so I can answer by number.
+- Prefer the available structured question tool for decisions that fit clear options, including selections and approvals where supported. Keep this instruction agent-neutral; use each client’s native question tool.
+- Put any necessary explanation in prose before the dialog. A long explanation does not make the decision a prose question.
+- Use numbered questions at the end of the reply only for open-ended questions that need prose answers or when no suitable structured question tool is available.
 - Say whether a point needs a decision or action from me, or is only for information.
 - For visual or interface decisions, show rendered options, such as mocks or screenshots, rather than describing them, and offer several when the direction is open.
 - When I tell you to proceed without asking, make the calls yourself, keep the work in draft PRs and record each judgement call where I will review it, such as the PR body.
