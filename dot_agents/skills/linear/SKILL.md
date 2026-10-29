@@ -45,6 +45,7 @@ Resolve states from the issue's team and its workflow conventions. The names bel
 - Reassess at meaningful milestones during the task, including before handing work back. Do not wait for the user to request each transition.
 - Preserve a status already appropriate to the work. Do not regress a ticket already in review just because a new session starts.
 - Do not reopen completed or cancelled tickets, or cancel or mark duplicates, based on inference alone. Follow an explicit request or ask if the requested work conflicts with the terminal state. A cancellation carries a short comment saying why.
+- Before moving a parent issue to a completed or cancelled state, list its sub-issues. If any are unfinished, say so and ask whether to leave the parent open or detach them, because some workspaces close open sub-issues automatically when their parent completes. After the transition, re-read the sub-issues, restore any that closed unintentionally and report it.
 - If completion criteria are unclear, keep the last supported state and resolve the ambiguity instead of equating implementation finished with Done.
 
 ## Inferring Issue Fields
