@@ -10,7 +10,7 @@
 	gpgsign = true
 
 [gpg]
-	program = gpg
+	program = /opt/homebrew/bin/gpg
 
 [fetch]
 	prune = true
