@@ -1,5 +1,6 @@
 tap "intellection/tools", "git@github.com:Intellection/homebrew-tools.git"
 
+brew "awscli"
 brew "chezmoi"
 brew "curl"
 brew "docker-credential-helper-ecr"
