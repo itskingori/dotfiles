@@ -13,6 +13,7 @@ Public chezmoi dotfiles. Keep changes reproducible and safe.
 - API keys, tokens, cookies, client secrets
 - SSH private keys, `known_hosts`, agent sockets
 - Any credential material, recovery codes, license keys
+- GPG private keys, keyrings and trust databases (agent configuration such as `gpg-agent.conf` is fine)
 - Session/state/cache/history/log/backup artifacts unless explicitly intended and reviewed
 
 If something feels secret-ish, do not add it. Prefer referencing an external secret manager (for example, 1Password) at runtime.

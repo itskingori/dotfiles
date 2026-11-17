@@ -6,12 +6,14 @@ brew "curl"
 brew "docker-credential-helper-ecr"
 brew "gh"
 brew "git"
+brew "gnupg"
 brew "jq"
 brew "kubernetes-cli"
 brew "mise"
 brew "mole"
 brew "mysql@8.0", restart_service: :changed
 brew "opensearch", restart_service: :changed
+brew "pinentry-mac"
 brew "postgresql@14", restart_service: :changed
 brew "pwgen"
 brew "redis", restart_service: :changed
