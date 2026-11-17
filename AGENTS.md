@@ -11,7 +11,7 @@ Public chezmoi dotfiles. Keep changes reproducible and safe.
 ## What Counts As A Secret (Examples)
 
 - API keys, tokens, cookies, client secrets
-- SSH private keys, `known_hosts`, agent sockets
+- SSH private keys, `known_hosts`, agent sockets (symlinks pointing to a socket path are fine)
 - Any credential material, recovery codes, license keys
 - GPG private keys, keyrings and trust databases (agent configuration such as `gpg-agent.conf` is fine)
 - Session/state/cache/history/log/backup artifacts unless explicitly intended and reviewed
