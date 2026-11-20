@@ -65,6 +65,12 @@ When adding configuration for a new tool:
 - Keep `~/.config/ghst/` out of chezmoi; it holds local site configuration and authentication material.
 - Keep MCP registration in each client's configuration and credentials outside this repository.
 
+## Playwright
+
+- Manage `playwright` through mise with an explicit version.
+- `.chezmoiscripts/run_onchange_after_install-playwright-browsers.sh.tmpl` reads that version from the mise config and installs Chromium whenever it changes. Bump the version in the mise config only.
+- Keep Playwright's browser cache (`~/Library/Caches/ms-playwright/`) out of chezmoi.
+
 ## Handy Commands
 
 ```sh
