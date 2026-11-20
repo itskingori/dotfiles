@@ -1,0 +1,12 @@
+#!/bin/sh
+{{- /* Embedding the pinned version makes chezmoi re-run this when it changes. */}}
+{{- $version := index (include "dot_config/mise/config.toml" | fromToml).tools "npm:playwright" }}
+
+set -eu
+
+if ! command -v mise >/dev/null 2>&1; then
+  echo "mise not found; install it before applying Playwright browsers" >&2
+  exit 1
+fi
+
+mise exec "npm:playwright@{{ $version }}" -- playwright install chromium
